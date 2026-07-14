@@ -1,0 +1,7 @@
+.vercel/
+node_modules/
+.env*
+!.env.example
+
+# Lokale kopie van het afzonderlijk gepubliceerde SEV-brandbook.
+brandbook/
