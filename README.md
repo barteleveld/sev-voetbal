@@ -2,6 +2,8 @@
 
 Een zelfstandige bestuursdemo voor een nieuwe publieke SEV-website. De visuele clubsite staat inhoudelijk los van het eerder ontwikkelde brandbook, maar biedt een logische doorklik naar `https://sev-brandbook.vercel.app/`.
 
+Live demo: https://sev-voetbal.vercel.app/
+
 ## Starten
 
 Dubbelklik op `OPEN-SEV-CLUBSITE.bat`, of open PowerShell in deze map en voer uit:
