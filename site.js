@@ -326,7 +326,7 @@ document.querySelectorAll("[data-news-grid]").forEach((grid) => {
 });
 
 async function loadInvestmentNews(grid) {
-  const limit = Number(grid.dataset.limit || 15);
+  const limit = Number(grid.dataset.limit || 30);
   const status = document.querySelector("[data-investment-news-status]");
 
   try {
