@@ -212,17 +212,21 @@ function bindNewsSearch() {
 
 async function loadNews(grid) {
   const limit = Number(grid.dataset.limit || 6);
+  const years = grid.dataset.years || "";
   const featureFirst = grid.dataset.featureFirst !== "false";
   const status = document.querySelector("[data-news-status]");
   try {
-    const response = await fetch(`/api/news?limit=${limit}`, { headers: { Accept: "application/json" } });
+    const query = years ? `years=${encodeURIComponent(years)}` : `limit=${limit}`;
+    const response = await fetch(`/api/news?${query}`, { headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error(`Status ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
     grid.replaceChildren(...payload.items.map((item, index) => createNewsCard(item, index, featureFirst)));
     if (status) {
       const time = new Intl.DateTimeFormat("nl-NL", { hour: "2-digit", minute: "2-digit" }).format(new Date(payload.updatedAt));
-      status.textContent = `Live bijgewerkt om ${time}`;
+      status.textContent = years
+        ? `${payload.items.length} berichten uit 2026 en 2025 · bijgewerkt om ${time}`
+        : `Live bijgewerkt om ${time}`;
     }
   } catch {
     if (status) status.textContent = "Reserveweergave · bron tijdelijk niet bereikbaar";

@@ -1,9 +1,10 @@
-import { getLatestNews, SOURCE_URL } from "../lib/news.mjs";
+import { getLatestNews, getNewsByYears, SOURCE_URL } from "../lib/news.mjs";
 
 export default async function handler(request, response) {
   try {
+    const years = request.query?.years;
     const limit = Number(request.query?.limit ?? 10);
-    const items = await getLatestNews(limit);
+    const items = years ? await getNewsByYears(years) : await getLatestNews(limit);
     response.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=900");
     response.status(200).json({
       source: SOURCE_URL,
