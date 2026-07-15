@@ -4,120 +4,110 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05291e">
-  <meta name="description" content="SEV Leidschendam — Sport en Vriendschap. Het laatste clubnieuws, wedstrijden en alles over lid worden.">
+  <meta name="description" content="SEV Leidschendam — nieuws, wedstrijden, trainingen en alles wat je als lid nodig hebt.">
   <title>SEV Leidschendam — Hier hoor je bij</title>
-  <link rel="stylesheet" href="styles.css?v=20260715a">
-  <script src="site.js?v=20260715a" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260715b">
+  <script src="site.js?v=20260715b" defer></script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
   <div data-site-header></div>
 
   <main id="inhoud">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero hero--daily" aria-labelledby="hero-title">
       <div class="hero__image" aria-hidden="true"></div>
       <div class="hero__inner">
         <div class="hero__content">
-          <p class="eyebrow eyebrow--light reveal">Voetbalvereniging SEV · Sinds 1962</p>
-          <h1 id="hero-title" class="reveal">Hier hoor<br><em>je bij.</em></h1>
-          <p class="hero__copy reveal">SEV is Sport én Vriendschap. Van je eerste balcontact tot de derde helft — op de Kastelenring kent de club je naam.</p>
-          <div class="hero__actions reveal">
-            <a class="button button--lime" href="/nieuws">Lees het clubnieuws <span class="button__arrow">→</span></a>
-            <a class="button button--ghost" href="/lid-worden">Kom een keer meetrainen</a>
+          <p class="eyebrow eyebrow--light">Voetbalvereniging SEV · Leidschendam</p>
+          <h1 id="hero-title">Hier hoor<br><em>je bij.</em></h1>
+          <p class="hero__copy">Nieuws, wedstrijden en clubzaken op één plek. Voor iedereen die op en rond de Kastelenring thuis is.</p>
+          <div class="hero__actions">
+            <a class="button button--lime" href="/wedstrijden">Bekijk het programma <span class="button__arrow">→</span></a>
+            <a class="button button--ghost" href="/nieuws">Laatste nieuws</a>
           </div>
         </div>
-        <div class="hero__foot reveal">
-          <div class="hero__status"><span class="pulse"></span><span>Het clubnieuws wordt automatisch bijgewerkt</span></div>
-          <a class="season-card" href="/wedstrijden">
-            <span class="season-card__icon">⚽</span>
-            <span><small>Op naar het nieuwe seizoen</small><strong>Bekijk het wedstrijdcentrum</strong></span>
-            <span>→</span>
-          </a>
-        </div>
+        <a class="new-member-route" href="/lid-worden">
+          <span class="new-member-route__label">Nieuw bij SEV?</span>
+          <span class="new-member-route__copy">Ontdek proeftrainingen, voetbalvormen en lid worden.</span>
+          <strong>Start hier <span>→</span></strong>
+        </a>
       </div>
     </section>
 
-    <nav class="quick-strip reveal" aria-label="Veel bezocht">
-      <a class="quick-link" href="/wedstrijden"><small>01 · Vandaag</small><strong>Programma <span>→</span></strong></a>
-      <a class="quick-link" href="https://www.sev-voetbal.nl/trainingsschema" target="_blank" rel="noreferrer"><small>02 · Teams</small><strong>Trainingstijden <span>↗</span></strong></a>
-      <a class="quick-link" href="https://www.sev-voetbal.nl/kantineschema" target="_blank" rel="noreferrer"><small>03 · Vereniging</small><strong>Kantineschema <span>↗</span></strong></a>
-      <a class="quick-link" href="/lid-worden"><small>04 · Nieuw bij SEV</small><strong>Proeftrainen <span>→</span></strong></a>
-    </nav>
+    <section class="daily-panel" aria-labelledby="daily-title">
+      <div class="daily-panel__heading">
+        <div><p class="eyebrow">Voor leden</p><h2 id="daily-title">Snel geregeld.</h2></div>
+        <p>De meest gebruikte clubinformatie direct bij de hand.</p>
+      </div>
+      <nav class="daily-grid" aria-label="Veelgebruikte clubinformatie">
+        <a class="daily-link daily-link--primary" href="/wedstrijden"><span>01</span><strong>Programma</strong><small>Wie, waar en wanneer</small><b>→</b></a>
+        <a class="daily-link" href="https://www.sev-voetbal.nl/trainingsschema" target="_blank" rel="noreferrer"><span>02</span><strong>Trainingstijden</strong><small>Schema per team</small><b>↗</b></a>
+        <a class="daily-link" href="https://www.sev-voetbal.nl/afgelastingen" target="_blank" rel="noreferrer"><span>03</span><strong>Afgelastingen</strong><small>Actuele veldstatus</small><b>↗</b></a>
+        <a class="daily-link" href="https://www.sev-voetbal.nl/kantineschema" target="_blank" rel="noreferrer"><span>04</span><strong>Kantinedienst</strong><small>Bar- en keukenschema</small><b>↗</b></a>
+        <a class="daily-link" href="https://www.sev-voetbal.nl/jeugdvoetbal/" target="_blank" rel="noreferrer"><span>05</span><strong>Teams</strong><small>Vind je teaminformatie</small><b>↗</b></a>
+        <a class="daily-link" href="mailto:secretarissev@gmail.com"><span>06</span><strong>Contact</strong><small>Vind de juiste persoon</small><b>→</b></a>
+      </nav>
+    </section>
 
-    <section class="section" aria-labelledby="news-title">
-      <div class="section-heading">
+    <section class="section section--news-home" aria-labelledby="news-title">
+      <div class="heading-row heading-row--compact">
         <div>
-          <p class="eyebrow reveal">Wat er speelt</p>
-          <h2 id="news-title" class="reveal">Vers van de<br><em>Kastelenring.</em></h2>
+          <p class="eyebrow">Clubnieuws</p>
+          <h2 id="news-title">Laatste nieuws.</h2>
         </div>
-        <div class="section-heading__aside reveal">
+        <div class="news-heading-actions">
           <span class="live-label" data-news-status>Verbinden met live nieuws…</span>
-          <p>Alles wat leden willen weten, zonder zoeken. Rechtstreeks uit de huidige SEV-nieuwsbron.</p>
-          <a class="button button--outline" href="/nieuws">Alle berichten →</a>
+          <a class="text-link" href="/nieuws">Alle berichten →</a>
         </div>
       </div>
 
-      <div class="news-grid" data-news-grid data-limit="3" data-feature-first="true">
-        <article class="news-card news-card--featured reveal" data-search="indeling sev 1 seizoen 2026 2027">
+      <div class="news-grid" data-news-grid data-limit="4" data-feature-first="false">
+        <article class="news-card" data-search="indeling sev 1 seizoen 2026 2027">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/indeling-sev-1-seizoen-2026-2027" target="_blank" rel="noreferrer">
-            <div class="news-card__media"><img src="assets/nieuwsarchief/images-blogpost-JO12-kampioen1.jpg" alt=""><span class="news-card__badge">Clubnieuws</span></div>
-            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-11">11 juli 2026</time><h3>Indeling SEV 1 seizoen 2026–2027</h3><p>De selectie maakt zich op voor een spannend nieuw seizoen.</p><span class="news-card__read">Lees het hele bericht ↗</span></div>
+            <div class="news-card__media"><img src="assets/sev-logo.png" alt="SEV-logo" class="news-card__image--logo"><span class="news-card__badge">Clubnieuws</span></div>
+            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-11">11 juli 2026</time><h3>Indeling SEV 1 seizoen 2026–2027</h3><p>De selectie maakt zich op voor het nieuwe seizoen.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>
-        <article class="news-card reveal" data-search="vernieuwd bestuur groeiend sev">
+        <article class="news-card" data-search="vernieuwd bestuur groeiend sev">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/vernieuwd-bestuur-voor-een-groeiend-sev" target="_blank" rel="noreferrer">
             <div class="news-card__media"><img src="assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg" alt=""><span class="news-card__badge">Vereniging</span></div>
-            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-09">9 juli 2026</time><h3>Vernieuwd bestuur voor een groeiend SEV</h3><p>Een nieuwe fase voor een club die volop in beweging is.</p><span class="news-card__read">Lees het hele bericht ↗</span></div>
+            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-09">9 juli 2026</time><h3>Vernieuwd bestuur voor een groeiend SEV</h3><p>Een nieuwe fase voor een club die volop in beweging is.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>
-        <article class="news-card reveal" data-search="sev 1 loosduinen oefenwedstrijd">
+        <article class="news-card" data-search="sev 1 loosduinen oefenwedstrijd">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/sev-1-oefent-donderdag-tegen-loosduinen-1" target="_blank" rel="noreferrer">
-            <div class="news-card__media"><img src="assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg" alt=""><span class="news-card__badge">Voetbal</span></div>
-            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-07">7 juli 2026</time><h3>SEV 1 oefent tegen Loosduinen</h3><p>Een mooie voetbalavond op de Kastelenring.</p><span class="news-card__read">Lees het hele bericht ↗</span></div>
+            <div class="news-card__media"><img src="assets/sev-logo.png" alt="SEV-logo" class="news-card__image--logo"><span class="news-card__badge">Voetbal</span></div>
+            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-07">7 juli 2026</time><h3>SEV 1 oefent tegen Loosduinen</h3><p>Een mooie voetbalavond op de Kastelenring.</p><span class="news-card__read">Lees bericht ↗</span></div>
+          </a>
+        </article>
+        <article class="news-card" data-search="buurtresto seizoen vereniging">
+          <a class="news-card__link" href="https://www.sev-voetbal.nl/laatste-buurtresto-van-het-seizoen" target="_blank" rel="noreferrer">
+            <div class="news-card__media"><img src="assets/nieuwsarchief/buurtrestro_20260618_5.jpeg" alt=""><span class="news-card__badge">Buiten de lijnen</span></div>
+            <div class="news-card__content"><time class="news-card__date" datetime="2026-06-19">19 juni 2026</time><h3>Laatste buurtresto van het seizoen</h3><p>Samen eten met bekende gezichten uit de buurt.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>
       </div>
     </section>
 
-    <section class="club-story" aria-labelledby="story-title">
-      <div class="club-story__inner">
-        <p class="eyebrow eyebrow--light reveal">Meer dan negentig minuten</p>
-        <h2 class="club-story__statement reveal" id="story-title">Groot genoeg voor <em>ambitie.</em><br>Klein genoeg om elkaar te kennen.</h2>
-        <figure class="club-collage reveal">
-          <img src="assets/facebook/sev-facebook-clubcollage-2025.png" alt="Collage van SEV-teams: van jonge pupillen en jeugd tot senioren, vrouwen en Old Stars">
-          <figcaption><small>Eén club · een leven lang</small><strong>Alle generaties. Hetzelfde groen.</strong></figcaption>
-        </figure>
-        <div class="story-grid">
-          <article class="story-photo reveal">
-            <img src="assets/nieuwsarchief/SEV-Nacht-1-1.jpg" alt="Jeugdleden en vrijwilligers van SEV samen op de Kastelenring">
-            <div class="story-photo__copy"><small>Samen beleven</small><h3>Herinneringen die langer meegaan dan de uitslag.</h3></div>
-          </article>
-          <div class="story-stack">
-            <article class="stat-card reveal"><strong>±700</strong><p>leden, tientallen teams en één gedeeld thuis op de Kastelenring.</p></article>
-            <a class="community-card reveal" href="https://www.sev-voetbal.nl/laatste-buurtresto-van-het-seizoen" target="_blank" rel="noreferrer"><div><small>Buiten de lijnen</small><h3>De club die ook de buurt aan tafel brengt →</h3></div></a>
+    <section class="home-routes" aria-label="Meer over SEV">
+      <article class="newcomer-card">
+        <div class="newcomer-card__copy">
+          <p class="eyebrow eyebrow--light">Nieuw bij SEV?</p>
+          <h2>Kom eerst eens kennismaken.</h2>
+          <p>Voor jeugd, senioren, vrouwen, G-voetbal, zaalvoetbal, Walking Football en de allerkleinsten. Je kunt altijd eerst meetrainen.</p>
+          <div class="card-actions">
+            <a class="button button--lime" href="/lid-worden">Bekijk de mogelijkheden →</a>
+            <a class="button button--ghost" href="mailto:sevleden@sev-voetbal.nl?subject=Kennismaken%20met%20SEV">Stel een vraag</a>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="brandbook-section" aria-labelledby="brandbook-title">
-      <a class="brandbook-promo reveal" href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">
-        <div class="brandbook-promo__copy">
-          <p class="eyebrow eyebrow--light">Het verhaal achter de club</p>
-          <h2 id="brandbook-title">Waarom SEV<br><em>voelt als SEV.</em></h2>
-          <p>Ontdek onze historie, waarden en visuele richting. Het fundament onder alles wat we als club vertellen en laten zien.</p>
-          <span class="button button--lime">Bekijk het SEV-brandbook <span class="button__arrow">↗</span></span>
-        </div>
+      <a class="identity-card" href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">
+        <p class="eyebrow eyebrow--light">Dit is SEV</p>
+        <h2>Sport én<br>vriendschap.</h2>
+        <p>Ons verhaal, onze waarden en de stijl die bij SEV hoort.</p>
+        <strong>Ontdek de club ↗</strong>
       </a>
-    </section>
-
-    <section class="member-cta reveal" aria-labelledby="member-title">
-      <div class="member-cta__copy">
-        <p class="eyebrow eyebrow--light">Nieuw bij SEV?</p>
-        <h2 id="member-title">Eerst even<br>de sfeer proeven.</h2>
-        <p>Je hoeft niet meteen te kiezen. Kom langs, train een paar keer mee en ontdek waarom zoveel leden blijven hangen.</p>
-        <a class="button button--lime" href="/lid-worden">Plan een proeftraining →</a>
-      </div>
     </section>
   </main>
 

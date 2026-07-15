@@ -1,9 +1,12 @@
 const page = document.body.dataset.page || "home";
+const scriptUrl = document.currentScript?.src || document.baseURI;
+const assetBase = new URL("assets/", scriptUrl);
+const assetPath = (path) => new URL(path.replace(/^assets\//, ""), assetBase).href;
 const pageLinks = [
   ["home", "/", "Home"],
   ["news", "/nieuws", "Nieuws"],
   ["matches", "/wedstrijden", "Wedstrijden"],
-  ["member", "/lid-worden", "Lid worden"]
+  ["member", "/lid-worden", "Nieuw bij SEV"]
 ];
 
 function current(name) {
@@ -16,13 +19,17 @@ if (headerTarget) {
     <div class="announcement">
       <div class="announcement__inner">
         <span>Welkom thuis op de Kastelenring</span>
-        <span>Sportparkweg 4 · Leidschendam · <a href="mailto:secretarissev@gmail.com">Contact</a></span>
+        <nav class="utility-links" aria-label="Direct naar">
+          <a href="/wedstrijden">Programma</a>
+          <a href="https://www.sev-voetbal.nl/afgelastingen" target="_blank" rel="noreferrer">Afgelastingen</a>
+          <a href="mailto:secretarissev@gmail.com">Contact</a>
+        </nav>
       </div>
     </div>
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="/" aria-label="SEV home">
-          <img src="assets/sev-logo.png" alt="SEV-logo, opgericht in 1962">
+          <img src="${assetPath("sev-logo.png")}" alt="SEV-logo, opgericht in 1962">
           <span class="brand__name"><strong>SEV</strong><small>Sport &amp; Vriendschap</small></span>
         </a>
         <nav class="main-nav" id="main-navigation" aria-label="Hoofdnavigatie">
@@ -30,11 +37,11 @@ if (headerTarget) {
           <a href="/nieuws"${current("news")}>Nieuws</a>
           <a href="/wedstrijden"${current("matches")}>Wedstrijden</a>
           <a href="https://www.sev-voetbal.nl/jeugdvoetbal/" target="_blank" rel="noreferrer">Teams</a>
-          <a href="/lid-worden"${current("member")}>Onze club</a>
-          <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Brandbook</a>
+          <a href="/lid-worden"${current("member")}>Nieuw bij SEV</a>
+          <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV</a>
         </nav>
         <div class="header-actions">
-          <a class="button" href="/lid-worden">Kom bij SEV <span class="button__arrow">↗</span></a>
+          <a class="button" href="/lid-worden"${current("member")}>Nieuw bij SEV <span class="button__arrow">→</span></a>
           <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Menu openen"><span></span></button>
         </div>
       </div>
@@ -48,7 +55,7 @@ if (footerTarget) {
       <div class="footer__top">
         <div class="footer__brand">
           <a class="brand" href="/">
-            <img src="assets/sev-logo.png" alt="">
+            <img src="${assetPath("sev-logo.png")}" alt="">
             <span class="brand__name"><strong>SEV</strong><small>Sport &amp; Vriendschap</small></span>
           </a>
           <p class="footer__tagline">Eén club.<br>Een leven lang.</p>
@@ -57,7 +64,7 @@ if (footerTarget) {
           <div class="footer__column">
             <h3>Snel naar</h3>
             ${pageLinks.map(([, href, label]) => `<a href="${href}">${label}</a>`).join("")}
-            <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Brandbook ↗</a>
+            <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV ↗</a>
             <a href="https://www.passasports.nl/voetbal/clubshops/sev" target="_blank" rel="noreferrer">Clubshop ↗</a>
           </div>
           <div class="footer__column">
@@ -72,7 +79,7 @@ if (footerTarget) {
       </div>
       <div class="footer__bottom">
         <span>© <span data-current-year></span> Voetbalvereniging SEV</span>
-        <span>Concept voor bestuurlijke besluitvorming · Live nieuws van sev-voetbal.nl</span>
+        <span>Sport, plezier en vriendschap sinds 1962 · Live nieuws van sev-voetbal.nl</span>
       </div>
     </footer>`;
 }
@@ -110,14 +117,14 @@ document.querySelectorAll(".reveal").forEach((element) => {
   else element.classList.add("is-visible");
 });
 
-const newsLogo = "assets/sev-logo.png";
+const newsLogo = assetPath("sev-logo.png");
 const newsImageMatches = [
-  { pattern: /\bkampioen(?:en|schap)?\b/i, src: "assets/nieuwsarchief/images-blogpost-JO12-kampioen1.jpg" },
-  { pattern: /\bvrijwilliger(?:s|savond)?\b/i, src: "assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg" },
-  { pattern: /\b(?:meiden|meisjes|vrouwen|dames)(?:team|voetbal)?\b/i, src: "assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg" },
-  { pattern: /\b(?:buurtresto|buurtrestaurant)\b/i, src: "assets/nieuwsarchief/buurtrestro_20260618_5.jpeg" },
-  { pattern: /\bkleuter(?:s|training)?\b/i, src: "assets/nieuwsarchief/images-blogpost-afsluiting-kleintjes3.jpg" },
-  { pattern: /\bg[- ]?voetbal\b/i, src: "assets/nieuwsarchief/G-trainers-in-het-zonnetje-2.jpg" }
+  { pattern: /\bkampioen(?:en|schap)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-JO12-kampioen1.jpg") },
+  { pattern: /\bvrijwilliger(?:s|savond)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg") },
+  { pattern: /\b(?:meiden|meisjes|vrouwen|dames)(?:team|voetbal)?\b/i, src: assetPath("nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") },
+  { pattern: /\b(?:buurtresto|buurtrestaurant)\b/i, src: assetPath("nieuwsarchief/buurtrestro_20260618_5.jpeg") },
+  { pattern: /\bkleuter(?:s|training)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-afsluiting-kleintjes3.jpg") },
+  { pattern: /\bg[- ]?voetbal\b/i, src: assetPath("nieuwsarchief/G-trainers-in-het-zonnetje-2.jpg") }
 ];
 
 function matchedNewsImage(item) {

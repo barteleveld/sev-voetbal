@@ -4,84 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05291e">
-  <meta name="description" content="Het wedstrijdcentrum van voetbalvereniging SEV Leidschendam.">
+  <meta name="description" content="Programma, uitslagen en wedstrijddaginformatie van voetbalvereniging SEV Leidschendam.">
   <title>Wedstrijden — SEV Leidschendam</title>
-  <link rel="stylesheet" href="styles.css?v=20260715a">
-  <script src="site.js?v=20260715a" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260715b">
+  <script src="site.js?v=20260715b" defer></script>
 </head>
 <body data-page="matches">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
   <div data-site-header></div>
 
   <main id="inhoud">
-    <section class="page-hero page-hero--matches" aria-labelledby="page-title">
+    <section class="page-hero page-hero--matches page-hero--compact" aria-labelledby="page-title">
       <div class="page-hero__inner">
-        <p class="eyebrow eyebrow--light reveal">Programma · Uitslagen · Teams</p>
-        <h1 id="page-title" class="reveal">Samen naar<br><em>de aftrap.</em></h1>
-        <p class="reveal">Geen tabellenjungle, maar direct zien wie, waar en wanneer speelt. Van SEV 1 tot JO7.</p>
+        <p class="eyebrow eyebrow--light">Wedstrijddag</p>
+        <h1 id="page-title">Programma<br><em>&amp; uitslagen.</em></h1>
+        <p>Alles wat je voor de wedstrijddag nodig hebt, zonder zoeken.</p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="program-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow reveal">Wedstrijdcentrum</p>
-          <h2 id="program-title" class="reveal">Jouw team.<br><em>Jouw zaterdag.</em></h2>
-        </div>
-        <p class="section-heading__aside reveal">Een rustige, mobiele weergave die later rechtstreeks op Sportlink kan worden aangesloten. De competitie-indeling voor 2026–2027 wordt momenteel gepubliceerd.</p>
+    <section class="section section--compact" aria-labelledby="program-title">
+      <div class="practical-heading">
+        <div><p class="eyebrow">Actuele informatie</p><h2 id="program-title">Naar het veld.</h2></div>
+        <p>De volledige Sportlink-koppeling is nog niet onderdeel van deze demo. Tot die tijd openen programma en uitslagen rechtstreeks bij de actuele SEV-bron.</p>
       </div>
 
-      <div class="season-banner reveal">
-        <div><strong>De voorbereiding op 2026–2027 is begonnen</strong><span>Het nieuwe programma verschijnt zodra de KNVB en Sportlink het vrijgeven.</span></div>
-        <a class="button" href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Huidige programma ↗</a>
-      </div>
-
-      <div class="match-layout">
-        <aside class="team-panel reveal" aria-label="Filter op afdeling">
-          <h2>Kies je afdeling</h2>
-          <div class="team-filters">
-            <button class="team-filter is-active" type="button" data-team-filter data-team-label="Alle teams"><span>Alle teams</span><span>→</span></button>
-            <button class="team-filter" type="button" data-team-filter data-team-label="Senioren"><span>Senioren</span><span>12</span></button>
-            <button class="team-filter" type="button" data-team-filter data-team-label="Jeugd"><span>Jeugd</span><span>25</span></button>
-            <button class="team-filter" type="button" data-team-filter data-team-label="Vrouwen"><span>Vrouwen</span><span>2</span></button>
-            <button class="team-filter" type="button" data-team-filter data-team-label="G-voetbal"><span>G-voetbal</span><span>4</span></button>
-            <button class="team-filter" type="button" data-team-filter data-team-label="Zaalvoetbal"><span>Zaalvoetbal</span><span>1</span></button>
-          </div>
-        </aside>
-
-        <div class="match-list reveal" aria-live="polite">
-          <div class="match-empty">
-            <strong data-match-empty-title>Alle teams: het nieuwe programma volgt</strong>
-            <span data-match-empty-copy>Zodra Sportlink het seizoen 2026–2027 publiceert, verschijnen de wedstrijden hier automatisch per team.</span>
-          </div>
-          <p class="match-date">Zo gaat een wedstrijddag straks lezen</p>
-          <article class="match-row" aria-label="Voorbeeld van een thuiswedstrijd">
-            <div class="match-time">14:30<small>Zaterdag</small></div>
-            <div class="match-teams"><span>SEV 1</span><span class="match-versus">VS</span><span>Tegenstander</span></div>
-            <div class="match-meta">Kastelenring<br>Veld 1</div>
-          </article>
-          <article class="match-row" aria-label="Voorbeeld van een jeugdwedstrijd">
-            <div class="match-time">10:00<small>Zaterdag</small></div>
-            <div class="match-teams"><span>SEV JO11</span><span class="match-versus">VS</span><span>Tegenstander</span></div>
-            <div class="match-meta">Kastelenring<br>Veld 2</div>
-          </article>
-        </div>
+      <div class="match-actions">
+        <a class="match-action match-action--primary" href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">
+          <span>Programma</span><strong>Bekijk komende wedstrijden</strong><small>Actueel overzicht ↗</small>
+        </a>
+        <a class="match-action" href="https://www.sev-voetbal.nl/uitslagen" target="_blank" rel="noreferrer">
+          <span>Uitslagen</span><strong>Bekijk de laatste standen</strong><small>Actueel overzicht ↗</small>
+        </a>
       </div>
     </section>
 
-    <section class="section section--compact" aria-labelledby="match-links-title">
-      <p class="eyebrow reveal">Alles voor de wedstrijddag</p>
-      <h2 id="match-links-title" class="club-story__statement reveal" style="color:var(--ink);font-size:clamp(3rem,6vw,6rem);margin-bottom:55px">Van eerste fluitsignaal<br>tot <em style="color:var(--forest-600)">derde helft.</em></h2>
-      <div class="join-paths">
-        <article class="join-card reveal">
-          <span class="join-card__number">01</span><h3>Uitslagen</h3><p>Alle eindstanden overzichtelijk bij elkaar, zonder eindeloos door te klikken.</p><a class="button button--outline" href="https://www.sev-voetbal.nl/uitslagen" target="_blank" rel="noreferrer">Bekijk uitslagen ↗</a>
-        </article>
-        <article class="join-card reveal">
-          <span class="join-card__number">02</span><h3>Afgelast?</h3><p>Bij slecht weer wil je één ding weten. De actuele status staat straks direct bovenaan.</p><a class="button button--lime" href="https://www.sev-voetbal.nl/afgelastingen" target="_blank" rel="noreferrer">Status velden ↗</a>
-        </article>
-        <article class="join-card reveal">
-          <span class="join-card__number">03</span><h3>Kantinedienst</h3><p>Even checken wanneer jouw team achter de bar of in de keuken staat.</p><a class="button" href="https://www.sev-voetbal.nl/kantineschema" target="_blank" rel="noreferrer">Open schema ↗</a>
-        </article>
+    <section class="match-essentials" aria-labelledby="essentials-title">
+      <div class="match-essentials__inner">
+        <div class="practical-heading practical-heading--light">
+          <div><p class="eyebrow eyebrow--light">Voor vertrek</p><h2 id="essentials-title">Even controleren.</h2></div>
+          <p>Drie links die je op een wedstrijddag snel wilt kunnen vinden.</p>
+        </div>
+        <div class="essential-grid">
+          <a class="essential-link" href="https://www.sev-voetbal.nl/afgelastingen" target="_blank" rel="noreferrer"><span>01</span><strong>Afgelastingen</strong><small>Controleer de veldstatus ↗</small></a>
+          <a class="essential-link" href="https://www.sev-voetbal.nl/kantineschema" target="_blank" rel="noreferrer"><span>02</span><strong>Kantinedienst</strong><small>Bekijk het actuele schema ↗</small></a>
+          <a class="essential-link" href="https://www.google.com/maps/search/?api=1&query=Sportparkweg+4+Leidschendam" target="_blank" rel="noreferrer"><span>03</span><strong>Route</strong><small>Sportparkweg 4, Leidschendam ↗</small></a>
+        </div>
       </div>
     </section>
   </main>
