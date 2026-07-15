@@ -1,5 +1,7 @@
 import { getInvestmentNews, SOURCE_URL } from "../lib/investment-news.mjs";
 
+export const config = { maxDuration: 60 };
+
 export default async function handler(request, response) {
   try {
     const limit = Number(request.query?.limit ?? 30);
