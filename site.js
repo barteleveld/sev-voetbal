@@ -110,14 +110,27 @@ document.querySelectorAll(".reveal").forEach((element) => {
   else element.classList.add("is-visible");
 });
 
-const fallbackImages = [
-  "assets/nieuwsarchief/images-blogpost-JO12-kampioen1.jpg",
-  "assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg",
-  "assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg",
-  "assets/nieuwsarchief/buurtrestro_20260618_5.jpeg",
-  "assets/nieuwsarchief/images-blogpost-afsluiting-kleintjes3.jpg",
-  "assets/nieuwsarchief/G-trainers-in-het-zonnetje-2.jpg"
+const newsLogo = "assets/sev-logo.png";
+const newsImageMatches = [
+  { pattern: /\bkampioen(?:en|schap)?\b/i, src: "assets/nieuwsarchief/images-blogpost-JO12-kampioen1.jpg" },
+  { pattern: /\bvrijwilliger(?:s|savond)?\b/i, src: "assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg" },
+  { pattern: /\b(?:meiden|meisjes|vrouwen|dames)(?:team|voetbal)?\b/i, src: "assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg" },
+  { pattern: /\b(?:buurtresto|buurtrestaurant)\b/i, src: "assets/nieuwsarchief/buurtrestro_20260618_5.jpeg" },
+  { pattern: /\bkleuter(?:s|training)?\b/i, src: "assets/nieuwsarchief/images-blogpost-afsluiting-kleintjes3.jpg" },
+  { pattern: /\bg[- ]?voetbal\b/i, src: "assets/nieuwsarchief/G-trainers-in-het-zonnetje-2.jpg" }
 ];
+
+function matchedNewsImage(item) {
+  const text = `${item.title || ""} ${item.excerpt || ""} ${item.category || ""}`;
+  return newsImageMatches.find(({ pattern }) => pattern.test(text))?.src || newsLogo;
+}
+
+function setNewsImage(image, src) {
+  const usesLogo = src === newsLogo;
+  image.src = src;
+  image.alt = usesLogo ? "SEV-logo" : "";
+  image.classList.toggle("news-card__image--logo", usesLogo);
+}
 
 const dateFormatter = new Intl.DateTimeFormat("nl-NL", {
   day: "numeric",
@@ -141,11 +154,11 @@ function createNewsCard(item, index, featureFirst) {
   media.className = "news-card__media";
   const image = document.createElement("img");
   const sourceHasGenericImage = /thumbnail-algemeen|cropped-logo|logo-512/i.test(item.image || "");
-  image.src = !sourceHasGenericImage && item.image ? item.image : fallbackImages[index % fallbackImages.length];
-  image.alt = "";
+  const fallbackImage = matchedNewsImage(item);
+  setNewsImage(image, !sourceHasGenericImage && item.image ? item.image : fallbackImage);
   image.loading = index > 1 ? "lazy" : "eager";
   image.addEventListener("error", () => {
-    image.src = fallbackImages[index % fallbackImages.length];
+    setNewsImage(image, fallbackImage);
   }, { once: true });
   const badge = document.createElement("span");
   badge.className = "news-card__badge";
