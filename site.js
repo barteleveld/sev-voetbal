@@ -343,19 +343,6 @@ async function loadInvestmentNews(grid) {
 
 document.querySelectorAll("[data-investment-news-grid]").forEach(loadInvestmentNews);
 
-document.querySelectorAll("[data-copy-value]").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const status = button.parentElement?.querySelector("[data-copy-status]");
-    try {
-      await navigator.clipboard.writeText(button.dataset.copyValue || "");
-      button.textContent = "IBAN gekopieerd";
-      if (status) status.textContent = "Je kunt het rekeningnummer nu in je bankapp plakken.";
-    } catch {
-      if (status) status.textContent = "Kopiëren lukte niet. Selecteer het rekeningnummer hierboven.";
-    }
-  });
-});
-
 const teamFilters = document.querySelectorAll("[data-team-filter]");
 const emptyTitle = document.querySelector("[data-match-empty-title]");
 const emptyCopy = document.querySelector("[data-match-empty-copy]");

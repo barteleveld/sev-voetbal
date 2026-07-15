@@ -1116,21 +1116,18 @@ body { font-family: var(--font-brand); }
 .investment-donate__intro { padding: 28px 50px 28px 0; }
 .investment-donate__intro h2 { margin: 9px 0 25px; font-size: clamp(3rem, 5.2vw, 5.4rem); letter-spacing: -.075em; line-height: .92; }
 .investment-donate__intro h2 span { color: var(--lime); }
-.investment-donate__intro > p:last-child { max-width: 520px; color: rgba(255,255,255,.64); line-height: 1.65; }
-.investment-bank-card,
-.investment-contact-card { min-height: 390px; padding: 34px; border-radius: 26px; display: flex; flex-direction: column; align-items: flex-start; }
-.investment-bank-card { background: var(--lime); color: var(--forest-950); }
-.investment-contact-card { border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); }
-.investment-bank-card small,
-.investment-contact-card small { font-size: .67rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.investment-bank-card strong { margin-top: auto; font-size: clamp(1.45rem, 2.3vw, 2.35rem); letter-spacing: -.045em; overflow-wrap: anywhere; }
-.investment-bank-card > span { margin-top: 8px; color: rgba(3,28,20,.64); }
-.investment-copy { margin-top: 28px; padding: 13px 17px; border: 1px solid rgba(3,28,20,.28); border-radius: 999px; background: transparent; font-size: .75rem; font-weight: 800; cursor: pointer; }
-.investment-copy:hover { background: var(--forest-950); color: white; }
-.investment-bank-card [data-copy-status] { min-height: 18px; margin: 10px 0 0; color: rgba(3,28,20,.62); font-size: .7rem; line-height: 1.4; }
-.investment-contact-card strong { margin-top: auto; font-size: 1.75rem; letter-spacing: -.05em; }
-.investment-contact-card > span { margin: 7px 0 24px; color: rgba(255,255,255,.57); font-size: .82rem; line-height: 1.4; }
-.investment-contact-card a { margin-top: 10px; color: var(--lime); font-size: .8rem; font-weight: 800; overflow-wrap: anywhere; }
+.investment-donate__intro > p:not(.eyebrow) { max-width: 520px; color: rgba(255,255,255,.64); line-height: 1.65; }
+.investment-donate__contact { margin-top: 24px; font-size: .82rem; }
+.investment-donate__contact a { color: var(--lime); font-weight: 800; }
+.investment-form-card { min-height: 390px; padding: 34px; border-radius: 26px; display: flex; flex-direction: column; align-items: flex-start; transition: transform .25s ease, box-shadow .25s ease; }
+.investment-form-card:hover { transform: translateY(-5px); box-shadow: 0 18px 45px rgba(0,0,0,.2); }
+.investment-form-card:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+.investment-form-card--donor { background: var(--lime); color: var(--forest-950); }
+.investment-form-card--idea { background: var(--cream); color: var(--forest-950); }
+.investment-form-card small { font-size: .67rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.investment-form-card strong { margin-top: auto; font-size: clamp(1.9rem, 2.8vw, 3rem); letter-spacing: -.055em; line-height: .98; }
+.investment-form-card > span { margin-top: 16px; color: rgba(3,28,20,.64); line-height: 1.55; }
+.investment-form-card b { margin-top: 28px; font-size: .78rem; font-weight: 800; }
 
 .investment-news-section { width: var(--shell); }
 .investment-news-grid .news-card { min-height: 445px; }
@@ -1144,8 +1141,7 @@ body { font-family: var(--font-brand); }
 .investment-story h2,
 .investment-principles h3,
 .investment-donate__intro h2,
-.investment-bank-card strong,
-.investment-contact-card strong,
+.investment-form-card strong,
 .investment-docs h2 { font-family: var(--font-brand); }
 
 @media (max-width: 1080px) {
@@ -1170,8 +1166,7 @@ body { font-family: var(--font-brand); }
   .investment-donate__inner { padding: 62px 0; grid-template-columns: 1fr; }
   .investment-donate__intro { grid-column: auto; padding: 0 0 18px; }
   .investment-donate__intro h2 { font-size: 3.4rem; }
-  .investment-bank-card,
-  .investment-contact-card { min-height: 340px; padding: 28px; }
+  .investment-form-card { min-height: 340px; padding: 28px; }
   .investment-docs__inner { padding: 62px 0; gap: 35px; }
   .investment-docs h2 { font-size: 3rem; }
 }
