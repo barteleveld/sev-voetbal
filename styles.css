@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
   --forest-950: #031c14;
@@ -680,4 +680,51 @@ button { color: inherit; }
   .member-info__inner { gap: 28px; }
   .member-info h2 { font-size: 3rem; }
   .footer__nav { grid-template-columns: 1fr; }
+}
+
+/* Typografie uit het SEV-brandbook: een rustige Inter-basis met een
+   handgeschreven accent voor de groene, menselijke tweede regel. */
+:root {
+  --font-brand: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-script: "Segoe Print", "Bradley Hand", cursive;
+}
+body { font-family: var(--font-brand); }
+.brand__name strong,
+.hero::before,
+.hero h1,
+.page-hero h1,
+.section-heading h2,
+.news-card h3,
+.club-story__statement,
+.club-collage strong,
+.story-photo__copy h3,
+.stat-card strong,
+.community-card h3,
+.brandbook-promo h2,
+.member-cta h2,
+.match-time,
+.join-intro h2,
+.join-card h3,
+.footer__tagline,
+.daily-panel__heading h2,
+.practical-heading h2,
+.heading-row--compact h2,
+.daily-link strong,
+.newcomer-card h2,
+.identity-card h2,
+.match-action strong,
+.essential-link strong,
+.member-info h2 {
+  font-family: var(--font-brand);
+}
+.match-time small { font-family: var(--font-brand); }
+.hero h1 em,
+.page-hero h1 em,
+.section-heading h2 em,
+.club-story__statement em,
+.brandbook-promo h2 em {
+  font-family: var(--font-script);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.06em;
 }
