@@ -347,6 +347,18 @@ button { color: inherit; }
 .search-field { min-height: 55px; padding: 0 18px; border: 1px solid var(--line); border-radius: 13px; display: flex; align-items: center; gap: 12px; }
 .search-field input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); }
 .source-note { display: flex; align-items: center; gap: 12px; padding: 0 16px; color: var(--muted); font-size: .78rem; }
+.news-filter-panel { margin: -24px 0 42px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 20px; display: grid; gap: 18px; background: rgba(255,255,255,.46); }
+.news-filter-group { display: grid; grid-template-columns: 105px 1fr; align-items: center; gap: 16px; }
+.news-filter-label { color: var(--forest-600); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.news-filter-options { display: flex; flex-wrap: wrap; gap: 9px; }
+.news-filter { min-height: 40px; padding: 0 17px; border: 1px solid rgba(3,28,20,.18); border-radius: 999px; background: var(--paper); color: var(--forest-900); font: inherit; font-size: .78rem; font-weight: 750; cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+.news-filter:hover { transform: translateY(-1px); border-color: var(--forest-600); }
+.news-filter:focus-visible { outline: 3px solid rgba(186,244,95,.7); outline-offset: 2px; }
+.news-filter.is-active { border-color: var(--lime); background: var(--lime); color: var(--forest-950); }
+.news-empty { margin: 54px auto; max-width: 560px; color: var(--muted); text-align: center; }
+.news-load-more { min-height: 90px; display: flex; align-items: center; justify-content: center; gap: 13px; color: var(--forest-600); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.news-load-more__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 7px rgba(186,244,95,.16); }
+[hidden] { display: none !important; }
 
 .season-banner { margin-bottom: 25px; padding: 24px 28px; border-radius: 18px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--lime); color: var(--forest-950); }
 .season-banner strong { display: block; font-size: 1.08rem; }
@@ -492,6 +504,9 @@ button { color: inherit; }
   .page-hero h1 { font-size: clamp(3.8rem, 18vw, 6rem); }
   .news-tools { grid-template-columns: 1fr; }
   .source-note { padding: 7px 5px; }
+  .news-filter-panel { margin-top: -22px; padding: 20px 18px; }
+  .news-filter-group { grid-template-columns: 1fr; gap: 10px; }
+  .news-filter { min-height: 42px; padding-inline: 15px; }
   .season-banner { align-items: flex-start; flex-direction: column; }
   .team-filters { grid-template-columns: 1fr 1fr; }
   .match-row { grid-template-columns: 58px 1fr; padding: 18px 15px; gap: 12px; }

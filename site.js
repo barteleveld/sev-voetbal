@@ -198,44 +198,132 @@ function createNewsCard(item, index, featureFirst) {
   return article;
 }
 
-function bindNewsSearch() {
-  const search = document.querySelector("[data-news-search]");
-  if (!search || search.dataset.bound) return;
-  search.dataset.bound = "true";
-  search.addEventListener("input", () => {
-    const query = search.value.trim().toLowerCase();
-    document.querySelectorAll("[data-news-grid] .news-card").forEach((card) => {
-      card.hidden = Boolean(query && !card.dataset.search?.includes(query));
-    });
-  });
-}
-
-async function loadNews(grid) {
+async function loadLatestNews(grid) {
   const limit = Number(grid.dataset.limit || 6);
-  const years = grid.dataset.years || "";
   const featureFirst = grid.dataset.featureFirst !== "false";
   const status = document.querySelector("[data-news-status]");
   try {
-    const query = years ? `years=${encodeURIComponent(years)}` : `limit=${limit}`;
-    const response = await fetch(`/api/news?${query}`, { headers: { Accept: "application/json" } });
+    const response = await fetch(`/api/news?limit=${limit}`, { headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error(`Status ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
     grid.replaceChildren(...payload.items.map((item, index) => createNewsCard(item, index, featureFirst)));
     if (status) {
       const time = new Intl.DateTimeFormat("nl-NL", { hour: "2-digit", minute: "2-digit" }).format(new Date(payload.updatedAt));
-      status.textContent = years
-        ? `${payload.items.length} berichten uit 2026 en 2025 · bijgewerkt om ${time}`
-        : `Live bijgewerkt om ${time}`;
+      status.textContent = `Live bijgewerkt om ${time}`;
     }
   } catch {
     if (status) status.textContent = "Reserveweergave · bron tijdelijk niet bereikbaar";
   }
-  bindNewsSearch();
 }
 
-document.querySelectorAll("[data-news-grid]").forEach(loadNews);
-bindNewsSearch();
+function initNewsArchive(grid) {
+  const archiveYears = grid.dataset.years;
+  const perPage = Number(grid.dataset.pageSize || 18);
+  const status = document.querySelector("[data-news-status]");
+  const search = document.querySelector("[data-news-search]");
+  const empty = document.querySelector("[data-news-empty]");
+  const sentinel = document.querySelector("[data-news-sentinel]");
+  const loadLabel = document.querySelector("[data-news-load-label]");
+  const filterButtons = document.querySelectorAll("[data-filter-year], [data-filter-audience]");
+  const state = {
+    page: 0,
+    hasMore: true,
+    loading: false,
+    requestId: 0,
+    search: "",
+    years: new Set(),
+    audiences: new Set()
+  };
+
+  async function loadArchivePage({ reset = false } = {}) {
+    if (state.loading && !reset) return;
+    if (reset) {
+      state.requestId += 1;
+      state.page = 0;
+      state.hasMore = true;
+    }
+
+    const requestId = state.requestId;
+    const nextPage = state.page + 1;
+    state.loading = true;
+    if (sentinel) sentinel.hidden = false;
+    if (loadLabel) loadLabel.textContent = reset ? "Berichten ophalen…" : "Meer berichten laden…";
+    if (status && reset) status.textContent = "Nieuwsarchief bijwerken…";
+
+    const params = new URLSearchParams({
+      years: archiveYears,
+      page: String(nextPage),
+      perPage: String(perPage)
+    });
+    if (state.search) params.set("search", state.search);
+    if (state.years.size) params.set("filterYears", [...state.years].join(","));
+    if (state.audiences.size) params.set("audiences", [...state.audiences].join(","));
+
+    try {
+      const response = await fetch(`/api/news?${params}`, { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error(`Status ${response.status}`);
+      const payload = await response.json();
+      if (requestId !== state.requestId) return;
+
+      const startIndex = reset ? 0 : grid.children.length;
+      const cards = payload.items.map((item, index) => createNewsCard(item, startIndex + index, false));
+      if (reset) grid.replaceChildren(...cards);
+      else grid.append(...cards);
+
+      state.page = payload.page;
+      state.hasMore = Boolean(payload.hasMore);
+      if (empty) empty.hidden = payload.total !== 0;
+      if (status) status.textContent = `${payload.total} ${payload.total === 1 ? "bericht" : "berichten"} gevonden`;
+      if (sentinel) sentinel.hidden = !state.hasMore;
+      if (loadLabel) loadLabel.textContent = state.hasMore ? "Scroll verder voor meer berichten" : "Alle berichten zijn geladen";
+    } catch {
+      if (requestId !== state.requestId) return;
+      if (status) status.textContent = "Nieuwsarchief tijdelijk niet bereikbaar";
+      if (sentinel) sentinel.hidden = true;
+    } finally {
+      if (requestId === state.requestId) state.loading = false;
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const value = button.dataset.filterYear || button.dataset.filterAudience;
+      const selected = button.dataset.filterYear ? state.years : state.audiences;
+      if (selected.has(value)) selected.delete(value);
+      else selected.add(value);
+      const isActive = selected.has(value);
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+      loadArchivePage({ reset: true });
+    });
+  });
+
+  let searchTimer;
+  search?.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      state.search = search.value.trim();
+      loadArchivePage({ reset: true });
+    }, 350);
+  });
+
+  if (sentinel && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting) && state.hasMore && !state.loading) {
+        loadArchivePage();
+      }
+    }, { rootMargin: "600px 0px" });
+    observer.observe(sentinel);
+  }
+
+  loadArchivePage({ reset: true });
+}
+
+document.querySelectorAll("[data-news-grid]").forEach((grid) => {
+  if (grid.dataset.years) initNewsArchive(grid);
+  else loadLatestNews(grid);
+});
 
 async function loadInvestmentNews(grid) {
   const limit = Number(grid.dataset.limit || 15);

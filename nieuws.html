@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260715f">
-  <script src="site.js?v=20260715g" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260715h">
+  <script src="site.js?v=20260715h" defer></script>
 </head>
 <body data-page="news">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -46,13 +46,38 @@
         <div class="source-note"><span class="pulse"></span><span>Automatisch bijgewerkt vanaf sev-voetbal.nl</span></div>
       </div>
 
-      <div class="news-grid news-grid--archive" data-news-grid data-years="2026,2025" data-feature-first="false">
+      <div class="news-filter-panel" data-news-filters aria-label="Filter nieuwsberichten">
+        <div class="news-filter-group">
+          <span class="news-filter-label">Jaar</span>
+          <div class="news-filter-options">
+            <button class="news-filter" type="button" data-filter-year="2026" aria-pressed="false">2026</button>
+            <button class="news-filter" type="button" data-filter-year="2025" aria-pressed="false">2025</button>
+          </div>
+        </div>
+        <div class="news-filter-group">
+          <span class="news-filter-label">Doelgroep</span>
+          <div class="news-filter-options">
+            <button class="news-filter" type="button" data-filter-audience="jeugd" aria-pressed="false">Jeugd</button>
+            <button class="news-filter" type="button" data-filter-audience="senioren" aria-pressed="false">Senioren</button>
+            <button class="news-filter" type="button" data-filter-audience="veteranen" aria-pressed="false">Veteranen</button>
+            <button class="news-filter" type="button" data-filter-audience="g" aria-pressed="false">G-voetbal</button>
+            <button class="news-filter" type="button" data-filter-audience="kleuters" aria-pressed="false">Peuters &amp; kleuters</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-grid news-grid--archive" data-news-grid data-years="2026,2025" data-page-size="18" data-feature-first="false">
         <article class="news-card" data-search="indeling sev 1 seizoen 2026 2027 clubnieuws">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/indeling-sev-1-seizoen-2026-2027" target="_blank" rel="noreferrer">
             <div class="news-card__media"><img src="assets/sev-logo.png" alt="SEV-logo" class="news-card__image--logo"><span class="news-card__badge">Clubnieuws</span></div>
             <div class="news-card__content"><time class="news-card__date" datetime="2026-07-11">11 juli 2026</time><h3>Indeling SEV 1 seizoen 2026–2027</h3><p>De selectie maakt zich op voor het nieuwe seizoen.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>
+      </div>
+      <p class="news-empty" data-news-empty hidden>Geen berichten gevonden met deze zoekopdracht en filters.</p>
+      <div class="news-load-more" data-news-sentinel aria-live="polite">
+        <span class="news-load-more__dot" aria-hidden="true"></span>
+        <span data-news-load-label>Meer berichten laden…</span>
       </div>
     </section>
   </main>

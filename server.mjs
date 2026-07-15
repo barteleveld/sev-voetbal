@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
-import { getLatestNews, getNewsByYears, SOURCE_URL } from "./lib/news.mjs";
+import { getLatestNews, getNewsArchivePage, SOURCE_URL } from "./lib/news.mjs";
 import { getInvestmentNews, SOURCE_URL as INVESTMENT_SOURCE_URL } from "./lib/investment-news.mjs";
 
 const ROOT = fileURLToPath(new URL(".", import.meta.url));
@@ -47,15 +47,21 @@ createServer(async (request, response) => {
 
   if (url.pathname === "/api/news") {
     try {
-      const years = url.searchParams.get("years");
-      const items = years
-        ? await getNewsByYears(years)
-        : await getLatestNews(url.searchParams.get("limit"));
+      const archiveYears = url.searchParams.get("years");
+      const archive = archiveYears ? await getNewsArchivePage({
+        archiveYears,
+        years: url.searchParams.get("filterYears"),
+        audiences: url.searchParams.get("audiences"),
+        search: url.searchParams.get("search"),
+        page: url.searchParams.get("page"),
+        perPage: url.searchParams.get("perPage")
+      }) : null;
+      const items = archive ? archive.items : await getLatestNews(url.searchParams.get("limit"));
       response.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "public, max-age=60, stale-while-revalidate=300"
       });
-      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), items }));
+      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), items, ...(archive || {}) }));
     } catch (error) {
       send(
         response,
