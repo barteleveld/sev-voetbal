@@ -37,11 +37,11 @@ if (headerTarget) {
         <nav class="main-nav" id="main-navigation" aria-label="Hoofdnavigatie">
           <a href="/"${current("home")}>Home</a>
           <a href="/nieuws"${current("news")}>Nieuws</a>
-          <a href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Wedstrijden</a>
-          <a href="https://www.sev-voetbal.nl/teams" target="_blank" rel="noreferrer">Teams</a>
-          <a href="/lid-worden"${current("member")}>Nieuw bij SEV?</a>
+          <a href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Wedstrijden <span class="nav-external" aria-hidden="true">↗</span></a>
+          <a href="https://www.sev-voetbal.nl/teams" target="_blank" rel="noreferrer">Teams <span class="nav-external" aria-hidden="true">↗</span></a>
           <a href="/clubzaken"${current("club")}>Clubzaken</a>
-          <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV</a>
+          <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV <span class="nav-external" aria-hidden="true">↗</span></a>
+          <a href="https://www.passasports.nl/voetbal/clubshops/sev" target="_blank" rel="noreferrer">Clubshop <span class="nav-external" aria-hidden="true">↗</span></a>
         </nav>
         <div class="header-actions">
           <a class="button" href="/lid-worden"${current("member")}>Nieuw bij SEV? <span class="button__arrow">→</span></a>

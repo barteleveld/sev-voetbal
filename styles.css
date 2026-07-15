@@ -112,6 +112,7 @@ button { color: inherit; }
 }
 .main-nav a:hover::after, .main-nav a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
 .main-nav a[aria-current="page"] { color: var(--forest-700); }
+.main-nav .nav-external { display: inline-block; margin-left: .2em; font-size: .8em; line-height: 1; transform: translateY(-.05em); }
 .header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
 .menu-button {
   display: none;
