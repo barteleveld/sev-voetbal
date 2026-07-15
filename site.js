@@ -6,7 +6,7 @@ const pageLinks = [
   ["home", "/", "Home"],
   ["news", "/nieuws", "Nieuws"],
   ["matches", "/wedstrijden", "Wedstrijden"],
-  ["member", "/lid-worden", "Nieuw bij SEV"]
+  ["member", "/lid-worden", "Nieuw bij SEV?"]
 ];
 
 function current(name) {
@@ -36,12 +36,12 @@ if (headerTarget) {
           <a href="/"${current("home")}>Home</a>
           <a href="/nieuws"${current("news")}>Nieuws</a>
           <a href="/wedstrijden"${current("matches")}>Wedstrijden</a>
-          <a href="https://www.sev-voetbal.nl/jeugdvoetbal/" target="_blank" rel="noreferrer">Teams</a>
-          <a href="/lid-worden"${current("member")}>Nieuw bij SEV</a>
+          <a href="https://www.sev-voetbal.nl/teams" target="_blank" rel="noreferrer">Teams</a>
+          <a href="/lid-worden"${current("member")}>Nieuw bij SEV?</a>
           <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV</a>
         </nav>
         <div class="header-actions">
-          <a class="button" href="/lid-worden"${current("member")}>Nieuw bij SEV <span class="button__arrow">→</span></a>
+          <a class="button" href="/lid-worden"${current("member")}>Nieuw bij SEV? <span class="button__arrow">→</span></a>
           <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Menu openen"><span></span></button>
         </div>
       </div>
