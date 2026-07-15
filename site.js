@@ -5,8 +5,10 @@ const assetPath = (path) => new URL(path.replace(/^assets\//, ""), assetBase).hr
 const pageLinks = [
   ["home", "/", "Home"],
   ["news", "/nieuws", "Nieuws"],
-  ["matches", "/wedstrijden", "Wedstrijden"],
-  ["member", "/lid-worden", "Nieuw bij SEV?"]
+  ["matches", "https://www.sev-voetbal.nl/programma-fw", "Wedstrijden"],
+  ["member", "/lid-worden", "Nieuw bij SEV?"],
+  ["club", "/clubzaken", "Clubzaken"],
+  ["investment", "/de-investering", 'Club van 50 "De InVESTEring"']
 ];
 
 function current(name) {
@@ -20,9 +22,9 @@ if (headerTarget) {
       <div class="announcement__inner">
         <span>Welkom thuis op de Kastelenring</span>
         <nav class="utility-links" aria-label="Direct naar">
-          <a href="/wedstrijden">Programma</a>
+          <a href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Programma</a>
           <a href="https://www.sev-voetbal.nl/afgelastingen" target="_blank" rel="noreferrer">Afgelastingen</a>
-          <a href="mailto:secretarissev@gmail.com">Contact</a>
+          <a href="/organisatie-contact#contact">Contact</a>
         </nav>
       </div>
     </div>
@@ -35,9 +37,10 @@ if (headerTarget) {
         <nav class="main-nav" id="main-navigation" aria-label="Hoofdnavigatie">
           <a href="/"${current("home")}>Home</a>
           <a href="/nieuws"${current("news")}>Nieuws</a>
-          <a href="/wedstrijden"${current("matches")}>Wedstrijden</a>
+          <a href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Wedstrijden</a>
           <a href="https://www.sev-voetbal.nl/teams" target="_blank" rel="noreferrer">Teams</a>
           <a href="/lid-worden"${current("member")}>Nieuw bij SEV?</a>
+          <a href="/clubzaken"${current("club")}>Clubzaken</a>
           <a href="https://sev-brandbook.vercel.app/" target="_blank" rel="noreferrer">Dit is SEV</a>
         </nav>
         <div class="header-actions">
@@ -229,6 +232,37 @@ async function loadNews(grid) {
 
 document.querySelectorAll("[data-news-grid]").forEach(loadNews);
 bindNewsSearch();
+
+async function loadInvestmentNews(grid) {
+  const limit = Number(grid.dataset.limit || 15);
+  const status = document.querySelector("[data-investment-news-status]");
+
+  try {
+    const response = await fetch(`/api/investering-news?limit=${limit}`, { headers: { Accept: "application/json" } });
+    if (!response.ok) throw new Error(`Status ${response.status}`);
+    const payload = await response.json();
+    if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
+    grid.replaceChildren(...payload.items.map((item, index) => createNewsCard(item, index, false)));
+    if (status) status.textContent = `${payload.items.length} berichten gevonden · automatisch bijgewerkt`;
+  } catch {
+    if (status) status.textContent = "Laatste selectie · live bron tijdelijk niet bereikbaar";
+  }
+}
+
+document.querySelectorAll("[data-investment-news-grid]").forEach(loadInvestmentNews);
+
+document.querySelectorAll("[data-copy-value]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const status = button.parentElement?.querySelector("[data-copy-status]");
+    try {
+      await navigator.clipboard.writeText(button.dataset.copyValue || "");
+      button.textContent = "IBAN gekopieerd";
+      if (status) status.textContent = "Je kunt het rekeningnummer nu in je bankapp plakken.";
+    } catch {
+      if (status) status.textContent = "Kopiëren lukte niet. Selecteer het rekeningnummer hierboven.";
+    }
+  });
+});
 
 const teamFilters = document.querySelectorAll("[data-team-filter]");
 const emptyTitle = document.querySelector("[data-match-empty-title]");

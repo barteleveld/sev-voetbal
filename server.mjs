@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { getLatestNews, SOURCE_URL } from "./lib/news.mjs";
+import { getInvestmentNews, SOURCE_URL as INVESTMENT_SOURCE_URL } from "./lib/investment-news.mjs";
 
 const ROOT = fileURLToPath(new URL(".", import.meta.url));
 const PORT = Number(process.env.PORT || 4173);
@@ -32,7 +33,13 @@ const cleanRoutes = new Map([
   ["/", "index.html"],
   ["/nieuws", "nieuws.html"],
   ["/wedstrijden", "wedstrijden.html"],
-  ["/lid-worden", "lid-worden.html"]
+  ["/lid-worden", "lid-worden.html"],
+  ["/clubzaken", "clubzaken.html"],
+  ["/lidmaatschap", "lidmaatschap.html"],
+  ["/veilig-bij-sev", "veilig-bij-sev.html"],
+  ["/organisatie-contact", "organisatie-contact.html"],
+  ["/privacy", "privacy.html"],
+  ["/de-investering", "de-investering.html"]
 ]);
 
 createServer(async (request, response) => {
@@ -51,6 +58,25 @@ createServer(async (request, response) => {
         response,
         502,
         JSON.stringify({ error: "Nieuwsbron tijdelijk niet bereikbaar", detail: error.message }),
+        "application/json; charset=utf-8"
+      );
+    }
+    return;
+  }
+
+  if (url.pathname === "/api/investering-news") {
+    try {
+      const items = await getInvestmentNews(url.searchParams.get("limit"));
+      response.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "public, max-age=300, stale-while-revalidate=900"
+      });
+      response.end(JSON.stringify({ source: INVESTMENT_SOURCE_URL, updatedAt: new Date().toISOString(), items }));
+    } catch (error) {
+      send(
+        response,
+        502,
+        JSON.stringify({ error: 'Nieuws over Club van 50 "De InVESTEring" tijdelijk niet bereikbaar', detail: error.message }),
         "application/json; charset=utf-8"
       );
     }
