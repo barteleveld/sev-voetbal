@@ -1133,6 +1133,7 @@ body { font-family: var(--font-brand); }
 .investment-news-grid .news-card { min-height: 445px; }
 .investment-news-grid .news-card__media { min-height: 225px; }
 .investment-news-grid .news-card__content { min-height: 215px; }
+.investment-news-more-wrap { margin-top: 42px; display: flex; justify-content: center; }
 .investment-docs { background: var(--forest-900); color: white; }
 .investment-docs__inner { width: var(--shell); margin: 0 auto; padding: 80px 0; display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; }
 .investment-docs h2 { margin: 9px 0 0; font-size: clamp(2.7rem, 4.8vw, 5rem); letter-spacing: -.07em; line-height: .95; }

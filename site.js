@@ -327,17 +327,34 @@ document.querySelectorAll("[data-news-grid]").forEach((grid) => {
 
 async function loadInvestmentNews(grid) {
   const limit = Number(grid.dataset.limit || 30);
+  const pageSize = Number(grid.dataset.pageSize || 9);
   const status = document.querySelector("[data-investment-news-status]");
+  const loadMore = document.querySelector("[data-investment-news-more]");
 
   try {
     const response = await fetch(`/api/investering-news?limit=${limit}`, { headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error(`Status ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
-    grid.replaceChildren(...payload.items.map((item, index) => createNewsCard(item, index, false)));
+    let visible = 0;
+    const showNextItems = () => {
+      const nextItems = payload.items.slice(visible, visible + pageSize);
+      grid.append(...nextItems.map((item, index) => createNewsCard(item, visible + index, false)));
+      visible += nextItems.length;
+      if (loadMore) {
+        const remaining = payload.items.length - visible;
+        loadMore.hidden = remaining <= 0;
+        loadMore.textContent = remaining > 0 ? `Meer berichten tonen (${remaining})` : "Alle berichten zijn zichtbaar";
+      }
+    };
+
+    grid.replaceChildren();
+    showNextItems();
+    loadMore?.addEventListener("click", showNextItems);
     if (status) status.textContent = `${payload.items.length} berichten gevonden · automatisch bijgewerkt`;
   } catch {
     if (status) status.textContent = "Laatste selectie · live bron tijdelijk niet bereikbaar";
+    if (loadMore) loadMore.hidden = true;
   }
 }
 

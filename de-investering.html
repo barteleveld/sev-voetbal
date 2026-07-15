@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260715j">
-  <script src="site.js?v=20260715k" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260715l">
+  <script src="site.js?v=20260715l" defer></script>
 </head>
 <body data-page="club">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -90,7 +90,7 @@
         </div>
       </div>
 
-      <div class="news-grid investment-news-grid" data-investment-news-grid data-limit="30">
+      <div class="news-grid investment-news-grid" id="investment-news-grid" data-investment-news-grid data-limit="30" data-page-size="9">
         <article class="news-card">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/club-van-50-de-investering-zet-trainers-g-jeugd-in-het-zonnetje" target="_blank" rel="noreferrer">
             <div class="news-card__media"><img src="https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-gtrainers-zonnetje.jpg" alt=""><span class="news-card__badge">Club van 50</span></div>
@@ -109,6 +109,9 @@
             <div class="news-card__content"><time class="news-card__date" datetime="2025-06-24">24 juni 2025</time><h3>Club van 50 krijgt een herkenbare naam</h3><p>De naam maakt duidelijker dat betrokken donateurs SEV samen met €50 per jaar steunen.</p><span class="news-card__read">Lees het hele bericht ↗</span></div>
           </a>
         </article>
+      </div>
+      <div class="investment-news-more-wrap">
+        <button class="button button--outline" type="button" data-investment-news-more aria-controls="investment-news-grid" hidden>Meer berichten tonen</button>
       </div>
     </section>
 
