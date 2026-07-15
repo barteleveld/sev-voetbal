@@ -417,7 +417,10 @@ button { color: inherit; }
 @media (max-width: 1080px) {
   :root { --shell: min(100% - 38px, 960px); }
   .site-header__inner { grid-template-columns: 1fr auto; }
-  .main-nav { position: fixed; inset: 118px 0 0; padding: 40px 24px; display: none; flex-direction: column; justify-content: flex-start; gap: 0; background: var(--cream); }
+  /* iOS treats a filtered ancestor as the containing block for fixed children.
+     Remove the filter while the menu is open so the panel covers the viewport. */
+  body.nav-open .site-header { background: var(--cream); backdrop-filter: none; }
+  .main-nav { position: fixed; z-index: 60; inset: 118px 0 0; min-height: calc(100dvh - 118px); padding: 40px 24px; display: none; flex-direction: column; justify-content: flex-start; gap: 0; overflow-y: auto; background: var(--cream); }
   .nav-open .main-nav { display: flex; }
   .main-nav a { padding: 20px 0; border-bottom: 1px solid var(--line); font-size: 1.4rem; }
   .main-nav a::after { display: none; }
@@ -446,7 +449,7 @@ button { color: inherit; }
   .brand img { width: 49px; height: 49px; }
   .brand__name strong { font-size: 1.08rem; }
   .brand__name small { font-size: .57rem; }
-  .main-nav { top: 116px; }
+  .main-nav { top: 116px; min-height: calc(100dvh - 116px); }
   .hero { min-height: 760px; }
   .hero__image { inset: 0; opacity: .72; }
   .hero__image::after { background: linear-gradient(90deg, rgba(3,28,20,.91), rgba(3,28,20,.3)), linear-gradient(0deg, var(--forest-950), transparent 65%); }
