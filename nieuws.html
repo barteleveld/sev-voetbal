@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#05291e">
   <meta name="description" content="Het laatste nieuws van voetbalvereniging SEV Leidschendam.">
   <title>Nieuws — SEV Leidschendam</title>
-  <link rel="icon" type="image/png" href="/assets/sev-logo.png">
-  <link rel="apple-touch-icon" href="/assets/sev-logo.png">
+  <link rel="icon" type="image/png" href="/assets/optimized/sev-logo-small.png">
+  <link rel="apple-touch-icon" href="/assets/optimized/sev-logo-small.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SEV Leidschendam">
   <meta property="og:title" content="Nieuws — SEV Leidschendam">
@@ -19,37 +19,30 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260715l">
-  <script src="site.js?v=20260715l" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260906">
+  <script src="site.js?v=20260906" defer></script>
 </head>
 <body data-page="news">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
   <div data-site-header></div>
 
   <main id="inhoud">
-    <section class="page-hero page-hero--compact" aria-labelledby="page-title">
-      <div class="page-hero__inner">
-        <p class="eyebrow eyebrow--light">Clubnieuws</p>
-        <h1 id="page-title">Wat er leeft<br><em>bij SEV.</em></h1>
-        <p>Berichten van teams, bestuur, vrijwilligers en alles buiten de lijnen.</p>
-      </div>
-    </section>
-
     <section class="section section--compact" aria-label="Alle nieuwsberichten">
       <div class="heading-row heading-row--compact">
-        <div><p class="eyebrow">Nieuwsarchief 2025–2026</p><h2>Blijf op de hoogte.</h2></div>
-        <span class="live-label" data-news-status>Verbinden met live nieuws…</span>
+        <div><p class="eyebrow">Clubnieuws</p><h1 id="page-title">Nieuws bij SEV</h1></div>
+        <span class="live-label" data-news-status role="status">Berichten ophalen…</span>
       </div>
 
       <div class="news-tools">
         <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" data-news-search placeholder="Zoek in het clubnieuws" aria-label="Zoek in het clubnieuws"></label>
-        <div class="source-note"><span class="pulse"></span><span>Automatisch bijgewerkt vanaf sev-voetbal.nl</span></div>
+        <button class="news-filter-clear" type="button" data-news-clear hidden>Wis filters</button>
+        <span class="news-filter-summary" data-news-filter-summary aria-live="polite">Alle berichten</span>
       </div>
 
       <div class="news-filter-panel" data-news-filters aria-label="Filter nieuwsberichten">
         <div class="news-filter-group">
           <span class="news-filter-label">Jaar</span>
-          <div class="news-filter-options">
+          <div class="news-filter-options" data-news-year-options>
             <button class="news-filter" type="button" data-filter-year="2026" aria-pressed="false">2026</button>
             <button class="news-filter" type="button" data-filter-year="2025" aria-pressed="false">2025</button>
           </div>
@@ -67,17 +60,13 @@
       </div>
 
       <div class="news-grid news-grid--archive" data-news-grid data-years="2026,2025" data-page-size="18" data-feature-first="false">
-        <article class="news-card" data-search="indeling sev 1 seizoen 2026 2027 clubnieuws">
-          <a class="news-card__link" href="https://www.sev-voetbal.nl/indeling-sev-1-seizoen-2026-2027" target="_blank" rel="noreferrer">
-            <div class="news-card__media"><img src="assets/sev-logo.png" alt="SEV-logo" class="news-card__image--logo"><span class="news-card__badge">Clubnieuws</span></div>
-            <div class="news-card__content"><time class="news-card__date" datetime="2026-07-11">11 juli 2026</time><h3>Indeling SEV 1 seizoen 2026–2027</h3><p>De selectie maakt zich op voor het nieuwe seizoen.</p><span class="news-card__read">Lees bericht ↗</span></div>
-          </a>
-        </article>
       </div>
       <p class="news-empty" data-news-empty hidden>Geen berichten gevonden met deze zoekopdracht en filters.</p>
+      <button class="news-show-all" type="button" data-news-show-all hidden>Toon alle berichten</button>
       <div class="news-load-more" data-news-sentinel aria-live="polite">
         <span class="news-load-more__dot" aria-hidden="true"></span>
         <span data-news-load-label>Meer berichten laden…</span>
+        <button class="news-load-more__button" type="button" data-news-load-more>Laad meer</button>
       </div>
     </section>
   </main>

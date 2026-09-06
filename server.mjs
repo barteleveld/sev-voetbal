@@ -2,8 +2,8 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
-import { getLatestNews, getNewsArchivePage, SOURCE_URL } from "./lib/news.mjs";
-import { getInvestmentNews, SOURCE_URL as INVESTMENT_SOURCE_URL } from "./lib/investment-news.mjs";
+import { getLatestNews, getLatestNewsMeta, getNewsArchiveMeta, getNewsArchivePage, SOURCE_URL } from "./lib/news.mjs";
+import { getInvestmentNews, getInvestmentNewsMeta, SOURCE_URL as INVESTMENT_SOURCE_URL } from "./lib/investment-news.mjs";
 
 const ROOT = fileURLToPath(new URL(".", import.meta.url));
 const PORT = Number(process.env.PORT || 4173);
@@ -12,6 +12,8 @@ const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
   ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".png": "image/png",
@@ -61,7 +63,7 @@ createServer(async (request, response) => {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "public, max-age=60, stale-while-revalidate=300"
       });
-      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), items, ...(archive || {}) }));
+      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus: archive ? getNewsArchiveMeta() : getLatestNewsMeta(), items, ...(archive || {}) }));
     } catch (error) {
       send(
         response,
@@ -80,7 +82,7 @@ createServer(async (request, response) => {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "public, max-age=300, stale-while-revalidate=900"
       });
-      response.end(JSON.stringify({ source: INVESTMENT_SOURCE_URL, updatedAt: new Date().toISOString(), items }));
+      response.end(JSON.stringify({ source: INVESTMENT_SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus: getInvestmentNewsMeta(), items }));
     } catch (error) {
       send(
         response,

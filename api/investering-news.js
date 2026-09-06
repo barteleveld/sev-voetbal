@@ -1,4 +1,4 @@
-import { getInvestmentNews, SOURCE_URL } from "../lib/investment-news.mjs";
+import { getInvestmentNews, getInvestmentNewsMeta, SOURCE_URL } from "../lib/investment-news.mjs";
 
 export const config = { maxDuration: 60 };
 
@@ -10,6 +10,7 @@ export default async function handler(request, response) {
     response.status(200).json({
       source: SOURCE_URL,
       updatedAt: new Date().toISOString(),
+      dataStatus: getInvestmentNewsMeta(),
       items
     });
   } catch (error) {

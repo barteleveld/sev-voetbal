@@ -170,7 +170,7 @@ button { color: inherit; }
 .hero__image {
   position: absolute;
   inset: 0;
-  background: url("assets/facebook/sev-facebook-clubcollage-2025.png") center / cover no-repeat;
+  background: url("assets/optimized/sev-facebook-clubcollage-2025.webp") center / cover no-repeat;
 }
 .hero__image::after {
   content: "";
@@ -314,7 +314,7 @@ button { color: inherit; }
 .stat-card::after { content: "62"; position: absolute; right: -.05em; bottom: -.25em; color: rgba(3,28,20,.07); font-size: 17rem; font-weight: 800; letter-spacing: -.1em; }
 .stat-card strong { position: relative; z-index: 2; display: block; font-family: "Manrope", sans-serif; font-size: clamp(4rem, 7vw, 7.5rem); letter-spacing: -.08em; line-height: .8; }
 .stat-card p { position: relative; z-index: 2; max-width: 300px; margin: 30px 0 0; font-weight: 600; line-height: 1.5; }
-.community-card { position: relative; overflow: hidden; display: flex; align-items: flex-end; background: url("assets/nieuwsarchief/buurtrestro_20260618_5.jpeg") center / cover; }
+.community-card { position: relative; overflow: hidden; display: flex; align-items: flex-end; background: url("assets/optimized/buurtrestro-20260618-5.webp") center / cover; }
 .community-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(3,28,20,.9), rgba(3,28,20,.08)); }
 .community-card div { position: relative; z-index: 2; }
 .community-card small { color: var(--lime); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -322,7 +322,7 @@ button { color: inherit; }
 
 .brandbook-section { width: var(--shell); margin: 100px auto 0; }
 .brandbook-promo { position: relative; overflow: hidden; min-height: 520px; padding: clamp(46px, 7vw, 95px); border-radius: 34px; display: flex; align-items: center; background: var(--forest-950); color: white; box-shadow: var(--shadow); }
-.brandbook-promo::before { content: ""; position: absolute; inset: 0 0 0 45%; background: linear-gradient(90deg, var(--forest-950) 0%, rgba(3,28,20,.55) 35%, rgba(3,28,20,.05)), url("assets/brandbook-preview.jpg") center / cover; transition: transform .7s ease; }
+.brandbook-promo::before { content: ""; position: absolute; inset: 0 0 0 45%; background: linear-gradient(90deg, var(--forest-950) 0%, rgba(3,28,20,.55) 35%, rgba(3,28,20,.05)), url("assets/optimized/brandbook-preview.webp") center / cover; transition: transform .7s ease; }
 .brandbook-promo:hover::before { transform: scale(1.025); }
 .brandbook-promo__copy { position: relative; z-index: 2; max-width: 690px; }
 .brandbook-promo h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(3.2rem, 6vw, 6.7rem); letter-spacing: -.075em; line-height: .88; }
@@ -330,19 +330,19 @@ button { color: inherit; }
 .brandbook-promo__copy > p:not(.eyebrow) { max-width: 560px; margin: 26px 0 31px; color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.65; }
 
 .member-cta { position: relative; overflow: hidden; width: var(--shell); min-height: 500px; margin: 100px auto; padding: clamp(46px, 7vw, 95px); border-radius: 34px; display: flex; align-items: center; background: var(--forest-800); color: white; }
-.member-cta::before { content: ""; position: absolute; inset: 0 0 0 52%; background: linear-gradient(90deg, var(--forest-800), transparent 50%), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+.member-cta::before { content: ""; position: absolute; inset: 0 0 0 52%; background: linear-gradient(90deg, var(--forest-800), transparent 50%), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
 .member-cta__copy { position: relative; z-index: 2; max-width: 680px; }
 .member-cta h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(3.2rem, 6vw, 6.7rem); letter-spacing: -.075em; line-height: .88; }
 .member-cta p { max-width: 530px; margin: 25px 0 30px; color: rgba(255,255,255,.7); font-size: 1.05rem; line-height: 1.6; }
 
 .page-hero { position: relative; overflow: hidden; min-height: 510px; background: var(--forest-900); color: white; }
-.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--page-image, url("assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg")) center / cover; opacity: .68; }
+.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--page-image, url("assets/optimized/vrijwilligersavond-2026.webp")) center / cover; opacity: .68; }
 .page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--forest-900) 0%, rgba(5,41,30,.98) 34%, rgba(5,41,30,.72) 57%, rgba(5,41,30,.14) 100%), linear-gradient(0deg, rgba(3,28,20,.58), transparent 58%); }
 .page-hero__inner { position: relative; z-index: 2; width: var(--shell); min-height: inherit; margin: 0 auto; padding: 85px 0 70px; display: flex; flex-direction: column; justify-content: flex-end; }
 .page-hero h1 { max-width: 950px; font-size: clamp(4rem, 8.5vw, 8.5rem); }
 .page-hero p { max-width: 640px; margin: 30px 0 0; color: rgba(255,255,255,.7); font-size: 1.08rem; line-height: 1.65; }
-.page-hero--matches { --page-image: url("assets/facebook/sev-facebook-teamvreugde-2026.jpg"); }
-.page-hero--member { --page-image: url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg"); }
+.page-hero--matches { --page-image: url("assets/optimized/sev-facebook-teamvreugde-2026.webp"); }
+.page-hero--member { --page-image: url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp"); }
 
 .news-tools { margin-bottom: 42px; padding: 16px; border-radius: 18px; display: grid; grid-template-columns: 1fr auto; gap: 16px; background: var(--paper); }
 .search-field { min-height: 55px; padding: 0 18px; border: 1px solid var(--line); border-radius: 13px; display: flex; align-items: center; gap: 12px; }
@@ -495,10 +495,10 @@ button { color: inherit; }
   .story-stack { grid-template-columns: 1fr; }
   .brandbook-section { width: 100%; margin-top: 70px; }
   .brandbook-promo { min-height: 650px; padding: 42px 25px; border-radius: 0; align-items: flex-end; }
-  .brandbook-promo::before { inset: 0; background: linear-gradient(0deg, var(--forest-950) 0%, rgba(3,28,20,.72) 53%, rgba(3,28,20,.12)), url("assets/brandbook-preview.jpg") center / cover; }
+  .brandbook-promo::before { inset: 0; background: linear-gradient(0deg, var(--forest-950) 0%, rgba(3,28,20,.72) 53%, rgba(3,28,20,.12)), url("assets/optimized/brandbook-preview.webp") center / cover; }
   .brandbook-promo h2 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
   .member-cta { width: 100%; min-height: 600px; margin: 70px 0; border-radius: 0; align-items: flex-end; }
-  .member-cta::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 0%, rgba(7,59,43,.78) 50%, rgba(7,59,43,.15)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+  .member-cta::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 0%, rgba(7,59,43,.78) 50%, rgba(7,59,43,.15)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
   .page-hero { min-height: 480px; }
   .page-hero::before { inset: 0; }
   .page-hero::after { background: linear-gradient(0deg, var(--forest-900), rgba(5,41,30,.25)); }
@@ -600,7 +600,7 @@ button { color: inherit; }
 .home-routes { width: var(--shell); margin: 0 auto 90px; display: grid; grid-template-columns: 1.65fr .85fr; gap: 18px; }
 .newcomer-card, .identity-card { min-height: 430px; border-radius: 30px; overflow: hidden; }
 .newcomer-card { position: relative; padding: 58px; display: flex; align-items: center; background: var(--forest-800); color: white; }
-.newcomer-card::before { content: ""; position: absolute; inset: 0 0 0 48%; background: linear-gradient(90deg, var(--forest-800), rgba(7,59,43,.22)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+.newcomer-card::before { content: ""; position: absolute; inset: 0 0 0 48%; background: linear-gradient(90deg, var(--forest-800), rgba(7,59,43,.22)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
 .newcomer-card__copy { position: relative; z-index: 1; max-width: 590px; }
 .newcomer-card h2, .identity-card h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(2.6rem, 4.6vw, 4.8rem); letter-spacing: -.07em; line-height: .94; }
 .newcomer-card__copy > p:not(.eyebrow) { max-width: 510px; margin: 22px 0 28px; color: rgba(255,255,255,.72); line-height: 1.65; }
@@ -687,7 +687,7 @@ button { color: inherit; }
   .home-routes { margin-bottom: 60px; }
   .newcomer-card, .identity-card { min-height: 390px; padding: 30px; border-radius: 22px; }
   .newcomer-card { align-items: flex-end; }
-  .newcomer-card::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 5%, rgba(7,59,43,.48) 68%, rgba(7,59,43,.12)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+  .newcomer-card::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 5%, rgba(7,59,43,.48) 68%, rgba(7,59,43,.12)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
   .newcomer-card h2, .identity-card h2 { font-size: 2.65rem; }
   .card-actions { align-items: stretch; flex-direction: column; }
   .card-actions .button { width: 100%; }
@@ -758,23 +758,23 @@ body { font-family: var(--font-brand); }
 .page-hero--service .page-hero__inner { padding: 72px 0 58px; }
 .page-hero--service h1 { font-size: clamp(4rem, 6.8vw, 7rem); }
 .page-hero--club::before {
-  background-image: url("assets/sev-hele-club.jpg");
+  background-image: url("assets/optimized/sev-hele-club.webp");
   background-position: center 45%;
 }
 .page-hero--membership::before {
-  background-image: url("assets/sev-jeugd.jpg");
+  background-image: url("assets/optimized/sev-jeugd.webp");
   background-position: center 45%;
 }
 .page-hero--safe::before {
-  background-image: url("assets/facebook/sev-facebook-ouder-kind-2026.jpg");
+  background-image: url("assets/optimized/sev-facebook-ouder-kind-2026.webp");
   background-position: center 38%;
 }
 .page-hero--organisation::before {
-  background-image: url("assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg");
+  background-image: url("assets/optimized/vrijwilligersavond-2026.webp");
   background-position: center 42%;
 }
 .page-hero--privacy::before {
-  background-image: url("assets/sev-de-veste.jpg");
+  background-image: url("assets/optimized/sev-de-veste.webp");
   background-position: center 38%;
 }
 .page-hero--club::after,
@@ -831,7 +831,7 @@ body { font-family: var(--font-brand); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(3,28,20,.94), rgba(3,28,20,.2)), url("assets/sev-de-veste.jpg") center / cover;
+  background: linear-gradient(0deg, rgba(3,28,20,.94), rgba(3,28,20,.2)), url("assets/optimized/sev-de-veste.webp") center / cover;
 }
 .service-card--photo > * { position: relative; z-index: 1; }
 .service-card--photo small,
@@ -1170,4 +1170,220 @@ body { font-family: var(--font-brand); }
   .investment-form-card { min-height: 340px; padding: 28px; }
   .investment-docs__inner { padding: 62px 0; gap: 35px; }
   .investment-docs h2 { font-size: 3rem; }
+}
+
+/* Dagelijks gebruik: compacte routes, leesbaar nieuws en rustige accenten. */
+:root { --shell: min(1280px, calc(100% - 48px)); }
+:where(a, button, input, summary):focus-visible { outline: 3px solid #278b63; outline-offset: 4px; }
+:where(section, h2, h3, [id]) { scroll-margin-top: 110px; }
+.main-nav { gap: clamp(14px, 1.8vw, 28px); }
+.site-header__inner { grid-template-columns: auto 1fr auto; gap: 24px; }
+.main-nav a { white-space: nowrap; }
+.main-nav .nav-join { display: none; }
+.main-nav .nav-external { margin-left: 3px; }
+.hero__image { background-image: url("assets/optimized/sev-facebook-clubcollage-2025.webp"); }
+.hero--daily { min-height: 410px; }
+.hero--daily .hero__inner { grid-template-columns: 1fr; padding: 48px 0 72px; gap: 0; }
+.hero--daily h1 { font-size: clamp(3.9rem, 6vw, 5.8rem); line-height: .92; letter-spacing: -.065em; }
+.hero--daily .hero__copy { margin-top: 20px; max-width: 510px; }
+.hero--daily .hero__actions { margin-top: 22px; }
+.hero--daily::after { content: ""; position: absolute; z-index: 3; inset: auto 0 0; height: 38px; pointer-events: none; background: linear-gradient(transparent, var(--cream)); }
+.daily-panel { padding: 24px 0 0; }
+.daily-panel__heading { display: block; margin-bottom: 14px; }
+.daily-panel__heading h2 { font-size: 1.35rem; letter-spacing: -.035em; line-height: 1.2; }
+.daily-grid { border-radius: 16px; box-shadow: none; }
+.daily-link { min-height: 90px; padding: 19px 16px; justify-content: center; }
+.daily-link > span { display: none; }
+.daily-link strong { margin: 0; font-size: .95rem; padding-right: 10px; }
+.daily-link small { font-size: .72rem; }
+.daily-link b { top: 12px; right: 10px; font-size: .75rem; }
+.section--news-home { padding-top: 38px; padding-bottom: 48px; }
+.heading-row--compact h2, .practical-heading h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.1; letter-spacing: -.045em; }
+.live-label { letter-spacing: .03em; text-transform: none; font-weight: 500; color: var(--muted); }
+.live-label::before { display: none; }
+.news-card, .section--news-home .news-card, .news-grid--archive .news-card { box-shadow: none; border: 1px solid var(--line); border-radius: 18px; }
+.news-card h3 { line-height: 1.2; letter-spacing: -.035em; }
+.news-card__read { font-size: .76rem; }
+.news-card__badge { font-size: .58rem; padding: 7px 10px; }
+.page-hero--service:not(.page-hero--investment), .page-hero--club { min-height: 0; background: var(--cream); color: var(--ink); border-bottom: 1px solid var(--line); }
+.page-hero--service:not(.page-hero--investment)::before,
+.page-hero--service:not(.page-hero--investment)::after,
+.page-hero--club::before, .page-hero--club::after { display: none; }
+.page-hero--service:not(.page-hero--investment) .page-hero__inner,
+.page-hero--club .page-hero__inner { padding: 34px 0 28px; min-height: 0; }
+.page-hero--service:not(.page-hero--investment) h1,
+.page-hero--club h1 { font-size: clamp(2.15rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -.05em; }
+.page-hero--service:not(.page-hero--investment) p,
+.page-hero--club p { color: var(--muted); margin-top: 14px; font-size: 1rem; max-width: 720px; }
+.page-hero--service:not(.page-hero--investment) .eyebrow,
+.page-hero--club .eyebrow { display: none; }
+.page-hero--service:not(.page-hero--investment) .breadcrumb { color: var(--forest-600); margin-bottom: 20px; }
+.page-hero--service:not(.page-hero--investment) .breadcrumb span:last-child { color: var(--muted); }
+.section--compact { padding-top: 36px; padding-bottom: 42px; }
+.page-actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+.page-hero--member { --page-image: url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp"); }
+.page-hero--member::after, .page-hero--investment::after { background: linear-gradient(0deg, var(--cream) 0, transparent 42px), linear-gradient(90deg, rgba(3,28,20,.96), rgba(3,28,20,.78) 45%, rgba(3,28,20,.18)); }
+.page-hero--member .page-hero__inner, .page-hero--investment .page-hero__inner { padding: 44px 0 80px; }
+.page-hero--member h1, .page-hero--investment h1 { font-size: clamp(3rem, 5.5vw, 5.2rem); line-height: .98; letter-spacing: -.065em; }
+.page-hero--investment .breadcrumb { margin-bottom: 26px; }
+.page-hero--investment p { max-width: 580px; }
+.page-hero--member p, .page-hero--investment p { font-size: 1rem; }
+.service-card { min-height: 245px; padding: 28px; box-shadow: none; border-radius: 18px; }
+.service-card > div { margin: 22px 0; }
+.service-card h2 { font-size: 2rem; line-height: 1.1; letter-spacing: -.045em; }
+.service-card > strong { margin-top: auto; }
+.service-card--lime { background: var(--paper); border-color: var(--line); }
+.action-card { min-height: 260px; padding: 28px; border-radius: 18px; }
+.action-card h2 { font-size: 1.8rem; margin: 24px 0 12px; }
+.action-card .button { margin-top: auto; }
+.values-grid article, .privacy-grid article { min-height: 185px; padding: 24px; }
+.values-grid h3, .privacy-grid h3 { margin: 22px 0 12px; }
+.contact-route-grid a { min-height: 160px; padding: 24px; }
+.service-note, .service-shortcuts { margin-top: 36px; }
+.service-shortcuts__inner, .support-panel__inner, .organisation-panel__inner,
+.privacy-actions__inner, .investment-docs__inner { padding: 48px 0; gap: 40px; }
+.support-intro h2, .organisation-panel h2, .privacy-actions h2,
+.content-split > div h2, .service-shortcuts h2, .investment-docs h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.12; letter-spacing: -.045em; }
+.support-routes article { min-height: 250px; }
+.investment-story { gap: 42px; }
+.investment-story h2 { font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.08; letter-spacing: -.045em; }
+.investment-story__copy { padding-top: 0; }
+.investment-principles { margin-top: 30px; }
+.investment-principles article { min-height: 180px; padding: 24px; }
+.investment-principles h3 { margin: 20px 0 10px; }
+.investment-donate__inner { padding: 48px 0; }
+.investment-donate__intro h2 { font-size: clamp(2rem, 3.6vw, 3.4rem); line-height: 1.08; }
+.investment-form-card { min-height: 290px; padding: 28px; }
+.investment-form-card strong { font-size: 1.8rem; line-height: 1.12; }
+.investment-feature { min-height: 210px; box-shadow: none; }
+.home-routes { margin-bottom: 40px; }
+.newcomer-card, .identity-card { min-height: 320px; padding: 36px; border-radius: 20px; }
+.newcomer-card h2, .identity-card h2 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; letter-spacing: -.055em; }
+.identity-card::before { background-image: linear-gradient(0deg, rgba(3,28,20,.98) 4%, rgba(3,28,20,.68) 56%, rgba(3,28,20,.34)), url("assets/optimized/sev-vaan.webp"); }
+.newcomer-card::before { background-image: linear-gradient(90deg, var(--forest-800), rgba(7,59,43,.22)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp"); }
+.football-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.football-option { padding: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; display: flex; flex-direction: column; }
+.football-option__tag { margin: 0; font-size: .75rem; font-weight: 700; color: var(--forest-600); }
+.football-option h3 { margin: 10px 0; font-size: 1.35rem; letter-spacing: -.03em; }
+.football-option > p:not(.football-option__tag) { margin: 0 0 22px; color: var(--muted); line-height: 1.6; font-size: .95rem; }
+.football-option a { margin-top: auto; color: var(--forest-700); font-size: .85rem; font-weight: 700; }
+.join-paths--compact { margin-top: 26px; }
+.join-paths--compact .join-card { min-height: 265px; padding: 26px; }
+.join-card h3 { font-size: 1.5rem; }
+.football-options-section { padding-top: 0; }
+.site-footer { margin-top: 36px; }
+.footer__top { padding-top: 44px; padding-bottom: 36px; }
+.footer__column a { min-height: 28px; }
+.footer__column a, .footer__column span { color: rgba(255,255,255,.8); }
+.footer__bottom { color: rgba(255,255,255,.68); }
+body[data-page="news"] main > .section { padding-top: 34px; }
+body[data-page="news"] h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.05em; }
+body[data-page="news"] .heading-row { margin-bottom: 22px; }
+.news-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; background: transparent; padding: 0; }
+.news-tools .search-field { flex: 1 1 360px; background: var(--paper); }
+.news-filter-summary { color: var(--muted); font-size: .8rem; }
+.news-filter-clear, .news-show-all, .news-load-more__button { padding: 12px 18px; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); color: var(--forest-700); font-size: .82rem; font-weight: 700; cursor: pointer; }
+.news-filter-panel { margin: 18px 0 28px; padding: 18px; }
+.news-load-more { letter-spacing: 0; text-transform: none; flex-wrap: wrap; }
+.news-load-more__button:disabled { opacity: .5; cursor: wait; }
+.news-show-all { display: block; margin: 0 auto 25px; }
+.news-empty { margin: 28px auto 18px; }
+@media (min-width: 1081px) and (max-width: 1250px) {
+  .brand__name small { max-width: 105px; line-height: 1.4; }
+  .site-header__inner { gap: 16px; }
+  .main-nav { gap: 13px; }
+  .main-nav a { font-size: .8rem; }
+  .header-actions .button { padding-inline: 18px; }
+}
+@media (max-width: 1080px) {
+  .site-header__inner { grid-template-columns: 1fr auto; }
+  .main-nav .nav-join { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; padding: 16px 20px; border: 0; color: white; font-size: 1rem; white-space: normal; flex-shrink: 0; }
+  .main-nav { padding-top: 16px; padding-bottom: max(24px, env(safe-area-inset-bottom)); min-height: 0; }
+  .main-nav a { padding: 14px 0; }
+  .football-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  :root { --shell: calc(100% - 36px); }
+  .utility-links a:nth-child(2) { display: inline; }
+  .utility-links { gap: 18px; }
+  .announcement { font-size: .68rem; }
+  .hero--daily { min-height: 0; }
+  .hero--daily .hero__inner { padding: 38px 0 62px; align-content: start; }
+  .hero--daily h1 { font-size: clamp(3.3rem, 15vw, 4.8rem); }
+  .hero--daily .eyebrow { font-size: .6rem; letter-spacing: .09em; margin-bottom: 22px; }
+  .hero--daily .eyebrow::before { width: 20px; flex-shrink: 0; }
+  .hero__image { background-image: url("assets/optimized/sev-facebook-clubcollage-2025-mobile.webp"); background-position: 63% center; }
+  .hero--daily .hero__copy { margin-top: 16px; max-width: 300px; font-size: .95rem; }
+  .hero--daily .hero__actions { display: grid; grid-template-columns: 1.1fr 1fr; gap: 8px; margin-top: 20px; }
+  .hero--daily .hero__actions .button { padding: 12px; min-height: 46px; font-size: .75rem; }
+  .hero--daily .button__arrow { display: none; }
+  .daily-panel { padding-top: 14px; }
+  .daily-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .daily-link { min-height: 67px; padding: 13px; }
+  .daily-link strong { font-size: .83rem; }
+  .daily-link small { display: none; }
+  .section--news-home { padding-top: 26px; }
+  .section--news-home .heading-row { gap: 12px; margin-bottom: 20px; }
+  .section--news-home .news-card:not(:first-child), .news-grid--archive .news-card { min-height: 0; }
+  .section--news-home .news-card:not(:first-child) .news-card__link,
+  .news-grid--archive .news-card__link { display: grid; grid-template-columns: 100px minmax(0,1fr); }
+  .section--news-home .news-card:not(:first-child) .news-card__media,
+  .news-grid--archive .news-card__media { min-height: 128px; height: 100%; }
+  .section--news-home .news-card:not(:first-child) .news-card__content,
+  .news-grid--archive .news-card__content { padding: 15px; min-height: 0; }
+  .section--news-home .news-card:not(:first-child) p,
+  .news-grid--archive .news-card p,
+  .section--news-home .news-card:not(:first-child) .news-card__badge,
+  .news-grid--archive .news-card__badge { display: none; }
+  .news-grid--archive .news-card h3, .section--news-home .news-card:not(:first-child) h3 { font-size: .98rem; margin: 8px 0 10px; }
+  .news-card__date { font-size: .62rem; letter-spacing: .02em; }
+  .section--news-home .news-card:first-child { min-height: 0; }
+  .section--news-home .news-card:first-child .news-card__media { min-height: 175px; height: 175px; }
+  .section--news-home .news-card:first-child .news-card__content { padding: 20px; }
+  .page-hero--service:not(.page-hero--investment) .page-hero__inner,
+  .page-hero--club .page-hero__inner { padding: 25px 0; }
+  .page-hero--service:not(.page-hero--investment) h1, .page-hero--club h1 { font-size: 2rem; }
+  .page-actions { gap: 10px; }
+  .page-actions .button { width: 100%; padding: 13px; font-size: .85rem; }
+  .page-hero--member, .page-hero--investment { min-height: 0; }
+  .page-hero--member .page-hero__inner, .page-hero--investment .page-hero__inner { padding: 30px 0 65px; }
+  .page-hero--member h1, .page-hero--investment h1 { font-size: clamp(2.6rem, 12vw, 3.6rem); }
+  .page-hero--investment .breadcrumb { font-size: .65rem; flex-wrap: wrap; gap: 6px; }
+  .page-hero--member::before { background-position: 62% center; }
+  .page-hero--member::after, .page-hero--investment::after { background: linear-gradient(0deg, var(--cream), transparent 38px), linear-gradient(90deg, rgba(3,28,20,.9), rgba(3,28,20,.52)); }
+  .page-hero p { margin-top: 16px; }
+  .section--compact { padding-top: 28px; padding-bottom: 32px; }
+  .practical-heading { margin-bottom: 22px; }
+  .practical-heading h2, .heading-row--compact h2 { font-size: 1.8rem; }
+  .service-card { min-height: 220px; padding: 24px; }
+  .service-card h2 { font-size: 1.65rem; }
+  .service-card__number { display: none; }
+  .service-card > div { margin-top: 0; }
+  .action-card { min-height: 240px; padding: 24px; }
+  .contact-route-grid a { min-height: 130px; padding: 22px; }
+  .values-grid article, .privacy-grid article { min-height: 0; padding: 22px; }
+  .values-grid h3, .privacy-grid h3 { margin-top: 12px; }
+  .investment-story h2 { font-size: 2rem; }
+  .investment-principles article { min-height: 145px; }
+  .investment-form-card { min-height: 270px; }
+  .investment-feature { min-height: 280px; padding: 26px; gap: 20px; }
+  .investment-feature h2 { font-size: 1.9rem; }
+  .investment-feature__amount { font-size: 3rem; }
+  .investment-donate__intro h2 { font-size: 2.2rem; }
+  .newcomer-card, .identity-card { padding: 27px; min-height: 300px; }
+  .newcomer-card::before { background-image: linear-gradient(0deg, var(--forest-800) 5%, rgba(7,59,43,.48) 68%, rgba(7,59,43,.12)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp"); }
+  .football-options { grid-template-columns: 1fr; }
+  .football-options-section { padding-top: 0; }
+  .football-option { padding: 22px; }
+  .join-paths--compact .join-card { min-height: 240px; }
+  body[data-page="news"] main > .section { padding-top: 26px; }
+  .news-tools { gap: 10px; }
+  .news-tools .search-field { flex-basis: 100%; }
+  .news-filter-panel { margin-top: 14px; padding: 14px; }
+  .news-filter-options { gap: 7px; }
+  .news-filter { padding: 10px 13px; }
+  .news-filter-group { gap: 8px; }
+  .news-filter-summary { flex: 1; }
+  .footer__nav { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .footer__column a, .footer__column span { font-size: .8rem; overflow-wrap: anywhere; }
 }
