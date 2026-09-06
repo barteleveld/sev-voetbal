@@ -1,4 +1,4 @@
-import { getLatestNews, getNewsArchivePage, SOURCE_URL } from "../lib/news.mjs";
+import { getLatestNews, getLatestNewsMeta, getNewsArchiveMeta, getNewsArchivePage, SOURCE_URL } from "../lib/news.mjs";
 
 export default async function handler(request, response) {
   try {
@@ -17,6 +17,7 @@ export default async function handler(request, response) {
     response.status(200).json({
       source: SOURCE_URL,
       updatedAt: new Date().toISOString(),
+      dataStatus: archive ? getNewsArchiveMeta() : getLatestNewsMeta(),
       items,
       ...(archive || {})
     });

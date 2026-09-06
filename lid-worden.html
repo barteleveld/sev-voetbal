@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#05291e">
   <meta name="description" content="Kom voetballen bij SEV Leidschendam. Proeftrainen, lid worden en voetbal voor alle leeftijden.">
   <title>Nieuw bij SEV — SEV Leidschendam</title>
-  <link rel="icon" type="image/png" href="/assets/sev-logo.png">
-  <link rel="apple-touch-icon" href="/assets/sev-logo.png">
+  <link rel="icon" type="image/png" href="/assets/optimized/sev-logo-small.png">
+  <link rel="apple-touch-icon" href="/assets/optimized/sev-logo-small.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SEV Leidschendam">
   <meta property="og:title" content="Nieuw bij SEV? — SEV Leidschendam">
@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260715l">
-  <script src="site.js?v=20260715l" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260906">
+  <script src="site.js?v=20260906" defer></script>
 </head>
 <body data-page="member">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -32,6 +32,7 @@
         <p class="eyebrow eyebrow--light">Nieuw bij SEV?</p>
         <h1 id="page-title">Kom gewoon<br><em>eens kijken.</em></h1>
         <p>Voor iedere leeftijd en ieder niveau. Je kunt altijd eerst kennismaken of een paar keer meetrainen.</p>
+        <a class="button button--lime" href="#football-options-title">Kies je voetbalvorm ↓</a>
       </div>
     </section>
 
@@ -42,7 +43,7 @@
       </div>
 
       <div class="join-paths join-paths--compact">
-        <article class="join-card">
+        <article class="join-card" id="proeftraining">
           <span class="join-card__number">01</span>
           <h3>Eerst proeftrainen</h3>
           <p>Maak laagdrempelig kennis met een trainer, team en de Kastelenring.</p>
@@ -63,13 +64,58 @@
       </div>
     </section>
 
+    <section class="section section--compact football-options-section" aria-labelledby="football-options-title">
+      <div class="practical-heading">
+        <div><p class="eyebrow">Voetbal voor jou</p><h2 id="football-options-title">Kies je voetbalvorm.</h2></div>
+        <p>SEV heeft teams en voetbalvormen voor verschillende leeftijden en wensen. Weet je nog niet precies waar je past? Mail ons je leeftijd en voorkeur; dan zoeken we het samen uit.</p>
+      </div>
+
+      <div class="football-options">
+        <article class="football-option">
+          <p class="football-option__tag">Vanaf 2 jaar</p><h3>Peuters &amp; kleuters</h3>
+          <p>Spelenderwijs kennismaken met de bal. Op de jeugdafdeling kunnen kinderen vanaf 2 jaar starten.</p>
+          <a href="mailto:sevleden@sev-voetbal.nl?subject=Vraag%20peuter-%20of%20kleutervoetbal">Vraag naar peutervoetbal →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">Jeugd JO7–JO19</p><h3>Jeugd</h3>
+          <p>Jongens en meiden spelen bij de pupillen samen. Jeugd traint doordeweeks en speelt op zaterdag.</p>
+          <a href="mailto:sevleden@sev-voetbal.nl?subject=Proeftraining%20jeugd">Plan een proeftraining →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">Veldvoetbal</p><h3>Senioren</h3>
+          <p>Voor wie prestatief of recreatief wil voetballen. Vraag welke seniorengroep op dit moment bij je past.</p>
+          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20seniorenvoetbal">Vraag naar senioren →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">Samen op het veld</p><h3>G-voetbal</h3>
+          <p>SEV heeft G-voetbal voor mensen met een verstandelijke beperking. We vertellen je graag hoe kennismaken werkt.</p>
+          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20G-voetbal">Vraag naar G-voetbal →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">Dames</p><h3>Vrouwenvoetbal</h3>
+          <p>SEV heeft een damesteam. Laat weten wat je zoekt, dan brengen we je in contact met de juiste afdeling.</p>
+          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20vrouwenvoetbal">Vraag naar vrouwenvoetbal →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">60+</p><h3>Walking Football</h3>
+          <p>Rustig bewegen, samen voetballen en plezier maken. Walking Football is er bij SEV voor 60-plussers.</p>
+          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20Walking%20Football">Vraag naar Walking Football →</a>
+        </article>
+        <article class="football-option">
+          <p class="football-option__tag">In de sporthal</p><h3>Zaalvoetbal</h3>
+          <p>SEV heeft ook zaalvoetbalteams. Informeer naar de actuele mogelijkheden en kennismaking.</p>
+          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20zaalvoetbal">Vraag naar zaalvoetbal →</a>
+        </article>
+      </div>
+    </section>
+
     <section class="member-info" aria-labelledby="member-info-title">
       <div class="member-info__inner">
         <div><p class="eyebrow eyebrow--light">Goed om te weten</p><h2 id="member-info-title">Veelgestelde vragen.</h2></div>
         <div class="faq faq--light">
           <details><summary>Hoe vaak mag ik proeftrainen?</summary><p>SEV nodigt geïnteresseerden uit om eerst een paar keer mee te trainen. De coördinator stemt het aantal en de data met je af.</p></details>
           <details><summary>Welke voetbalvormen zijn er?</summary><p>SEV heeft jeugd- en seniorenteams, vrouwenvoetbal, G-voetbal, zaalvoetbal, Walking Football en voetbal voor peuters en kleuters.</p></details>
-          <details><summary>Wat kost een lidmaatschap?</summary><p>De contributie verschilt per leeftijd en voetbalvorm. De ledenadministratie geeft je graag de actuele bedragen en informatie over de Ooievaarspas.</p></details>
+          <details><summary>Wat kost een lidmaatschap?</summary><p>De contributie verschilt per leeftijd en voetbalvorm. Vraag de actuele bedragen en informatie over de Ooievaarspas op bij de ledenadministratie.</p><a class="button button--small" href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20actuele%20contributie">Vraag actuele contributie op →</a></details>
           <details><summary>Kan ik eerst iemand spreken?</summary><p>Natuurlijk. Mail naar ledenadm.sev@gmail.com of bel het clubhuis via 070 327 89 72.</p></details>
         </div>
       </div>
