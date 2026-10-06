@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05291e">
-  <meta name="description" content="Kom voetballen bij SEV Leidschendam. Proeftrainen, lid worden en voetbal voor alle leeftijden.">
-  <title>Nieuw bij SEV — SEV Leidschendam</title>
+  <meta name="description" content="Welke voetbalvorm past bij jou? Bekijk leeftijden, kennismaken, aanmelden en de contributie 2026–2027 bij SEV Leidschendam.">
+  <title>Nieuw bij SEV? — SEV Leidschendam</title>
   <link rel="icon" type="image/png" href="/assets/optimized/sev-logo-small.png">
   <link rel="apple-touch-icon" href="/assets/optimized/sev-logo-small.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SEV Leidschendam">
   <meta property="og:title" content="Nieuw bij SEV? — SEV Leidschendam">
-  <meta property="og:description" content="Kom voetballen bij SEV Leidschendam. Proeftrainen, lid worden en voetbal voor alle leeftijden.">
+  <meta property="og:description" content="Kies je voetbalvorm, maak kennis met SEV en vind de juiste aanmeldroute en contributie.">
   <meta property="og:url" content="https://sev-voetbal.vercel.app/lid-worden">
   <meta property="og:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
   <meta property="og:image:width" content="1024">
@@ -19,8 +19,10 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260906">
-  <script src="site.js?v=20260906" defer></script>
+  <link rel="preload" as="image" href="assets/optimized/hero-member.webp" media="(min-width: 721px)">
+  <link rel="preload" as="image" href="assets/optimized/hero-member-mobile.webp" media="(max-width: 720px)">
+  <link rel="stylesheet" href="styles.css?v=20261006-8">
+  <script type="module" src="site.js?v=20261006-o"></script>
 </head>
 <body data-page="member">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -28,97 +30,154 @@
 
   <main id="inhoud">
     <section class="page-hero page-hero--member page-hero--compact" aria-labelledby="page-title">
+      <picture class="page-hero__image hero-picture" aria-hidden="true">
+        <source media="(max-width: 720px)" srcset="assets/optimized/hero-member-mobile.webp">
+        <img src="assets/optimized/hero-member.webp" width="1100" height="825" alt="" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
       <div class="page-hero__inner">
         <p class="eyebrow eyebrow--light">Nieuw bij SEV?</p>
         <h1 id="page-title">Kom gewoon<br><em>eens kijken.</em></h1>
-        <p>Voor iedere leeftijd en ieder niveau. Je kunt altijd eerst kennismaken of een paar keer meetrainen.</p>
+        <p>Je eerste balcontact, een nieuw team of weer het veld op? Kies wat bij je past en ontdek hoe je kunt kennismaken.</p>
         <a class="button button--lime" href="#football-options-title">Kies je voetbalvorm ↓</a>
       </div>
     </section>
 
-    <section class="section section--compact" aria-labelledby="join-title">
+    <nav class="joining-steps" aria-label="Zo begin je bij SEV">
+      <a href="#voetbalvormen"><span>01</span><strong>Kies je voetbalvorm</strong><b aria-hidden="true">↓</b></a>
+      <a href="#proeftraining"><span>02</span><strong>Eerst kennismaken</strong><b aria-hidden="true">↓</b></a>
+      <a href="#aanmelden"><span>03</span><strong>Aanmelden</strong><b aria-hidden="true">↓</b></a>
+    </nav>
+
+    <section class="section section--compact joining-section" id="voetbalvormen" aria-labelledby="football-options-title">
       <div class="practical-heading">
-        <div><p class="eyebrow">Kies wat bij je past</p><h2 id="join-title">Je bent welkom.</h2></div>
-        <p>Van peutervoetbal tot senioren, van prestatief tot recreatief en van veldvoetbal tot G-voetbal, Walking Football en zaalvoetbal.</p>
+        <div><p class="eyebrow">01 · Voetbal voor jou</p><h2 id="football-options-title">Wat past bij jou?</h2></div>
+        <p>Open een voetbalvorm voor uitleg en de juiste contactpersoon. Teamindeling, beschikbare plekken en een eerste bezoek stemmen we samen af.</p>
       </div>
 
-      <div class="join-paths join-paths--compact">
-        <article class="join-card" id="proeftraining">
-          <span class="join-card__number">01</span>
-          <h3>Eerst proeftrainen</h3>
-          <p>Maak laagdrempelig kennis met een trainer, team en de Kastelenring.</p>
-          <a class="button button--outline" href="mailto:sevleden@sev-voetbal.nl?subject=Aanmelden%20proeftraining&body=Naam%20speler%3A%0AGeboortedatum%3A%0ATelefoonnummer%3A%0AVoorkeursteam%20of%20ervaring%3A">Vraag een proeftraining aan →</a>
-        </article>
-        <article class="join-card">
-          <span class="join-card__number">02</span>
-          <h3>Direct lid worden</h3>
-          <p>Vul het officiële formulier in. De ledenadministratie neemt daarna contact op.</p>
-          <a class="button button--lime" href="https://www.sev-voetbal.nl/club_aanmelden/" target="_blank" rel="noreferrer">Open het aanmeldformulier ↗</a>
-        </article>
-        <article class="join-card">
-          <span class="join-card__number">03</span>
-          <h3>Eerst iets vragen</h3>
-          <p>Twijfel je over een team, leeftijdsgroep of voetbalvorm? We helpen je graag verder.</p>
-          <a class="button" href="mailto:ledenadm.sev@gmail.com">Mail de ledenadministratie →</a>
-        </article>
+      <div class="joining-options">
+        <details class="joining-option" name="voetbalvorm" data-joining-route="peuters" data-joining-label="peutervoetbal">
+          <summary><span><strong>Peutervoetbal</strong><small>2 en 3 jaar · samen met een volwassene</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Spelenderwijs bewegen met de bal in de zaal, samen met een ouder of grootouder. Je kind kan één keer vrijblijvend meedoen; spreek dit vooraf af via de peutercoördinatie.</p>
+            <p class="joining-contact" data-joining-contact><span>Peutercoördinatie</span><a href="mailto:peuters@sev-voetbal.nl">peuters@sev-voetbal.nl</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="peuters" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/peuters" target="_blank" rel="noreferrer">Meer over peuters ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="kleuters" data-joining-label="kleutervoetbal">
+          <summary><span><strong>Kleutervoetbal</strong><small>4 en 5 jaar · spelenderwijs op het veld</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Buiten op het kunstgras leren kleuters met hun eigen bal dribbelen, schieten en samenspelen. Neem contact op met de coördinator om een eerste kennismaking af te spreken.</p>
+            <p class="joining-contact" data-joining-contact><span>Rik Orta · kleutercoördinator</span><a href="tel:+31624694025">06 2469 4025</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="kleuters" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/sev-kleutervoetbal" target="_blank" rel="noreferrer">Meer over kleuters ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="jeugd" data-joining-label="jeugdvoetbal">
+          <summary><span><strong>Jeugdvoetbal</strong><small>O7–O19 · indeling op geboortejaar</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>O staat voor Onder. In O-teams kunnen jongens en meiden samen spelen; volledige meidenteams gebruiken de aanduiding MO. Je kind kan eerst een paar keer meetrainen. Mail de naam en geboortedatum van je kind en de contactgegevens van een ouder; SEV stemt de passende groep en proeftrainingen met je af.</p>
+            <p class="joining-contact" data-joining-contact><span>Jeugd · proeftraining en instroom</span><a href="mailto:sevleden@sev-voetbal.nl">sevleden@sev-voetbal.nl</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="jeugd" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/jeugdvoetbal-sev" target="_blank" rel="noreferrer">Meer over jeugd ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="senioren" data-joining-label="senioren en O23">
+          <summary><span><strong>Senioren &amp; O23</strong><small>Veldvoetbal · een team dat bij je past</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Op zoek naar een seniorenteam of O23? Bespreek je ervaring, voorkeur en de beschikbare plekken met de seniorencommissie. Die helpt je de passende groep te vinden en af te spreken hoe je kunt kennismaken.</p>
+            <p class="joining-contact" data-joining-contact><span>Theo Tetteroo · seniorencommissie (waarnemend)</span><a href="mailto:secretarissev@gmail.com">secretarissev@gmail.com</a><a href="tel:+31653366462">06 5336 6462</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="senioren" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/contactpersonen" target="_blank" rel="noreferrer">Officiële contactpersonen ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="vrouwen" data-joining-label="vrouwenvoetbal">
+          <summary><span><strong>Vrouwenvoetbal</strong><small>18+ en 30+ · samen voetballen</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>SEV heeft vrouwenvoetbal met teams 18+ en 30+. Bespreek met de seniorencommissie welk team en welke voetbalvorm bij je passen. De commissie kan je verder helpen met contact met het team en een eerste kennismaking.</p>
+            <p class="joining-contact" data-joining-contact><span>Theo Tetteroo · seniorencommissie (waarnemend)</span><a href="mailto:secretarissev@gmail.com">secretarissev@gmail.com</a><a href="tel:+31653366462">06 5336 6462</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="vrouwen" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/contactpersonen" target="_blank" rel="noreferrer">Officiële contactpersonen ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="g" data-joining-label="G-voetbal">
+          <summary><span><strong>G-voetbal</strong><small>Jeugd en volwassenen · indeling in overleg</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Voetbal voor spelers met een verstandelijke en/of lichamelijke beperking. De G-jeugd traint in een eigen groep, zonder competitie. Voor volwassenen zijn er competitie- en trainingsmogelijkheden. Je kunt vrijblijvend komen kijken; Kirsten bespreekt met je wat past en wanneer je kunt langskomen.</p>
+            <p class="joining-contact" data-joining-contact><span>Kirsten Wijers · G-voetbal</span><a href="mailto:kirstenwijers@live.nl">kirstenwijers@live.nl</a><a href="tel:+31619949944">06 1994 9944</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="g" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/g-jeugd" target="_blank" rel="noreferrer">Meer over G-voetbal ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="walking" data-joining-label="Walking Football">
+          <summary><span><strong>Walking Football</strong><small>60+ · voetballen in wandeltempo</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Samen voetballen op een kleiner veld, waarbij je wandelt in plaats van rent. Walking Football is bij SEV bedoeld voor 60-plussers. Neem contact op met de All Stars om een kennismaking af te spreken.</p>
+            <p class="joining-contact" data-joining-contact><span>Hans Verhagen · SEV All Stars</span><a href="mailto:allstars.sev@hotmail.com">allstars.sev@hotmail.com</a><a href="tel:+31640000505">06 4000 0505</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="walking" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/walking-football" target="_blank" rel="noreferrer">Meer over Walking Football ↗</a></div>
+          </div>
+        </details>
+        <details class="joining-option" name="voetbalvorm" data-joining-route="zaal" data-joining-label="zaalvoetbal">
+          <summary><span><strong>Zaalvoetbal</strong><small>In de sporthal · team in overleg</small></span><b aria-hidden="true">+</b></summary>
+          <div class="joining-option__body">
+            <p data-joining-description>Liever voetballen in de sporthal? Bespreek met de zaalvoetbalcommissie voor welk team er mogelijkheden zijn en hoe je kunt kennismaken. De commissie helpt je verder met de actuele team- en leeftijdsindeling.</p>
+            <p class="joining-contact" data-joining-contact><span>Jeroen de Ruyter · zaalvoetbalcommissie</span><a href="mailto:jeroen_ruyter@msn.com">jeroen_ruyter@msn.com</a><a href="tel:+31642488834">06 4248 8834</a></p>
+            <div class="joining-option__actions"><a class="joining-choice" data-join-choice="zaal" href="#proeftraining">Mijn volgende stap ↓</a><a class="joining-source" data-source-link href="https://www.sev-voetbal.nl/contactpersonen" target="_blank" rel="noreferrer">Officiële contactpersonen ↗</a></div>
+          </div>
+        </details>
       </div>
+      <p class="joining-help">Nog aan het oriënteren? Je hoeft nog niet te kiezen. <a href="#contributie">Bekijk eerst de contributie ↓</a></p>
     </section>
 
-    <section class="section section--compact football-options-section" aria-labelledby="football-options-title">
-      <div class="practical-heading">
-        <div><p class="eyebrow">Voetbal voor jou</p><h2 id="football-options-title">Kies je voetbalvorm.</h2></div>
-        <p>SEV heeft teams en voetbalvormen voor verschillende leeftijden en wensen. Weet je nog niet precies waar je past? Mail ons je leeftijd en voorkeur; dan zoeken we het samen uit.</p>
-      </div>
-
-      <div class="football-options">
-        <article class="football-option">
-          <p class="football-option__tag">Vanaf 2 jaar</p><h3>Peuters &amp; kleuters</h3>
-          <p>Spelenderwijs kennismaken met de bal. Op de jeugdafdeling kunnen kinderen vanaf 2 jaar starten.</p>
-          <a href="mailto:sevleden@sev-voetbal.nl?subject=Vraag%20peuter-%20of%20kleutervoetbal">Vraag naar peutervoetbal →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">Jeugd JO7–JO19</p><h3>Jeugd</h3>
-          <p>Jongens en meiden spelen bij de pupillen samen. Jeugd traint doordeweeks en speelt op zaterdag.</p>
-          <a href="mailto:sevleden@sev-voetbal.nl?subject=Proeftraining%20jeugd">Plan een proeftraining →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">Veldvoetbal</p><h3>Senioren</h3>
-          <p>Voor wie prestatief of recreatief wil voetballen. Vraag welke seniorengroep op dit moment bij je past.</p>
-          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20seniorenvoetbal">Vraag naar senioren →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">Samen op het veld</p><h3>G-voetbal</h3>
-          <p>SEV heeft G-voetbal voor mensen met een verstandelijke beperking. We vertellen je graag hoe kennismaken werkt.</p>
-          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20G-voetbal">Vraag naar G-voetbal →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">Dames</p><h3>Vrouwenvoetbal</h3>
-          <p>SEV heeft een damesteam. Laat weten wat je zoekt, dan brengen we je in contact met de juiste afdeling.</p>
-          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20vrouwenvoetbal">Vraag naar vrouwenvoetbal →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">60+</p><h3>Walking Football</h3>
-          <p>Rustig bewegen, samen voetballen en plezier maken. Walking Football is er bij SEV voor 60-plussers.</p>
-          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20Walking%20Football">Vraag naar Walking Football →</a>
-        </article>
-        <article class="football-option">
-          <p class="football-option__tag">In de sporthal</p><h3>Zaalvoetbal</h3>
-          <p>SEV heeft ook zaalvoetbalteams. Informeer naar de actuele mogelijkheden en kennismaking.</p>
-          <a href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20zaalvoetbal">Vraag naar zaalvoetbal →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="member-info" aria-labelledby="member-info-title">
-      <div class="member-info__inner">
-        <div><p class="eyebrow eyebrow--light">Goed om te weten</p><h2 id="member-info-title">Veelgestelde vragen.</h2></div>
-        <div class="faq faq--light">
-          <details><summary>Hoe vaak mag ik proeftrainen?</summary><p>SEV nodigt geïnteresseerden uit om eerst een paar keer mee te trainen. De coördinator stemt het aantal en de data met je af.</p></details>
-          <details><summary>Welke voetbalvormen zijn er?</summary><p>SEV heeft jeugd- en seniorenteams, vrouwenvoetbal, G-voetbal, zaalvoetbal, Walking Football en voetbal voor peuters en kleuters.</p></details>
-          <details><summary>Wat kost een lidmaatschap?</summary><p>De contributie verschilt per leeftijd en voetbalvorm. Vraag de actuele bedragen en informatie over de Ooievaarspas op bij de ledenadministratie.</p><a class="button button--small" href="mailto:ledenadm.sev@gmail.com?subject=Vraag%20actuele%20contributie">Vraag actuele contributie op →</a></details>
-          <details><summary>Kan ik eerst iemand spreken?</summary><p>Natuurlijk. Mail naar ledenadm.sev@gmail.com of bel het clubhuis via 070 327 89 72.</p></details>
+    <section class="section section--compact joining-section" id="proeftraining" aria-labelledby="trial-title">
+      <div class="joining-trial">
+        <div class="joining-trial__intro"><p class="eyebrow">02 · Eerst kennismaken</p><h2 id="trial-title" data-trial-title tabindex="-1">Kom eens kijken.</h2><p>Je hoeft niet meteen lid te worden. Spreek eerst een bezoek of proeftraining af met de contactpersoon van jouw voetbalvorm.</p></div>
+        <div class="joining-trial__selection">
+          <p data-trial-placeholder><a href="#voetbalvormen">Kies hierboven je voetbalvorm</a> en klik op ‘Mijn volgende stap’. Hier zie je dan jouw kennismakingsroute. De contactgegevens staan ook bij iedere voetbalvorm zelf.</p>
+          <p data-trial-copy hidden></p>
+          <div data-trial-contact hidden></div>
+          <p class="joining-trial__note">Spreek af wanneer je langskomt en wat je nodig hebt. Het aantal proeftrainingen en de mogelijkheden verschillen per voetbalvorm.</p>
+          <a class="joining-choice" href="#aanmelden">Al een goed gevoel? Naar aanmelden ↓</a>
+          <a class="joining-source" href="#voetbalvormen">Andere voetbalvorm kiezen ↑</a>
         </div>
       </div>
+    </section>
+
+    <section class="section section--compact joining-section" id="aanmelden" aria-labelledby="signup-title">
+      <div class="joining-signup">
+        <div><p class="eyebrow">03 · Klaar voor de aftrap</p><h2 id="signup-title">Lid worden.</h2><p>Vul het officiële SEV-aanmeldformulier in. Je ontvangt een bevestiging, waarna SEV contact met je opneemt. Dit formulier wordt ook gebruikt voor peutervoetbal.</p><p>Controleer welke activiteit in het formulier is geselecteerd. Vermeld je voetbalvorm of teamvoorkeur bij ‘Opmerkingen’.</p><a class="button button--lime" href="https://www.sev-voetbal.nl/club_aanmelden/" target="_blank" rel="noreferrer">Open het aanmeldformulier ↗</a></div>
+        <aside class="joining-admin" aria-labelledby="signup-help-title"><h3 id="signup-help-title">Hulp bij inschrijven?</h3><p>Voor het formulier, inschrijfvragen en je gegevens is de ledenadministratie het juiste adres.</p><a href="mailto:ledenadm.sev@gmail.com">ledenadm.sev@gmail.com</a><p class="joining-admin__note">Dit is een andere route dan jeugdproeftrainingen: daarvoor gebruik je <strong>sevleden@sev-voetbal.nl</strong>.</p></aside>
+      </div>
+    </section>
+
+    <section class="section section--compact joining-section joining-costs" id="contributie" aria-labelledby="fees-title">
+      <div class="practical-heading"><div><p class="eyebrow">Goed om te weten · seizoen 2026–2027</p><h2 id="fees-title">Wat kost het?</h2></div><p>De jaarcontributie hangt af van de leeftijdscategorie en voetbalvorm. Hieronder staan de bedragen zoals gepubliceerd door SEV.</p></div>
+      <div class="joining-costs__grid">
+        <div>
+          <details class="joining-fees">
+            <summary><span><strong>Alle contributies 2026–2027</strong><small>Bekijk de jaarbedragen per categorie</small></span><b aria-hidden="true">+</b></summary>
+            <table>
+              <caption>Jaarcontributie 2026–2027</caption>
+              <thead><tr><th scope="col">Categorie</th><th scope="col">Per jaar</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Peutervoetbal</th><td>€ 140,-</td></tr>
+                <tr><th scope="row">O7</th><td>€ 165,-</td></tr>
+                <tr><th scope="row">O8 t/m O12 + MO10</th><td>€ 225,-</td></tr>
+                <tr><th scope="row">O13 t/m O15</th><td>€ 255,-</td></tr>
+                <tr><th scope="row">O16 t/m O19</th><td>€ 300,-</td></tr>
+                <tr><th scope="row">O23</th><td>€ 375,-</td></tr>
+                <tr><th scope="row">Senioren</th><td>€ 375,-</td></tr>
+                <tr><th scope="row">Senioren duolid</th><td>€ 215,-</td></tr>
+                <tr><th scope="row">Dames (halve competitie) 7x7</th><td>€ 130,-</td></tr>
+                <tr><th scope="row">Walking Football</th><td>€ 150,-</td></tr>
+                <tr><th scope="row">G senioren</th><td>€ 240,-</td></tr>
+                <tr><th scope="row">G senioren-training</th><td>€ 165,-</td></tr>
+                <tr><th scope="row">G junioren</th><td>€ 165,-</td></tr>
+                <tr><th scope="row">Trainingslid</th><td>€ 140,-</td></tr>
+                <tr><th scope="row">Niet-spelend (sponsor) lid</th><td>€ 120,-</td></tr>
+              </tbody>
+            </table>
+            <p class="joining-fees__note">Voor kleuters en zaalvoetbal vermeldt de officiële tabel geen afzonderlijk bedrag. Laat de passende categorie bevestigen voordat je je aanmeldt.</p>
+          </details>
+          <p class="joining-help">De contributie wordt eenmaal per jaar automatisch geïncasseerd. Als incasso niet mogelijk blijkt en/of de contributie niet binnen 30 dagen is betaald, rekent SEV € 15,- administratiekosten. Vragen over bedragen of betalen? Mail <a href="mailto:penningmeestersev@gmail.com">penningmeestersev@gmail.com</a>.</p>
+        </div>
+        <aside class="joining-support" aria-labelledby="support-title"><span class="eyebrow">Ondersteuning</span><h3 id="support-title">Heb je een Ooievaarspas?</h3><p>Onder voorwaarden is er korting op de contributie: 100% voor jeugdleden jonger dan 18 jaar en 50% voor senioren. Is de volledige vergoeding al bij een andere sportclub gebruikt? Dan is bij SEV maximaal 50% mogelijk.</p><p>Laat de pas ieder jaar scannen in het clubhuis. Bekijk vooraf de voorwaarden en de procedure op de officiële pagina.</p><a class="joining-choice" data-source-link href="https://www.sev-voetbal.nl/lid-worden" target="_blank" rel="noreferrer">Tarieven en voorwaarden bij SEV ↗</a></aside>
+      </div>
+      <p class="joining-source-note">Informatie gecontroleerd op <time datetime="2026-10-06">6 oktober 2026</time>, aan de hand van de <a data-source-link href="https://www.sev-voetbal.nl/lid-worden" target="_blank" rel="noreferrer">officiële lidmaatschapspagina ↗</a> en de <a data-source-link href="https://www.sev-voetbal.nl/contactpersonen" target="_blank" rel="noreferrer">contactpersonen van SEV ↗</a>. Actuele roosters en teaminformatie blijven op de bestaande site.</p>
     </section>
   </main>
 

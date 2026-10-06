@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05291e">
+  <meta name="description" content="Lees de wedstrijdverslagen van SEV, apart van het clubnieuws. Zoek en filter op jaar en doelgroep.">
+  <title>Wedstrijdverslagen — SEV Leidschendam</title>
+  <link rel="icon" type="image/png" href="/assets/optimized/sev-logo-small.png">
+  <link rel="apple-touch-icon" href="/assets/optimized/sev-logo-small.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SEV Leidschendam">
+  <meta property="og:title" content="Wedstrijdverslagen — SEV Leidschendam">
+  <meta property="og:description" content="De wedstrijdverslagen van SEV, met zoeken en filters per jaar en doelgroep.">
+  <meta property="og:url" content="https://sev-voetbal.vercel.app/wedstrijdverslagen">
+  <meta property="og:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
+  <link rel="stylesheet" href="styles.css?v=20261006">
+  <script type="module" src="site.js?v=20261006-o"></script>
+</head>
+<body data-page="news">
+  <a class="skip-link" href="#inhoud">Naar de inhoud</a>
+  <div data-site-header></div>
+
+  <main id="inhoud">
+    <section class="section section--compact news-archive" aria-label="Wedstrijdverslagen">
+      <div class="heading-row heading-row--compact">
+        <div><p class="eyebrow">Op het veld</p><h1 id="page-title">Wedstrijdverslagen</h1></div>
+      </div>
+
+      <nav class="news-streams" aria-label="Kies een overzicht">
+        <a href="/nieuws">Clubnieuws</a>
+        <a href="/wedstrijdverslagen" aria-current="page">Wedstrijdverslagen</a>
+      </nav>
+
+      <div class="news-toolbar" data-news-toolbar>
+        <div class="news-tools">
+          <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" data-news-search placeholder="Zoek in wedstrijdverslagen" aria-label="Zoek in wedstrijdverslagen"></label>
+          <button class="news-filter-toggle" type="button" data-news-filter-toggle aria-expanded="true" aria-controls="news-filters">Filters</button>
+        </div>
+        <div class="news-result-bar">
+          <span class="live-label" data-news-status role="status">Berichten ophalen…</span>
+          <span class="news-filter-summary" data-news-filter-summary>Alle berichten</span>
+          <button class="news-filter-clear" type="button" data-news-clear hidden>Wis filters</button>
+        </div>
+      </div>
+
+      <div class="news-filter-panel" id="news-filters" data-news-filters aria-label="Filter wedstrijdverslagen">
+        <div class="news-filter-group">
+          <span class="news-filter-label">Jaar</span>
+          <div class="news-filter-options" data-news-year-options>
+            <button class="news-filter" type="button" data-filter-year="2026" aria-pressed="false">2026</button>
+            <button class="news-filter" type="button" data-filter-year="2025" aria-pressed="false">2025</button>
+          </div>
+        </div>
+        <div class="news-filter-group">
+          <span class="news-filter-label">Doelgroep</span>
+          <div class="news-filter-options">
+            <button class="news-filter" type="button" data-filter-audience="jeugd" aria-pressed="false">Jeugd</button>
+            <button class="news-filter" type="button" data-filter-audience="senioren" aria-pressed="false">Senioren</button>
+            <button class="news-filter" type="button" data-filter-audience="veteranen" aria-pressed="false">Veteranen</button>
+            <button class="news-filter" type="button" data-filter-audience="g" aria-pressed="false">G-voetbal</button>
+            <button class="news-filter" type="button" data-filter-audience="kleuters" aria-pressed="false">Peuters &amp; kleuters</button>
+            <button class="news-filter" type="button" data-filter-audience="vrouwen" aria-pressed="false">Vrouwen</button>
+            <button class="news-filter" type="button" data-filter-audience="walking" aria-pressed="false">Walking Football</button>
+          </div>
+        </div>
+        <button class="news-filter-done" type="button" data-news-filter-done>Toon berichten ↓</button>
+      </div>
+
+      <div class="news-grid news-grid--archive" id="nieuwsoverzicht" aria-label="wedstrijdverslagen" data-news-grid data-news-kind="reports" data-years="2026,2025" data-page-size="18" data-feature-first="false">
+      </div>
+      <p class="news-empty" data-news-empty hidden>Geen berichten gevonden met deze zoekopdracht en filters.</p>
+      <button class="news-show-all" type="button" data-news-show-all hidden>Toon alle berichten</button>
+      <div class="news-load-more" data-news-sentinel aria-live="polite">
+        <span class="news-load-more__dot" aria-hidden="true"></span>
+        <span data-news-load-label>Meer berichten laden…</span>
+        <small data-news-load-hint></small>
+        <button class="news-load-more__button" type="button" data-news-load-more>Laad meer</button>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>
+
+

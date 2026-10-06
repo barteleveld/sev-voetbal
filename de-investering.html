@@ -19,8 +19,10 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260906">
-  <script src="site.js?v=20260906" defer></script>
+  <link rel="preload" as="image" href="assets/optimized/hero-investment.webp" media="(min-width: 721px)">
+  <link rel="preload" as="image" href="assets/optimized/hero-investment-mobile.webp" media="(max-width: 720px)">
+  <link rel="stylesheet" href="styles.css?v=20261006">
+  <script type="module" src="site.js?v=20261006-o"></script>
 </head>
 <body data-page="club">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -28,14 +30,18 @@
 
   <main id="inhoud">
     <section class="page-hero page-hero--investment page-hero--service" aria-labelledby="page-title">
+      <picture class="page-hero__image hero-picture" aria-hidden="true">
+        <source media="(max-width: 720px)" srcset="assets/optimized/hero-investment-mobile.webp">
+        <img src="assets/optimized/hero-investment.webp" width="1280" height="960" alt="" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
       <div class="page-hero__inner">
         <nav class="breadcrumb" aria-label="Broodkruimel"><a href="/clubzaken">Clubzaken</a><span>→</span><span>Club van 50 "De InVESTEring"</span></nav>
         <p class="eyebrow eyebrow--light">Samen investeren in SEV</p>
         <h1 id="page-title">Samen geven we<br><em>de club meer.</em></h1>
-        <p>Vijftig euro per jaar wordt samen iets groots: meer waardering voor vrijwilligers en ruimte voor initiatieven die SEV sterker maken.</p>
+        <p>Met €50 per jaar steun je vrijwilligers en mooie initiatieven voor SEV.</p>
         <div class="page-actions">
-          <a class="button button--lime" href="#inschrijven-donateur">Word donateur · €50 per jaar →</a>
-          <a class="button button--ghost" href="#ideeenbus">Draag een idee aan →</a>
+          <a class="button button--lime" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Ydvh3TNr706B2c3GyTklcbRFei5rz41DsTtUwoXmIxxUMkVVSEdGRDZHQ0NPNzJCWFI1MzUyUDQ4Mi4u" target="_blank" rel="noreferrer">Word donateur · €50 per jaar ↗</a>
+          <a class="button button--ghost" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Ydvh3TNr706B2c3GyTklcbRFei5rz41DsTtUwoXmIxxUREswN1JSRllNR1NSNU9DV1kxWFRHOTlPOS4u" target="_blank" rel="noreferrer">Draag een idee aan ↗</a>
         </div>
       </div>
     </section>
@@ -94,7 +100,7 @@
         </div>
       </div>
 
-      <div class="news-grid investment-news-grid" id="investment-news-grid" data-investment-news-grid data-limit="100" data-page-size="9">
+      <div class="news-grid news-grid--compact-mobile investment-news-grid" id="investment-news-grid" data-investment-news-grid data-limit="100" data-page-size="9">
         <article class="news-card">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/club-van-50-de-investering-zet-trainers-g-jeugd-in-het-zonnetje" target="_blank" rel="noreferrer">
             <div class="news-card__media"><img src="https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-gtrainers-zonnetje.jpg" alt=""><span class="news-card__badge">Club van 50</span></div>

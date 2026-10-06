@@ -1,5 +1,10 @@
+import { dedupeNews, normalizeNewsImage, formatNewsForDisplay, selectNewsKind } from "./news-utils.js";
+import { createArchiveView, readArchiveView, formatNewsProgress } from "./news-view-state.js";
+import { initJoiningRoute } from "./joining.js";
+
 const page = document.body.dataset.page || "home";
-const scriptUrl = document.currentScript?.src || document.baseURI;
+initJoiningRoute();
+const scriptUrl = import.meta.url;
 const assetBase = new URL("assets/", scriptUrl);
 const assetPath = (path) => new URL(path.replace(/^assets\//, ""), assetBase).href;
 const pageLinks = [
@@ -96,6 +101,11 @@ document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
 
+const siteHeader = document.querySelector(".site-header");
+const updateHeaderHeight = () => document.documentElement.style.setProperty("--site-header-height", `${siteHeader?.offsetHeight || 74}px`);
+updateHeaderHeight();
+if (siteHeader && "ResizeObserver" in window) new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+
 const menuButton = document.querySelector(".menu-button");
 const mainNav = document.querySelector(".main-nav");
 let menuReturnFocus = null;
@@ -161,19 +171,6 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 const newsLogo = assetPath("optimized/sev-logo-small.png");
-const newsImageMatches = [
-  { pattern: /\bkampioen(?:en|schap)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-JO12-kampioen1.jpg") },
-  { pattern: /\bvrijwilliger(?:s|savond)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg") },
-  { pattern: /\b(?:meiden|meisjes|vrouwen|dames)(?:team|voetbal)?\b/i, src: assetPath("nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") },
-  { pattern: /\b(?:buurtresto|buurtrestaurant)\b/i, src: assetPath("nieuwsarchief/buurtrestro_20260618_5.jpeg") },
-  { pattern: /\bkleuter(?:s|training)?\b/i, src: assetPath("nieuwsarchief/images-blogpost-afsluiting-kleintjes3.jpg") },
-  { pattern: /\bg[- ]?voetbal\b/i, src: assetPath("nieuwsarchief/G-trainers-in-het-zonnetje-2.jpg") }
-];
-
-function matchedNewsImage(item) {
-  const text = `${item.title || ""} ${item.excerpt || ""} ${item.category || ""}`;
-  return newsImageMatches.find(({ pattern }) => pattern.test(text))?.src || newsLogo;
-}
 
 function setNewsImage(image, src) {
   const usesLogo = src === newsLogo;
@@ -189,6 +186,7 @@ const dateFormatter = new Intl.DateTimeFormat("nl-NL", {
 });
 
 function createNewsCard(item, index, featureFirst) {
+  item = formatNewsForDisplay(item);
   const article = document.createElement("article");
   article.className = `news-card reveal is-visible${featureFirst && index === 0 ? " news-card--featured" : ""}`;
   article.dataset.search = `${item.title} ${item.excerpt} ${item.category}`.toLowerCase();
@@ -203,12 +201,10 @@ function createNewsCard(item, index, featureFirst) {
   const media = document.createElement("div");
   media.className = "news-card__media";
   const image = document.createElement("img");
-  const sourceHasGenericImage = /thumbnail-algemeen|cropped-logo|logo-512/i.test(item.image || "");
-  const fallbackImage = matchedNewsImage(item);
-  setNewsImage(image, !sourceHasGenericImage && item.image ? item.image : fallbackImage);
+  setNewsImage(image, normalizeNewsImage(item.image) || newsLogo);
   image.loading = index > 1 ? "lazy" : "eager";
   image.addEventListener("error", () => {
-    setNewsImage(image, fallbackImage);
+    setNewsImage(image, newsLogo);
   }, { once: true });
   const badge = document.createElement("span");
   badge.className = "news-card__badge";
@@ -238,31 +234,55 @@ function createNewsCard(item, index, featureFirst) {
   return article;
 }
 
+function newsStatusNote(payload, fromCache = false) {
+  if (payload.dataStatus?.refreshing) return " · wordt bijgewerkt";
+  if (payload.dataStatus?.stale) {
+    const date = payload.dataStatus.sourceUpdatedAt;
+    return date && !Number.isNaN(Date.parse(date))
+      ? ` · bron gecontroleerd op ${dateFormatter.format(new Date(date))}` : " · laatst beschikbaar";
+  }
+  return fromCache ? " · eerder geladen" : "";
+}
+
+async function fetchNewsPayload(url, onPayload, attempt = 0) {
+  const requestUrl = new URL(url, window.location.href);
+  if (attempt) requestUrl.searchParams.set("_refresh", String(Date.now()));
+  const response = await fetch(requestUrl, { headers: { Accept: "application/json" },
+    cache: attempt ? "no-store" : "default", signal: AbortSignal.timeout(8000) });
+  if (!response.ok) throw new Error(`Status ${response.status}`);
+  const payload = await response.json();
+  if (!Array.isArray(payload.items)) throw new Error("Ongeldige nieuwsrespons");
+  payload.items = dedupeNews(payload.items);
+  onPayload(payload);
+  if (payload.dataStatus?.refreshing && attempt < 4) {
+    setTimeout(() => fetchNewsPayload(url, onPayload, attempt + 1).catch(() => {}), 3000 * (attempt + 1));
+  }
+  return payload;
+}
+
 async function loadLatestNews(grid) {
   const limit = Number(grid.dataset.limit || 6);
   const featureFirst = grid.dataset.featureFirst !== "false";
   const status = document.querySelector("[data-news-status]");
-  const storageKey = `sev-news-latest-${limit}`;
+  const storageKey = `sev-news-latest-news-v3-${limit}`;
   let cached = null;
   try { cached = JSON.parse(localStorage.getItem(storageKey) || "null"); } catch { cached = null; }
   grid.replaceChildren();
-  if (Array.isArray(cached?.items) && cached.items.length) grid.append(...cached.items.map((item, index) => createNewsCard(item, index, featureFirst)));
+  if (Array.isArray(cached?.items) && cached.items.length) grid.append(...selectNewsKind(dedupeNews(cached.items)).map((item, index) => createNewsCard(item, index, featureFirst)));
   try {
-    const response = await fetch(`/api/news?limit=${limit}`, { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Status ${response.status}`);
-    const payload = await response.json();
-    if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
-    grid.replaceChildren(...payload.items.map((item, index) => createNewsCard(item, index, featureFirst)));
-    try { localStorage.setItem(storageKey, JSON.stringify({ items: payload.items, updatedAt: payload.updatedAt })); } catch {}
-    if (status) {
-      status.textContent = payload.dataStatus?.stale ? "Laatst beschikbare berichten" : "";
-    }
+    await fetchNewsPayload(`/api/news?limit=${limit}&kind=news`, (payload) => {
+      if (!payload.items.length) throw new Error("Lege nieuwsfeed");
+      grid.replaceChildren(...selectNewsKind(payload.items).map((item, index) => createNewsCard(item, index, featureFirst)));
+      try { localStorage.setItem(storageKey, JSON.stringify(payload)); } catch {}
+      if (status) status.textContent = newsStatusNote(payload).replace(/^ · /, "");
+    });
   } catch {
     if (status) status.textContent = cached?.items?.length ? "Eerder geladen nieuws · bron tijdelijk niet bereikbaar" : "Nieuws tijdelijk niet bereikbaar. Bekijk alle berichten op sev-voetbal.nl.";
   }
 }
 
 function initNewsArchive(grid) {
+  const newsType = grid.dataset.newsKind === "reports" ? "reports" : "news";
   const currentYear = new Date().getFullYear();
   const archiveYears = Array.from({ length: Math.max(1, currentYear - 2025 + 1) }, (_, index) => String(currentYear - index)).join(",");
   const perPage = Number(grid.dataset.pageSize || 18);
@@ -271,6 +291,13 @@ function initNewsArchive(grid) {
   const empty = document.querySelector("[data-news-empty]");
   const sentinel = document.querySelector("[data-news-sentinel]");
   const loadLabel = document.querySelector("[data-news-load-label]");
+  const loadHint = document.querySelector("[data-news-load-hint]");
+  const toolbar = document.querySelector("[data-news-toolbar]");
+  const filterPanel = document.querySelector("[data-news-filters]");
+  const filterToggle = document.querySelector("[data-news-filter-toggle]");
+  const filterDone = document.querySelector("[data-news-filter-done]");
+  const mobile = window.matchMedia("(max-width: 720px)");
+  let filtersOpen = false;
   const clearButton = document.querySelector("[data-news-clear]");
   const summary = document.querySelector("[data-news-filter-summary]");
   const showAllButton = document.querySelector("[data-news-show-all]");
@@ -286,8 +313,48 @@ function initNewsArchive(grid) {
     audiences: new Set(),
     cache: new Map(),
     availableYears: [],
-    error: false
+    error: false,
+    items: [],
+    total: 0,
+    restoring: false
   };
+  const viewId = history.state?.sevNewsView || (globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`);
+  const viewStorageKey = `sev-news-view-v3-${newsType}-${viewId}`;
+  let restore = null;
+  try { restore = readArchiveView(sessionStorage.getItem(viewStorageKey), {
+    url: `${location.pathname}${location.search}`, perPage }); } catch {}
+  history.replaceState({ ...history.state, sevNewsView: viewId }, "");
+
+  const updateToolbarHeight = () => document.documentElement.style.setProperty("--news-toolbar-height", `${toolbar?.offsetHeight || 100}px`);
+  if (toolbar && "ResizeObserver" in window) new ResizeObserver(updateToolbarHeight).observe(toolbar);
+  function setFiltersOpen(open, { scroll = false, focus = false } = {}) {
+    filtersOpen = open;
+    if (filterPanel) {
+      filterPanel.hidden = mobile.matches && !open;
+      filterPanel.dataset.ready = "true";
+    }
+    filterToggle?.setAttribute("aria-expanded", String(!mobile.matches || open));
+    if (scroll && open) filterPanel?.scrollIntoView({ block: "start", behavior: "smooth" });
+    if (focus) filterToggle?.focus({ preventScroll: true });
+  }
+  filterToggle?.addEventListener("click", () => setFiltersOpen(!filtersOpen, { scroll: !filtersOpen }));
+  filterDone?.addEventListener("click", () => {
+    setFiltersOpen(false, { focus: true });
+    grid.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobile.matches && filtersOpen && !document.body.classList.contains("nav-open")) {
+      setFiltersOpen(false, { focus: true });
+    }
+  });
+  mobile.addEventListener("change", () => setFiltersOpen(filtersOpen));
+  setFiltersOpen(Boolean(restore?.filtersOpen));
+  updateToolbarHeight();
+  const archiveStorageKey = `sev-news-archive-v3-${newsType}-${archiveYears}`;
+  try {
+    const saved = JSON.parse(localStorage.getItem(archiveStorageKey) || "[]");
+    if (Array.isArray(saved)) state.cache = new Map(saved.slice(-8));
+  } catch {}
 
   const yearOptions = document.querySelector("[data-news-year-options]");
   const configuredYears = (archiveYears || "").split(",").map((year) => year.trim()).filter(Boolean);
@@ -323,7 +390,7 @@ function initNewsArchive(grid) {
     if (state.years.size) params.set("years", [...state.years].join(","));
     if (state.audiences.size) params.set("audiences", [...state.audiences].join(","));
     const query = params.toString();
-    history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`);
+    history.replaceState({ ...history.state, sevNewsView: viewId }, "", `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`);
   }
 
   const cacheKey = () => JSON.stringify([state.search, [...state.years].sort(), [...state.audiences].sort()]);
@@ -338,19 +405,46 @@ function initNewsArchive(grid) {
     });
     const count = state.years.size + state.audiences.size;
     if (summary) {
-      const labels = { jeugd: "Jeugd", senioren: "Senioren", veteranen: "Veteranen", g: "G-voetbal", kleuters: "Peuters & kleuters" };
+      const labels = { jeugd: "Jeugd", senioren: "Senioren", veteranen: "Veteranen", g: "G-voetbal", kleuters: "Peuters & kleuters", vrouwen: "Vrouwen", walking: "Walking Football" };
       summary.textContent = [...state.years, ...[...state.audiences].map((value) => labels[value] || value), ...(state.search ? [`“${state.search}”`] : [])].join(" · ") || "Alle berichten";
+      summary.title = summary.textContent;
     }
     if (clearButton) clearButton.hidden = !count && !state.search;
+    if (filterToggle) filterToggle.textContent = count ? `Filters (${count})` : "Filters";
   }
+
+  function updateProgress() {
+    const moreButton = document.querySelector("[data-news-load-more]");
+    if (sentinel) sentinel.hidden = state.total === 0 && !state.loading && !state.error;
+    if (loadLabel) loadLabel.textContent = formatNewsProgress(grid.children.length, state.total);
+    if (loadHint) loadHint.textContent = state.hasMore ? "Scroll verder of laad meer" : "Alle berichten zijn zichtbaar";
+    if (moreButton) moreButton.hidden = !state.hasMore && !state.error;
+  }
+
+  function saveView() {
+    if (!state.page || !state.items.length || state.restoring) return;
+    try {
+      sessionStorage.setItem(viewStorageKey, JSON.stringify(createArchiveView({
+        url: `${location.pathname}${location.search}`, perPage, items: state.items,
+        page: state.page, total: state.total, hasMore: state.hasMore,
+        scrollY: window.scrollY, filtersOpen
+      })));
+    } catch { /* Storage is optional; the live archive remains usable. */ }
+  }
+  window.addEventListener("pagehide", saveView);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) saveView(); });
 
   function renderCached() {
     const cached = state.cache.get(cacheKey());
     if (!cached) return false;
-    grid.replaceChildren(...cached.items.map((item, index) => createNewsCard(item, index, false)));
+    grid.replaceChildren(...dedupeNews(cached.items).map((item, index) => createNewsCard(item, index, false)));
+    state.items = dedupeNews(cached.items);
+    state.total = cached.total;
+    state.page = Math.max(1, Math.ceil(state.items.length / perPage));
+    state.hasMore = state.items.length < cached.total;
     if (empty) empty.hidden = cached.total !== 0;
     if (status) status.textContent = `${cached.total} ${cached.total === 1 ? "bericht" : "berichten"} · eerder geladen`;
-    if (sentinel) sentinel.hidden = false;
+    updateProgress();
     return true;
   }
 
@@ -361,7 +455,11 @@ function initNewsArchive(grid) {
       state.page = 0;
       state.hasMore = true;
       state.error = false;
-      grid.replaceChildren();
+      state.restoring = false;
+      const cached = state.cache.get(cacheKey());
+      state.items = dedupeNews(cached?.items || []).slice(0, perPage);
+      state.total = cached?.total || 0;
+      grid.replaceChildren(...state.items.map((item, index) => createNewsCard(item, index, false)));
       if (empty) empty.hidden = true;
       if (showAllButton) showAllButton.hidden = true;
     }
@@ -374,41 +472,48 @@ function initNewsArchive(grid) {
     if (retryButton) retryButton.disabled = true;
     if (sentinel) sentinel.hidden = false;
     if (loadLabel) loadLabel.textContent = reset ? "Berichten ophalen…" : "Meer berichten laden…";
-    if (status && reset) status.textContent = "Nieuwsarchief bijwerken…";
+    if (status && reset) status.textContent = "Overzicht bijwerken…";
 
     const params = new URLSearchParams({
       years: archiveYears,
       page: String(nextPage),
       perPage: String(perPage)
     });
+    params.set("kind", newsType);
     if (state.search) params.set("search", state.search);
     if (state.years.size) params.set("filterYears", [...state.years].join(","));
     if (state.audiences.size) params.set("audiences", [...state.audiences].join(","));
 
     try {
-      const response = await fetch(`/api/news?${params}`, { headers: { Accept: "application/json" } });
-      if (!response.ok) throw new Error(`Status ${response.status}`);
-      const payload = await response.json();
-      if (requestId !== state.requestId) return;
+      await fetchNewsPayload(`/api/news?${params}`, (payload) => {
+      if (requestId !== state.requestId || state.page > nextPage) return;
       state.error = false;
       if (Array.isArray(payload.availableYears)) renderYears(payload.availableYears);
 
       const startIndex = reset ? 0 : grid.children.length;
       const cards = payload.items.map((item, index) => createNewsCard(item, startIndex + index, false));
       if (reset) grid.replaceChildren(...cards);
-      else grid.append(...cards);
+      else {
+        const existingLinks = new Set([...grid.querySelectorAll("a")].map((link) => link.href));
+        grid.append(...cards.filter((card) => !existingLinks.has(card.querySelector("a").href)));
+      }
+
+      state.items = dedupeNews(reset ? payload.items : [...state.items, ...payload.items]);
+      state.total = payload.total;
 
       state.page = payload.page;
       state.hasMore = Boolean(payload.hasMore);
       const key = requestCacheKey;
       const existing = state.cache.get(key);
-      state.cache.set(key, { items: reset ? payload.items : [...(existing?.items || []), ...payload.items], total: payload.total });
+      state.cache.set(key, { items: dedupeNews(reset ? payload.items : [...(existing?.items || []), ...payload.items]), total: payload.total });
+      try { localStorage.setItem(archiveStorageKey, JSON.stringify([...state.cache].slice(-8))); } catch {}
       if (empty) empty.hidden = payload.total !== 0;
-      if (status) status.textContent = `${payload.total} ${payload.total === 1 ? "bericht" : "berichten"}${payload.dataStatus?.stale ? " · laatst beschikbaar" : " gevonden"}`;
-      if (sentinel) sentinel.hidden = !state.hasMore;
-      if (loadLabel) loadLabel.textContent = state.hasMore ? "Scroll verder voor meer berichten" : "Alle berichten zijn geladen";
+      if (status) status.textContent = `${payload.total} ${payload.total === 1 ? "bericht" : "berichten"}${newsStatusNote(payload) || " gevonden"}`;
+      updateProgress();
       if (showAllButton) showAllButton.hidden = payload.total !== 0;
       updateFilterUi();
+      saveView();
+      });
     } catch {
       if (requestId !== state.requestId) return;
       state.error = true;
@@ -422,6 +527,7 @@ function initNewsArchive(grid) {
         state.loading = false;
         const retryButton = document.querySelector("[data-news-load-more]");
         if (retryButton) retryButton.disabled = false;
+        if (!state.error) updateProgress();
       }
     }
   }
@@ -472,13 +578,14 @@ function initNewsArchive(grid) {
     loadArchivePage({ reset: true });
   });
 
+  let archiveObserver = null;
   if (sentinel && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting) && state.hasMore && !state.loading && !state.error) {
+    archiveObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting) && state.hasMore && !state.loading && !state.error && !state.restoring) {
         loadArchivePage();
       }
     }, { rootMargin: "600px 0px" });
-    observer.observe(sentinel);
+    archiveObserver.observe(sentinel);
   }
 
   const manualLoadMore = document.querySelector("[data-news-load-more]");
@@ -489,7 +596,28 @@ function initNewsArchive(grid) {
   });
   updateFilterUi();
 
-  loadArchivePage({ reset: true });
+  if (restore) {
+    state.items = restore.items;
+    state.page = restore.page;
+    state.total = restore.total;
+    state.hasMore = restore.hasMore;
+    state.restoring = true;
+    grid.replaceChildren(...state.items.map((item, index) => createNewsCard(item, index, false)));
+    state.cache.set(cacheKey(), { items: state.items, total: state.total });
+    if (status) status.textContent = `${state.total} berichten · eerder geladen`;
+    updateProgress();
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      window.scrollTo({ top: restore.scrollY, behavior: "instant" });
+      requestAnimationFrame(() => {
+        state.restoring = false;
+        // A restored position may already be near the next batch. Recheck it once.
+        if (archiveObserver) {
+          archiveObserver.unobserve(sentinel);
+          archiveObserver.observe(sentinel);
+        }
+      });
+    }));
+  } else loadArchivePage({ reset: true });
 }
 
 document.querySelectorAll("[data-news-grid]").forEach((grid) => {
@@ -507,13 +635,15 @@ async function loadInvestmentNews(grid) {
   try { cached = JSON.parse(localStorage.getItem(storageKey) || "null"); } catch { cached = null; }
 
   let activeMoreHandler = null;
+  let wantedVisible = pageSize;
   const renderPayload = (payload, fromCache = false) => {
     if (activeMoreHandler) loadMore?.removeEventListener("click", activeMoreHandler);
     let visible = 0;
-    const showNextItems = () => {
-      const nextItems = payload.items.slice(visible, visible + pageSize);
+    const showNextItems = (count = pageSize) => {
+      const nextItems = payload.items.slice(visible, visible + count);
       grid.append(...nextItems.map((item, index) => createNewsCard(item, visible + index, false)));
       visible += nextItems.length;
+      wantedVisible = Math.max(pageSize, visible);
       if (loadMore) {
         const remaining = payload.items.length - visible;
         loadMore.hidden = remaining <= 0;
@@ -521,20 +651,19 @@ async function loadInvestmentNews(grid) {
       }
     };
     grid.replaceChildren();
-    showNextItems();
-    activeMoreHandler = showNextItems;
+    showNextItems(wantedVisible);
+    activeMoreHandler = () => showNextItems();
     loadMore?.addEventListener("click", activeMoreHandler);
-    if (status) status.textContent = `${payload.items.length} berichten${fromCache || payload.dataStatus?.stale ? " · laatst beschikbaar" : ""}`;
+    if (status) status.textContent = `${payload.items.length} berichten${newsStatusNote(payload, fromCache)}`;
   };
   grid.replaceChildren();
-  if (Array.isArray(cached?.items) && cached.items.length) renderPayload(cached, true);
+  if (Array.isArray(cached?.items) && cached.items.length) renderPayload({ ...cached, items: dedupeNews(cached.items) }, true);
   try {
-    const response = await fetch(`/api/investering-news?limit=${limit}`, { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Status ${response.status}`);
-    const payload = await response.json();
-    if (!Array.isArray(payload.items) || !payload.items.length) throw new Error("Lege nieuwsfeed");
-    try { localStorage.setItem(storageKey, JSON.stringify({ items: payload.items })); } catch {}
-    renderPayload(payload);
+    await fetchNewsPayload(`/api/investering-news?limit=${limit}`, (payload) => {
+      if (!payload.items.length) throw new Error("Lege nieuwsfeed");
+      try { localStorage.setItem(storageKey, JSON.stringify(payload)); } catch {}
+      renderPayload(payload);
+    });
   } catch {
     if (status) status.textContent = cached?.items?.length ? "Eerder geladen selectie · live bron tijdelijk niet bereikbaar" : "Laatste selectie · live bron tijdelijk niet bereikbaar";
     if (loadMore && !cached?.items?.length) {

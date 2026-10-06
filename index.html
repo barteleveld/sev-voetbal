@@ -19,8 +19,10 @@
   <meta property="og:image:alt" content="Logo van voetbalvereniging SEV">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://sev-voetbal.vercel.app/assets/sev-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260906">
-  <script src="site.js?v=20260906" defer></script>
+  <link rel="preload" as="image" href="assets/optimized/hero-home.webp" media="(min-width: 721px)">
+  <link rel="preload" as="image" href="assets/optimized/hero-home-mobile.webp" media="(max-width: 720px)">
+  <link rel="stylesheet" href="styles.css?v=20261006">
+  <script type="module" src="site.js?v=20261006-o"></script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
@@ -28,15 +30,18 @@
 
   <main id="inhoud">
     <section class="hero hero--daily" aria-labelledby="hero-title">
-      <div class="hero__image" aria-hidden="true"></div>
+      <picture class="hero__image hero-picture" aria-hidden="true">
+        <source media="(max-width: 720px)" srcset="assets/optimized/hero-home-mobile.webp">
+        <img src="assets/optimized/hero-home.webp" width="1280" height="475" alt="" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
       <div class="hero__inner">
         <div class="hero__content">
           <p class="eyebrow eyebrow--light">Voetbalvereniging SEV · Leidschendam</p>
           <h1 id="hero-title">Hier hoor<br><em>je bij.</em></h1>
           <p class="hero__copy">Het laatste clubnieuws en alles voor jouw week bij SEV.</p>
           <div class="hero__actions">
-            <a class="button button--lime" href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Bekijk het programma <span class="button__arrow">↗</span></a>
-            <a class="button button--ghost" href="/nieuws">Laatste nieuws</a>
+            <a class="button button--lime" href="#laatste-nieuws">Laatste nieuws <span class="button__arrow">↓</span></a>
+            <a class="button button--ghost" href="https://www.sev-voetbal.nl/programma-fw" target="_blank" rel="noreferrer">Programma <span class="button__arrow">↗</span></a>
           </div>
         </div>
       </div>
@@ -56,14 +61,15 @@
       </nav>
     </section>
 
-    <section class="section section--news-home" aria-labelledby="news-title">
+    <section class="section section--news-home" id="laatste-nieuws" aria-labelledby="news-title">
       <div class="heading-row heading-row--compact">
         <div>
           <h2 id="news-title">Laatste nieuws.</h2>
         </div>
         <div class="news-heading-actions">
           <span class="live-label" data-news-status>Verbinden met live nieuws…</span>
-          <a class="text-link" href="/nieuws">Alle berichten →</a>
+          <a class="text-link" href="/nieuws">Alle nieuwsberichten →</a>
+          <a class="text-link" href="/wedstrijdverslagen">Wedstrijdverslagen →</a>
         </div>
       </div>
 
@@ -76,7 +82,7 @@
         </article>
         <article class="news-card" data-search="vernieuwd bestuur groeiend sev">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/vernieuwd-bestuur-voor-een-groeiend-sev" target="_blank" rel="noreferrer">
-            <div class="news-card__media"><img src="assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg" alt=""><span class="news-card__badge">Vereniging</span></div>
+            <div class="news-card__media"><img src="assets/optimized/vrijwilligersavond-2026.webp" alt=""><span class="news-card__badge">Vereniging</span></div>
             <div class="news-card__content"><time class="news-card__date" datetime="2026-07-09">9 juli 2026</time><h3>Vernieuwd bestuur voor een groeiend SEV</h3><p>Een nieuwe fase voor een club die volop in beweging is.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>
@@ -88,7 +94,7 @@
         </article>
         <article class="news-card" data-search="buurtresto seizoen vereniging">
           <a class="news-card__link" href="https://www.sev-voetbal.nl/laatste-buurtresto-van-het-seizoen" target="_blank" rel="noreferrer">
-            <div class="news-card__media"><img src="assets/nieuwsarchief/buurtrestro_20260618_5.jpeg" alt=""><span class="news-card__badge">Buiten de lijnen</span></div>
+            <div class="news-card__media"><img src="assets/optimized/buurtrestro-20260618-5.webp" alt=""><span class="news-card__badge">Buiten de lijnen</span></div>
             <div class="news-card__content"><time class="news-card__date" datetime="2026-06-19">19 juni 2026</time><h3>Laatste buurtresto van het seizoen</h3><p>Samen eten met bekende gezichten uit de buurt.</p><span class="news-card__read">Lees bericht ↗</span></div>
           </a>
         </article>

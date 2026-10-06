@@ -4,6 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "news:refresh": "node scripts/refresh-news-index.mjs"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.9.9",
+    "cheerio": "^1.2.0"
   }
 }

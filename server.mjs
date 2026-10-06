@@ -34,6 +34,7 @@ function send(response, status, body, type = "text/plain; charset=utf-8") {
 const cleanRoutes = new Map([
   ["/", "index.html"],
   ["/nieuws", "nieuws.html"],
+  ["/wedstrijdverslagen", "wedstrijdverslagen.html"],
   ["/wedstrijden", "wedstrijden.html"],
   ["/lid-worden", "lid-worden.html"],
   ["/clubzaken", "clubzaken.html"],
@@ -56,14 +57,16 @@ createServer(async (request, response) => {
         audiences: url.searchParams.get("audiences"),
         search: url.searchParams.get("search"),
         page: url.searchParams.get("page"),
-        perPage: url.searchParams.get("perPage")
+        perPage: url.searchParams.get("perPage"),
+        kind: url.searchParams.get("kind")
       }) : null;
-      const items = archive ? archive.items : await getLatestNews(url.searchParams.get("limit"));
+      const items = archive ? archive.items : await getLatestNews(url.searchParams.get("limit"), { kind: url.searchParams.get("kind") });
+      const dataStatus = archive ? getNewsArchiveMeta() : getLatestNewsMeta();
       response.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, max-age=60, stale-while-revalidate=300"
+        "Cache-Control": dataStatus.stale || dataStatus.refreshing ? "no-store" : "public, max-age=60, stale-while-revalidate=300"
       });
-      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus: archive ? getNewsArchiveMeta() : getLatestNewsMeta(), items, ...(archive || {}) }));
+      response.end(JSON.stringify({ source: SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus, items, ...(archive || {}) }));
     } catch (error) {
       send(
         response,
@@ -78,11 +81,12 @@ createServer(async (request, response) => {
   if (url.pathname === "/api/investering-news") {
     try {
       const items = await getInvestmentNews(url.searchParams.get("limit"));
+      const dataStatus = getInvestmentNewsMeta();
       response.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, max-age=300, stale-while-revalidate=900"
+        "Cache-Control": dataStatus.stale || dataStatus.refreshing ? "no-store" : "public, max-age=60, stale-while-revalidate=300"
       });
-      response.end(JSON.stringify({ source: INVESTMENT_SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus: getInvestmentNewsMeta(), items }));
+      response.end(JSON.stringify({ source: INVESTMENT_SOURCE_URL, updatedAt: new Date().toISOString(), dataStatus, items }));
     } catch (error) {
       send(
         response,

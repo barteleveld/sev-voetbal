@@ -170,7 +170,7 @@ button { color: inherit; }
 .hero__image {
   position: absolute;
   inset: 0;
-  background: url("assets/facebook/sev-facebook-clubcollage-2025.png") center / cover no-repeat;
+  background: url("assets/optimized/sev-facebook-clubcollage-2025.webp") center / cover no-repeat;
 }
 .hero__image::after {
   content: "";
@@ -314,7 +314,7 @@ button { color: inherit; }
 .stat-card::after { content: "62"; position: absolute; right: -.05em; bottom: -.25em; color: rgba(3,28,20,.07); font-size: 17rem; font-weight: 800; letter-spacing: -.1em; }
 .stat-card strong { position: relative; z-index: 2; display: block; font-family: "Manrope", sans-serif; font-size: clamp(4rem, 7vw, 7.5rem); letter-spacing: -.08em; line-height: .8; }
 .stat-card p { position: relative; z-index: 2; max-width: 300px; margin: 30px 0 0; font-weight: 600; line-height: 1.5; }
-.community-card { position: relative; overflow: hidden; display: flex; align-items: flex-end; background: url("assets/nieuwsarchief/buurtrestro_20260618_5.jpeg") center / cover; }
+.community-card { position: relative; overflow: hidden; display: flex; align-items: flex-end; background: url("assets/optimized/buurtrestro-20260618-5.webp") center / cover; }
 .community-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(3,28,20,.9), rgba(3,28,20,.08)); }
 .community-card div { position: relative; z-index: 2; }
 .community-card small { color: var(--lime); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -322,7 +322,7 @@ button { color: inherit; }
 
 .brandbook-section { width: var(--shell); margin: 100px auto 0; }
 .brandbook-promo { position: relative; overflow: hidden; min-height: 520px; padding: clamp(46px, 7vw, 95px); border-radius: 34px; display: flex; align-items: center; background: var(--forest-950); color: white; box-shadow: var(--shadow); }
-.brandbook-promo::before { content: ""; position: absolute; inset: 0 0 0 45%; background: linear-gradient(90deg, var(--forest-950) 0%, rgba(3,28,20,.55) 35%, rgba(3,28,20,.05)), url("assets/brandbook-preview.jpg") center / cover; transition: transform .7s ease; }
+.brandbook-promo::before { content: ""; position: absolute; inset: 0 0 0 45%; background: linear-gradient(90deg, var(--forest-950) 0%, rgba(3,28,20,.55) 35%, rgba(3,28,20,.05)), url("assets/optimized/brandbook-preview.webp") center / cover; transition: transform .7s ease; }
 .brandbook-promo:hover::before { transform: scale(1.025); }
 .brandbook-promo__copy { position: relative; z-index: 2; max-width: 690px; }
 .brandbook-promo h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(3.2rem, 6vw, 6.7rem); letter-spacing: -.075em; line-height: .88; }
@@ -330,19 +330,19 @@ button { color: inherit; }
 .brandbook-promo__copy > p:not(.eyebrow) { max-width: 560px; margin: 26px 0 31px; color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.65; }
 
 .member-cta { position: relative; overflow: hidden; width: var(--shell); min-height: 500px; margin: 100px auto; padding: clamp(46px, 7vw, 95px); border-radius: 34px; display: flex; align-items: center; background: var(--forest-800); color: white; }
-.member-cta::before { content: ""; position: absolute; inset: 0 0 0 52%; background: linear-gradient(90deg, var(--forest-800), transparent 50%), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+.member-cta::before { content: ""; position: absolute; inset: 0 0 0 52%; background: linear-gradient(90deg, var(--forest-800), transparent 50%), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
 .member-cta__copy { position: relative; z-index: 2; max-width: 680px; }
 .member-cta h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(3.2rem, 6vw, 6.7rem); letter-spacing: -.075em; line-height: .88; }
 .member-cta p { max-width: 530px; margin: 25px 0 30px; color: rgba(255,255,255,.7); font-size: 1.05rem; line-height: 1.6; }
 
 .page-hero { position: relative; overflow: hidden; min-height: 510px; background: var(--forest-900); color: white; }
-.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--page-image, url("assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg")) center / cover; opacity: .68; }
+.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--page-image, url("assets/optimized/vrijwilligersavond-2026.webp")) center / cover; opacity: .68; }
 .page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--forest-900) 0%, rgba(5,41,30,.98) 34%, rgba(5,41,30,.72) 57%, rgba(5,41,30,.14) 100%), linear-gradient(0deg, rgba(3,28,20,.58), transparent 58%); }
 .page-hero__inner { position: relative; z-index: 2; width: var(--shell); min-height: inherit; margin: 0 auto; padding: 85px 0 70px; display: flex; flex-direction: column; justify-content: flex-end; }
 .page-hero h1 { max-width: 950px; font-size: clamp(4rem, 8.5vw, 8.5rem); }
 .page-hero p { max-width: 640px; margin: 30px 0 0; color: rgba(255,255,255,.7); font-size: 1.08rem; line-height: 1.65; }
-.page-hero--matches { --page-image: url("assets/facebook/sev-facebook-teamvreugde-2026.jpg"); }
-.page-hero--member { --page-image: url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg"); }
+.page-hero--matches { --page-image: url("assets/optimized/sev-facebook-teamvreugde-2026.webp"); }
+.page-hero--member { --page-image: url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp"); }
 
 .news-tools { margin-bottom: 42px; padding: 16px; border-radius: 18px; display: grid; grid-template-columns: 1fr auto; gap: 16px; background: var(--paper); }
 .search-field { min-height: 55px; padding: 0 18px; border: 1px solid var(--line); border-radius: 13px; display: flex; align-items: center; gap: 12px; }
@@ -495,10 +495,10 @@ button { color: inherit; }
   .story-stack { grid-template-columns: 1fr; }
   .brandbook-section { width: 100%; margin-top: 70px; }
   .brandbook-promo { min-height: 650px; padding: 42px 25px; border-radius: 0; align-items: flex-end; }
-  .brandbook-promo::before { inset: 0; background: linear-gradient(0deg, var(--forest-950) 0%, rgba(3,28,20,.72) 53%, rgba(3,28,20,.12)), url("assets/brandbook-preview.jpg") center / cover; }
+  .brandbook-promo::before { inset: 0; background: linear-gradient(0deg, var(--forest-950) 0%, rgba(3,28,20,.72) 53%, rgba(3,28,20,.12)), url("assets/optimized/brandbook-preview.webp") center / cover; }
   .brandbook-promo h2 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
   .member-cta { width: 100%; min-height: 600px; margin: 70px 0; border-radius: 0; align-items: flex-end; }
-  .member-cta::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 0%, rgba(7,59,43,.78) 50%, rgba(7,59,43,.15)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+  .member-cta::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 0%, rgba(7,59,43,.78) 50%, rgba(7,59,43,.15)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
   .page-hero { min-height: 480px; }
   .page-hero::before { inset: 0; }
   .page-hero::after { background: linear-gradient(0deg, var(--forest-900), rgba(5,41,30,.25)); }
@@ -600,7 +600,7 @@ button { color: inherit; }
 .home-routes { width: var(--shell); margin: 0 auto 90px; display: grid; grid-template-columns: 1.65fr .85fr; gap: 18px; }
 .newcomer-card, .identity-card { min-height: 430px; border-radius: 30px; overflow: hidden; }
 .newcomer-card { position: relative; padding: 58px; display: flex; align-items: center; background: var(--forest-800); color: white; }
-.newcomer-card::before { content: ""; position: absolute; inset: 0 0 0 48%; background: linear-gradient(90deg, var(--forest-800), rgba(7,59,43,.22)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+.newcomer-card::before { content: ""; position: absolute; inset: 0 0 0 48%; background: linear-gradient(90deg, var(--forest-800), rgba(7,59,43,.22)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
 .newcomer-card__copy { position: relative; z-index: 1; max-width: 590px; }
 .newcomer-card h2, .identity-card h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(2.6rem, 4.6vw, 4.8rem); letter-spacing: -.07em; line-height: .94; }
 .newcomer-card__copy > p:not(.eyebrow) { max-width: 510px; margin: 22px 0 28px; color: rgba(255,255,255,.72); line-height: 1.65; }
@@ -687,7 +687,7 @@ button { color: inherit; }
   .home-routes { margin-bottom: 60px; }
   .newcomer-card, .identity-card { min-height: 390px; padding: 30px; border-radius: 22px; }
   .newcomer-card { align-items: flex-end; }
-  .newcomer-card::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 5%, rgba(7,59,43,.48) 68%, rgba(7,59,43,.12)), url("assets/nieuwsarchief/Meidenteam-vlak-na-de-eerste-wedstrijd.jpeg") center / cover; }
+  .newcomer-card::before { inset: 0; background: linear-gradient(0deg, var(--forest-800) 5%, rgba(7,59,43,.48) 68%, rgba(7,59,43,.12)), url("assets/optimized/meidenteam-vlak-na-eerste-wedstrijd.webp") center / cover; }
   .newcomer-card h2, .identity-card h2 { font-size: 2.65rem; }
   .card-actions { align-items: stretch; flex-direction: column; }
   .card-actions .button { width: 100%; }
@@ -758,23 +758,23 @@ body { font-family: var(--font-brand); }
 .page-hero--service .page-hero__inner { padding: 72px 0 58px; }
 .page-hero--service h1 { font-size: clamp(4rem, 6.8vw, 7rem); }
 .page-hero--club::before {
-  background-image: url("assets/sev-hele-club.jpg");
+  background-image: url("assets/optimized/sev-hele-club.webp");
   background-position: center 45%;
 }
 .page-hero--membership::before {
-  background-image: url("assets/sev-jeugd.jpg");
+  background-image: url("assets/optimized/sev-jeugd.webp");
   background-position: center 45%;
 }
 .page-hero--safe::before {
-  background-image: url("assets/facebook/sev-facebook-ouder-kind-2026.jpg");
+  background-image: url("assets/optimized/sev-facebook-ouder-kind-2026.webp");
   background-position: center 38%;
 }
 .page-hero--organisation::before {
-  background-image: url("assets/nieuwsarchief/images-blogpost-vrijwilligersavond-2026-2.jpg");
+  background-image: url("assets/optimized/vrijwilligersavond-2026.webp");
   background-position: center 42%;
 }
 .page-hero--privacy::before {
-  background-image: url("assets/sev-de-veste.jpg");
+  background-image: url("assets/optimized/sev-de-veste.webp");
   background-position: center 38%;
 }
 .page-hero--club::after,
@@ -831,7 +831,7 @@ body { font-family: var(--font-brand); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(3,28,20,.94), rgba(3,28,20,.2)), url("assets/sev-de-veste.jpg") center / cover;
+  background: linear-gradient(0deg, rgba(3,28,20,.94), rgba(3,28,20,.2)), url("assets/optimized/sev-de-veste.webp") center / cover;
 }
 .service-card--photo > * { position: relative; z-index: 1; }
 .service-card--photo small,
@@ -1386,4 +1386,236 @@ body[data-page="news"] .heading-row { margin-bottom: 22px; }
   .news-filter-summary { flex: 1; }
   .footer__nav { grid-template-columns: 1fr 1fr; gap: 18px; }
   .footer__column a, .footer__column span { font-size: .8rem; overflow-wrap: anywhere; }
+}
+
+/* Leesroute 4–7: nieuws voorop, filters bij de hand en echte, snelle hero-beelden. */
+:root { --site-header-height: 84px; --news-toolbar-height: 100px; }
+.hero__image.hero-picture { inset: 0; background: none; opacity: 1; }
+.hero-picture { display: block; position: absolute; overflow: hidden; }
+.hero-picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-focus, 50% 50%); }
+.hero--daily { min-height: 330px; --hero-focus: 55% 48%; }
+.hero--daily .hero__inner { padding: 30px 0 46px; }
+.hero--daily .eyebrow { margin-bottom: 18px; }
+.hero--daily h1 { font-size: clamp(3.5rem, 5.3vw, 5rem); }
+.hero--daily .hero__copy { margin-top: 16px; }
+.hero--daily .hero__actions { margin-top: 20px; }
+.hero--daily::before { display: none; }
+.hero--daily::after { height: 22px; }
+.daily-panel { padding-top: 18px; }
+.daily-panel__heading { margin-bottom: 10px; }
+.daily-panel__heading h2 { font-size: 1.1rem; }
+.daily-link { min-height: 72px; padding: 14px 16px; }
+.section--news-home { padding-top: 28px; }
+#laatste-nieuws { scroll-margin-top: calc(var(--site-header-height) + 18px); }
+
+.page-hero--member, .page-hero--investment { background: var(--forest-950); }
+.page-hero--member::before, .page-hero--investment::before { display: none; }
+.page-hero__image { inset: 0 0 0 35%; }
+.page-hero--member { --hero-focus: 50% 28%; }
+.page-hero--investment { --hero-focus: 50% 30%; }
+.page-hero--member::after, .page-hero--investment::after {
+  background: linear-gradient(0deg, var(--cream), transparent 24px),
+    linear-gradient(90deg, var(--forest-950) 15%, rgba(3,28,20,.92) 40%, rgba(3,28,20,.55) 60%, rgba(3,28,20,.12));
+}
+.page-hero--member .page-hero__inner, .page-hero--investment .page-hero__inner { padding: 38px 0 54px; }
+.page-hero--member .page-hero__inner > .button { align-self: flex-start; margin-top: 20px; }
+
+.news-archive .heading-row { margin-bottom: 16px; }
+.news-toolbar { position: sticky; top: var(--site-header-height); z-index: 30; padding: 12px 0; margin-bottom: 14px; background: var(--cream); border-bottom: 1px solid var(--line); }
+.news-toolbar .news-tools { margin: 0; gap: 10px; }
+.news-toolbar .search-field { min-height: 46px; }
+.news-result-bar { margin-top: 9px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; }
+.news-result-bar .live-label { font-size: .78rem; color: var(--forest-700); }
+.news-result-bar .news-filter-summary { min-width: 0; font-size: .76rem; }
+.news-result-bar .news-filter-clear { margin-left: auto; padding: 8px 12px; min-height: 36px; }
+.news-filter-toggle, .news-filter-done { min-height: 44px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 13px; background: var(--paper); color: var(--forest-700); font-size: .82rem; font-weight: 700; cursor: pointer; }
+.news-filter-toggle, .news-filter-done { display: none; }
+.news-filter-toggle[aria-expanded="true"] { background: var(--forest-800); color: white; }
+.news-filter-panel { margin: 0 0 22px; padding: 14px 18px; gap: 12px; }
+#news-filters, #nieuwsoverzicht { scroll-margin-top: calc(var(--site-header-height) + var(--news-toolbar-height) + 14px); }
+.news-load-more { padding: 22px 0; min-height: 0; }
+.news-load-more small { color: var(--muted); font-size: .75rem; font-weight: 500; }
+body.nav-open .news-toolbar { visibility: hidden; }
+
+@media (max-width: 720px) {
+  .hero--daily .hero__inner { padding: 24px 0 36px; }
+  .hero--daily { --hero-focus: 60% center; }
+  .hero--daily h1 { font-size: clamp(2.85rem, 13.5vw, 3.5rem); }
+  .hero--daily .eyebrow { margin-bottom: 16px; }
+  .hero--daily .hero__copy { margin-top: 13px; max-width: 310px; font-size: .88rem; line-height: 1.5; }
+  .hero--daily .hero__actions { margin-top: 17px; grid-template-columns: 1.1fr 1fr; }
+  .hero--daily .hero__actions .button { min-height: 44px; padding: 11px 9px; font-size: .78rem; }
+  .hero--daily .button__arrow { display: inline; }
+  .daily-panel { padding-top: 12px; }
+  .daily-panel__heading { margin-bottom: 8px; }
+  .daily-panel__heading h2 { font-size: .95rem; }
+  .daily-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 13px; }
+  .daily-link { min-height: 44px; padding: 10px; }
+  .daily-link strong { font-size: .7rem; padding-right: 8px; }
+  .daily-link b { top: 8px; right: 7px; font-size: .7rem; }
+  .section--news-home { padding-top: 22px; }
+  .section--news-home .heading-row { margin-bottom: 14px; }
+  .section--news-home .news-heading-actions { gap: 8px; }
+
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card { min-height: 0; }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card__link { display: grid; grid-template-columns: 96px minmax(0, 1fr); }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card__media { min-height: 120px; height: 100%; }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card__content { min-height: 0; padding: 14px; }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card h3 { font-size: .98rem; margin: 7px 0 8px; line-height: 1.25; }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card p,
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card__badge { display: none; }
+  :is(.news-grid--archive, .news-grid--compact-mobile, .section--news-home .news-grid) .news-card__read { padding-top: 8px; }
+  .investment-news-more-wrap { margin-top: 24px; }
+
+  .page-hero__image { inset: 0 0 auto; height: 220px; }
+  .page-hero__image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--forest-950), transparent 72px); }
+  .page-hero--member { --hero-focus: 50% 45%; }
+  .page-hero--investment { --hero-focus: 50% 38%; }
+  .page-hero--member::after, .page-hero--investment::after { background: linear-gradient(0deg, var(--cream), transparent 22px); }
+  .page-hero--member .page-hero__inner, .page-hero--investment .page-hero__inner { padding: 208px 0 35px; }
+  .page-hero--member h1, .page-hero--investment h1 { font-size: clamp(2.45rem, 10.5vw, 3rem); }
+  .page-hero--member .eyebrow { margin-bottom: 12px; }
+  .page-hero--member .page-hero__inner > .button { align-self: stretch; margin-top: 18px; }
+  .page-hero--member p, .page-hero--investment p { margin-top: 13px; font-size: .93rem; line-height: 1.5; }
+  .page-hero--investment .breadcrumb { position: absolute; top: 18px; left: 0; right: 0; margin: 0; padding: 8px 10px; border-radius: 9px; background: rgba(3,28,20,.76); }
+  .page-hero--investment .eyebrow { display: none; }
+  .page-hero--investment .page-actions { margin-top: 18px; gap: 9px; }
+  .page-hero--investment .page-actions .button { min-height: 44px; padding: 11px; font-size: .82rem; }
+
+  body[data-page="news"] main > .section { padding-top: 18px; }
+  body[data-page="news"] .heading-row { margin-bottom: 8px; }
+  body[data-page="news"] .heading-row .eyebrow { display: none; }
+  body[data-page="news"] h1 { font-size: 1.9rem; }
+  .news-toolbar { padding: 10px 0; margin-bottom: 16px; }
+  .news-toolbar .news-tools { flex-wrap: nowrap; }
+  .news-toolbar .search-field { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 0 12px; gap: 8px; }
+  .news-toolbar .search-field input { min-width: 0; font-size: .9rem; }
+  .news-filter-toggle { display: block; padding: 10px 13px; flex-shrink: 0; }
+  .news-result-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 8px; margin-top: 8px; }
+  .news-result-bar .live-label { grid-column: 1; font-size: .74rem; }
+  .news-result-bar .news-filter-summary { grid-column: 1; font-size: .72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .news-result-bar .news-filter-clear { grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 7px 10px; }
+  .news-filter-panel { padding: 13px; margin: 0 0 18px; gap: 13px; border-radius: 15px; }
+  .news-filter-panel:not([data-ready]) { display: none; }
+  .news-filter-group { gap: 7px; }
+  .news-filter-label { font-size: .63rem; }
+  .news-filter-options { gap: 7px; }
+  .news-filter { min-height: 44px; padding: 10px 13px; }
+  .news-filter-done { display: block; order: 3; background: var(--forest-800); color: white; }
+  .news-load-more { gap: 10px; }
+  .news-load-more [data-news-load-label] { font-size: .76rem; }
+  .news-load-more small { flex-basis: 100%; text-align: center; order: 3; }
+}
+
+@media (max-width: 360px) {
+  .daily-link { padding: 9px 8px; }
+  .daily-link strong { font-size: .65rem; }
+  .hero--daily .eyebrow { font-size: .54rem; }
+  .news-filter-toggle { padding-inline: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Instroomroute 8: kiezen, kennismaken en aanmelden, met bronvaste informatie. */
+.news-streams { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
+.news-streams a { min-height: 44px; padding: 12px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); font-size: .9rem; font-weight: 700; }
+.news-streams a[aria-current="page"] { background: var(--forest-800); color: var(--paper); border-color: var(--forest-800); }
+@media (max-width: 720px) { .news-streams { margin-top: 12px; } .news-streams a { padding: 11px 13px; font-size: .82rem; } .section--news-home .news-heading-actions { flex-wrap: wrap; } }
+.joining-steps { width: var(--shell); margin: 18px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.joining-steps a { min-width: 0; min-height: 76px; display: flex; align-items: center; gap: 14px; padding: 18px 22px; }
+.joining-steps a + a { border-left: 1px solid var(--line); }
+.joining-steps a:hover { background: var(--lime-soft); }
+.joining-steps a:first-child { border-radius: 16px 0 0 16px; }
+.joining-steps a:last-child { border-radius: 0 16px 16px 0; }
+.joining-steps span { color: var(--forest-600); font-size: .78rem; font-weight: 700; }
+.joining-steps strong { font-size: .94rem; }
+.joining-steps b { margin-left: auto; font-weight: 400; }
+.joining-section { padding-top: 38px; padding-bottom: 18px; }
+:is(#voetbalvormen, #football-options-title, #proeftraining, #aanmelden, #contributie) { scroll-margin-top: calc(var(--site-header-height) + 22px); }
+.joining-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 14px; }
+.joining-option, .joining-fees { min-width: 0; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); }
+.joining-option.is-selected { border-color: var(--forest-600); }
+:is(.joining-option, .joining-fees) summary { display: flex; align-items: center; gap: 15px; min-height: 88px; padding: 20px 24px; cursor: pointer; list-style: none; }
+:is(.joining-option, .joining-fees) summary::-webkit-details-marker { display: none; }
+:is(.joining-option, .joining-fees) summary strong { display: block; font-family: var(--font-brand); font-size: 1.1rem; letter-spacing: -.025em; }
+:is(.joining-option, .joining-fees) summary small { display: block; margin-top: 5px; color: var(--muted); font-size: .87rem; line-height: 1.4; }
+:is(.joining-option, .joining-fees) summary b { display: grid; place-items: center; margin-left: auto; flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; color: var(--forest-700); font-size: 1.25rem; font-weight: 400; }
+:is(.joining-option, .joining-fees)[open] summary b { transform: rotate(45deg); }
+.joining-option[open] summary, .joining-fees[open] summary { border-bottom: 1px solid var(--line); }
+.joining-option.is-selected summary { background: var(--lime-soft); border-radius: 17px 17px 0 0; }
+.joining-option__body { padding: 0 24px 18px; }
+.joining-option__body > p { font-size: .94rem; line-height: 1.65; }
+.joining-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin: 22px 0 8px; }
+.joining-contact span { margin-bottom: 5px; font-size: .87rem; color: var(--muted); }
+.joining-contact a { display: flex; align-items: center; min-height: 44px; color: var(--forest-700); font-size: .94rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.joining-option__actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 18px; margin-top: 12px; }
+.joining-choice, .joining-source { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 0; color: var(--forest-700); font-size: .9rem; font-weight: 700; line-height: 1.4; }
+.joining-source { font-size: .82rem; font-weight: 500; color: #536359; }
+.joining-choice:hover, .joining-source:hover { text-decoration: underline; text-underline-offset: 4px; }
+.joining-help { margin: 20px 0 0; max-width: 850px; color: #536359; font-size: .9rem; line-height: 1.65; }
+.joining-help a, .joining-source-note a, .joining-admin > a, [data-trial-placeholder] a { color: var(--forest-700); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.joining-trial, .joining-signup { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 50px; padding: 38px; border-radius: 22px; }
+.joining-trial { background: var(--lime-soft); }
+:is(.joining-trial, .joining-signup) h2 { margin: 0 0 18px; font-family: var(--font-brand); font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.04em; line-height: 1.15; }
+:is(.joining-trial, .joining-signup) p { margin-top: 0; font-size: .97rem; line-height: 1.65; }
+.joining-trial .eyebrow, .joining-signup .eyebrow { font-size: .7rem; }
+.joining-trial__selection { align-self: center; }
+.joining-trial__selection .joining-contact { margin: 15px 0; }
+.joining-trial__note { color: #536359; font-size: .88rem !important; }
+[data-trial-title]:focus-visible { outline: 3px solid var(--forest-600); outline-offset: 6px; }
+.joining-signup { background: var(--forest-800); color: var(--paper); }
+.joining-signup .eyebrow { color: var(--lime); }
+.joining-signup .button { margin-top: 10px; }
+.joining-admin { align-self: start; border-left: 1px solid rgba(255,255,255,.22); padding-left: 32px; }
+.joining-admin h3 { margin: 0 0 14px; font-family: var(--font-brand); font-size: 1.2rem; }
+.joining-admin > a { display: inline-flex; align-items: center; min-height: 44px; color: var(--lime); font-weight: 700; }
+.joining-admin .joining-admin__note { margin-top: 18px; margin-bottom: 0; color: rgba(255,255,255,.8); font-size: .88rem; }
+.joining-admin__note strong { font-weight: 500; overflow-wrap: anywhere; }
+.joining-costs { padding-bottom: 46px; }
+.joining-costs__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; gap: 28px; }
+.joining-fees summary { min-height: 90px; }
+.joining-fees table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.joining-fees caption { padding: 22px 24px 12px; text-align: left; font-weight: 700; }
+.joining-fees th, .joining-fees td { padding: 12px 24px; text-align: left; border-bottom: 1px solid var(--line); line-height: 1.45; }
+.joining-fees thead th { font-size: .8rem; color: var(--muted); }
+.joining-fees tbody th { font-weight: 500; }
+.joining-fees tr > :last-child { text-align: right; white-space: nowrap; }
+.joining-fees__note { padding: 0 24px; margin: 20px 0 24px; font-size: .88rem; line-height: 1.65; color: #536359; }
+.joining-support { border: 1px solid var(--line); border-radius: 17px; padding: 28px; background: var(--paper); }
+.joining-support .eyebrow { font-size: .68rem; }
+.joining-support h3 { margin: 12px 0 16px; font-family: var(--font-brand); font-size: 1.35rem; letter-spacing: -.03em; }
+.joining-support p { font-size: .93rem; line-height: 1.65; color: #536359; }
+.joining-source-note { margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--line); color: #536359; font-size: .84rem; line-height: 1.65; }
+
+@media (max-width: 900px) {
+  .joining-trial, .joining-signup { gap: 30px; padding: 28px; }
+  .joining-costs__grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .joining-steps { margin-top: 12px; }
+  .joining-steps a { min-height: 88px; padding: 13px 10px; flex-direction: column; align-items: flex-start; gap: 5px; }
+  .joining-steps span { font-size: .7rem; }
+  .joining-steps strong { font-size: .78rem; line-height: 1.4; }
+  .joining-steps b { display: none; }
+  .joining-section { padding-top: 28px; padding-bottom: 8px; }
+  .joining-options { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  :is(.joining-option, .joining-fees) summary { min-height: 80px; padding: 17px 18px; }
+  :is(.joining-option, .joining-fees) summary strong { font-size: 1rem; }
+  :is(.joining-option, .joining-fees) summary small { font-size: .82rem; }
+  .joining-option__body { padding: 0 18px 14px; }
+  .joining-contact a { font-size: .88rem; }
+  .joining-option__actions { gap: 0 18px; }
+  .joining-trial, .joining-signup { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 24px 20px; border-radius: 17px; }
+  :is(.joining-trial, .joining-signup) h2 { font-size: 1.8rem; }
+  :is(.joining-trial, .joining-signup) p { font-size: .93rem; }
+  .joining-signup .button { width: 100%; font-size: .83rem; padding: 14px 12px; }
+  .joining-admin { border-left: 0; border-top: 1px solid rgba(255,255,255,.22); padding: 20px 0 0; }
+  .joining-admin > a { font-size: .9rem; }
+  .joining-costs { padding-bottom: 32px; }
+  .joining-fees table { font-size: .84rem; }
+  .joining-fees caption { padding: 18px 18px 10px; }
+  .joining-fees th, .joining-fees td { padding: 10px 14px; }
+  .joining-fees th:first-child { width: 70%; }
+  .joining-fees__note { padding: 0 18px; }
+  .joining-support { padding: 23px 20px; }
 }
