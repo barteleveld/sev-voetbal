@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-23T10:02:46.027Z",
+  "verifiedAt": "2026-10-24T09:31:42.002Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/sev-buurtresto-was-weer-supergezellig-en-lekker/",
+      "title": "SEV buurtresto was weer supergezellig. En lekker!",
+      "link": "https://www.sev-voetbal.nl/sev-buurtresto-was-weer-supergezellig-en-lekker",
+      "date": "2026-10-23T17:39:52.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Op donderdag 22 oktober wisten onze gasten de weg naar SEV weer te vinden voor de warme lunch bij SEV. De vrijwilligers waren toen alweer een paar uurtjes aan het voorbereiden om een heerlijke 3-gangenmaaltijd te kunnen bereiden. Tegen 12.00 uur was iedereen binnen en meteen was duidelijk te zien (e…",
+      "searchText": "Op donderdag 22 oktober wisten onze gasten de weg naar SEV weer te vinden voor de warme lunch bij SEV. De vrijwilligers waren toen alweer een paar uurtjes aan het voorbereiden om een heerlijke 3-gangenmaaltijd te kunnen bereiden. Tegen 12.00 uur was iedereen binnen en meteen was duidelijk te zien (e...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/Buurtresto_20261022_2.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/sev-steunt-sintvoorieder1/",
       "title": "SEV steunt Sintvoorieder1",
