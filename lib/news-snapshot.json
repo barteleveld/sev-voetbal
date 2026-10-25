@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-24T09:31:42.002Z",
+  "verifiedAt": "2026-10-25T09:48:13.171Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,33 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/sev-1-ariston-1-0-5-2/",
+      "title": "SEV 1 – Ariston 1: 0-5",
+      "link": "https://www.sev-voetbal.nl/sev-1-ariston-1-0-5-2",
+      "date": "2026-10-24T18:18:59.000Z",
+      "category": "Wedstrijdverslagen",
+      "categories": [
+        "Wedstrijdverslagen",
+        "Wedstrijdverslagen Team: SEV 1 VE zaterdag speeldag man 133590"
+      ],
+      "excerpt": "Een wedstrijd met voor beide ploegen moeilijke omstandigheden door de komst van de eerste herfststorm van dit jaar, Austen. In het eerste kwartier leken beide ploegen goed te kunnen omgaan met de elementen. Maar het meeste gevaar kwam van de ploeg uit Delft. Ook was het meeste balbezit voor de studen…",
+      "searchText": "Een wedstrijd met voor beide ploegen moeilijke omstandigheden door de komst van de eerste herfststorm van dit jaar, Austen. In het eerste kwartier leken beide ploegen goed te kunnen omgaan met de elementen. Maar het meeste gevaar kwam van de ploeg uit Delft. Ook was het meeste balbezit voor de studen...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/SEV-1-Ariston-1.jpg"
+    },
+    {
+      "id": "https://www.sev-voetbal.nl/sev-1-ariston-1-0-5/",
+      "title": "SEV 1 – Ariston 1: 0-5",
+      "link": "https://www.sev-voetbal.nl/sev-1-ariston-1-0-5",
+      "date": "2026-10-24T18:16:42.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Een wedstrijd met voor beide ploegen moeilijke omstandigheden door de komst van de eerste herfststorm van dit jaar, Austen. In het eerste kwartier leken beide ploegen goed te kunnen omgaan met de elementen. Maar het meeste gevaar kwam van de ploeg uit Delft. Ook was het meeste balbezit voor de studen…",
+      "searchText": "Een wedstrijd met voor beide ploegen moeilijke omstandigheden door de komst van de eerste herfststorm van dit jaar, Austen. In het eerste kwartier leken beide ploegen goed te kunnen omgaan met de elementen. Maar het meeste gevaar kwam van de ploeg uit Delft. Ook was het meeste balbezit voor de studen...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/SEV-1-Ariston-1.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/sev-buurtresto-was-weer-supergezellig-en-lekker/",
       "title": "SEV buurtresto was weer supergezellig. En lekker!",
