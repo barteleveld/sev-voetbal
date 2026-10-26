@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-25T09:48:13.171Z",
+  "verifiedAt": "2026-10-26T11:06:07.711Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/rugbyvereniging-wassenaaar-warriors-traint-bij-sev/",
+      "title": "Rugbyvereniging Wassenaaar Warriors traint bij SEV",
+      "link": "https://www.sev-voetbal.nl/rugbyvereniging-wassenaaar-warriors-traint-bij-sev",
+      "date": "2026-10-26T06:19:20.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "De komende 2 weken traint rugbyvereniging Wassenaaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden…",
+      "searchText": "De komende 2 weken traint rugbyvereniging Wassenaaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden....",
+      "image": ""
+    },
     {
       "id": "https://www.sev-voetbal.nl/sev-1-ariston-1-0-5-2/",
       "title": "SEV 1 – Ariston 1: 0-5",
