@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-27T10:32:26.499Z",
+  "verifiedAt": "2026-10-28T11:20:00.170Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,32 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/arjan-kortleven-stopt-na-dit-seizoen-bij-sev/",
+      "title": "Arjan Kortleven stopt na dit seizoen bij SEV",
+      "link": "https://www.sev-voetbal.nl/arjan-kortleven-stopt-na-dit-seizoen-bij-sev",
+      "date": "2026-10-27T19:35:56.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Na dit seizoen zal Arjan stoppen als hoofdtrainer van SEV. Dat is een beslissing die hij niet zomaar heeft genomen, want hij heeft het hier ontzettend naar zijn zin en kijkt met veel warmte terug op zijn tijd bij de club. Reactie Arjan:\"Vanaf het eerste moment heb ik me welkom en gewaardeerd gevoeld…",
+      "searchText": "Na dit seizoen zal Arjan stoppen als hoofdtrainer van SEV. Dat is een beslissing die hij niet zomaar heeft genomen, want hij heeft het hier ontzettend naar zijn zin en kijkt met veel warmte terug op zijn tijd bij de club. Reactie Arjan:\"Vanaf het eerste moment heb ik me welkom en gewaardeerd gevoeld...",
+      "image": ""
+    },
+    {
+      "id": "https://www.sev-voetbal.nl/vier-biertaps-en-nog-meer-keuze-in-de-kantine-van-sev/",
+      "title": "Vier biertaps en nóg meer keuze in de kantine van SEV!",
+      "link": "https://www.sev-voetbal.nl/vier-biertaps-en-nog-meer-keuze-in-de-kantine-van-sev",
+      "date": "2026-10-27T15:26:24.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Goed nieuws voor alle bezoekers van onze gezellige SEV-kantine! Vanaf deze week beschikken we over maar liefst vier biertaps. Daarmee breiden we ons assortiment flink uit en is er voor vrijwel iedere smaak iets lekkers te vinden. Ook het assortiment STËLZ is uitgebreid, inclusief een alcoholvrije v…",
+      "searchText": "Goed nieuws voor alle bezoekers van onze gezellige SEV-kantine! Vanaf deze week beschikken we over maar liefst vier biertaps. Daarmee breiden we ons assortiment flink uit en is er voor vrijwel iedere smaak iets lekkers te vinden. Ook het assortiment STËLZ is uitgebreid, inclusief een alcoholvrije v...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-4-taps-1.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/rugbyvereniging-wassenaaar-warriors-traint-bij-sev/",
       "title": "Rugbyvereniging Wassenaaar Warriors traint bij SEV",
@@ -17,8 +43,8 @@
       "categories": [
         "Club nieuws"
       ],
-      "excerpt": "De komende 2 weken traint rugbyvereniging Wassenaaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden…",
-      "searchText": "De komende 2 weken traint rugbyvereniging Wassenaaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden....",
+      "excerpt": "De komende 2 weken traint rugby vereniging Wassenaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden…",
+      "searchText": "De komende 2 weken traint rugby vereniging Wassenaar Warriors op dinsdag- en donderdagavond op veld 3. De reden is dat zij in deze periode niet op hun eigen terrein terecht kunnen vanwege onderhoudswerkzaamheden....",
       "image": ""
     },
     {
