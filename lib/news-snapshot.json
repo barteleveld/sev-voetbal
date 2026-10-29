@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-28T11:20:00.170Z",
+  "verifiedAt": "2026-10-29T11:30:40.680Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/sev-helpt-sinterklaas-een-handje-samen-zorgen-we-voor-een-cadeau-voor-ieder-kind/",
+      "title": "SEV helpt Sinterklaas een handje: samen zorgen we voor een cadeau voor ieder kind!",
+      "link": "https://www.sev-voetbal.nl/sev-helpt-sinterklaas-een-handje-samen-zorgen-we-voor-een-cadeau-voor-ieder-kind",
+      "date": "2026-10-29T08:40:48.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Bij SEV draait het om meer dan alleen voetbal. Samenhorigheid, betrokkenheid en oog hebben voor elkaar zijn belangrijke waarden binnen onze vereniging. Daarom steunen wij dit jaar Stichting Sintvoorieder1, die zich inzet om ook kinderen uit gezinnen waar weinig geld is een onvergetelijk sinterklaasf…",
+      "searchText": "Bij SEV draait het om meer dan alleen voetbal. Samenhorigheid, betrokkenheid en oog hebben voor elkaar zijn belangrijke waarden binnen onze vereniging. Daarom steunen wij dit jaar Stichting Sintvoorieder1, die zich inzet om ook kinderen uit gezinnen waar weinig geld is een onvergetelijk sinterklaasf...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-sintvoorieder1-activatie.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/arjan-kortleven-stopt-na-dit-seizoen-bij-sev/",
       "title": "Arjan Kortleven stopt na dit seizoen bij SEV",
