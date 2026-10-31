@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-10-30T11:23:27.579Z",
+  "verifiedAt": "2026-10-31T10:55:02.463Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/wat-een-record-sev-haalt-maar-liefst-e-14-37435-op-met-de-grote-clubactie/",
+      "title": "WAT EEN RECORD! SEV haalt maar liefst € 14.374,35 op met de Grote Clubactie!",
+      "link": "https://www.sev-voetbal.nl/wat-een-record-sev-haalt-maar-liefst-e-14-37435-op-met-de-grote-clubactie",
+      "date": "2026-10-30T12:15:36.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Ongelooflijk. Fantastisch. Niet normaal! De Grote Clubactie 2026 zit erop en wat hebben we met elkaar een geweldig resultaat neergezet. Met een eindopbrengst van maar liefst € 14.374,35 heeft SEV alle verwachtingen overtroffen! Ons doel was ambitieus: de magische grens van € 10.000 doorbreken. M…",
+      "searchText": "Ongelooflijk. Fantastisch. Niet normaal! De Grote Clubactie 2026 zit erop en wat hebben we met elkaar een geweldig resultaat neergezet. Met een eindopbrengst van maar liefst € 14.374,35 heeft SEV alle verwachtingen overtroffen! Ons doel was ambitieus: de magische grens van € 10.000 doorbreken. M...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-clubactie2026-opbrengst-record.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/sev-helpt-sinterklaas-een-handje-samen-zorgen-we-voor-een-cadeau-voor-ieder-kind/",
       "title": "SEV helpt Sinterklaas een handje: samen zorgen we voor een cadeau voor ieder kind!",
