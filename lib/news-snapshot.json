@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-11-01T11:49:50.788Z",
+  "verifiedAt": "2026-11-02T13:29:01.160Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,33 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/sev-maakt-het-zichzelf-onnodig-lastig-maar-wint-wel-2/",
+      "title": "SEV maakt het zichzelf onnodig lastig maar wint wel",
+      "link": "https://www.sev-voetbal.nl/sev-maakt-het-zichzelf-onnodig-lastig-maar-wint-wel-2",
+      "date": "2026-11-01T16:24:47.000Z",
+      "category": "Wedstrijdverslagen",
+      "categories": [
+        "Wedstrijdverslagen",
+        "Wedstrijdverslagen Team: SEV 1 VE zaterdag speeldag man 133590"
+      ],
+      "excerpt": "SEV heeft zaterdagmiddag een verdiende 2-3 overwinning geboekt op Hazerswoudse Boys. De ploeg van hoofdtrainer Arjan Kortleven was grote delen van de wedstrijd de bovenliggende partij, creëerde volop kansen, maar vergat zichzelf opnieuw vroegtijdig te belonen. Hierdoor bleef het tot het laatste flu…",
+      "searchText": "SEV heeft zaterdagmiddag een verdiende 2-3 overwinning geboekt op Hazerswoudse Boys. De ploeg van hoofdtrainer Arjan Kortleven was grote delen van de wedstrijd de bovenliggende partij, creëerde volop kansen, maar vergat zichzelf opnieuw vroegtijdig te belonen. Hierdoor bleef het tot het laatste flu...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/images-blogpost-hazerswoudse-sev-1.jpg"
+    },
+    {
+      "id": "https://www.sev-voetbal.nl/sev-maakt-het-zichzelf-onnodig-lastig-maar-wint-wel/",
+      "title": "SEV maakt het zichzelf onnodig lastig maar wint wel",
+      "link": "https://www.sev-voetbal.nl/sev-maakt-het-zichzelf-onnodig-lastig-maar-wint-wel",
+      "date": "2026-11-01T16:21:25.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "SEV heeft zaterdagmiddag een verdiende 2-3 overwinning geboekt op Hazerswoudse Boys. De ploeg van hoofdtrainer Arjan Kortleven was grote delen van de wedstrijd de bovenliggende partij, creëerde volop kansen, maar vergat zichzelf opnieuw vroegtijdig te belonen. Hierdoor bleef het tot het laatste flu…",
+      "searchText": "SEV heeft zaterdagmiddag een verdiende 2-3 overwinning geboekt op Hazerswoudse Boys. De ploeg van hoofdtrainer Arjan Kortleven was grote delen van de wedstrijd de bovenliggende partij, creëerde volop kansen, maar vergat zichzelf opnieuw vroegtijdig te belonen. Hierdoor bleef het tot het laatste flu...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-hazerswoudse-sev.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/wat-een-record-sev-haalt-maar-liefst-e-14-37435-op-met-de-grote-clubactie/",
       "title": "WAT EEN RECORD! SEV haalt maar liefst € 14.374,35 op met de Grote Clubactie!",
