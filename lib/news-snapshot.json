@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-11-05T13:11:23.341Z",
+  "verifiedAt": "2026-11-06T12:56:08.361Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/pupillen-van-de-week-olivia-van-spronsen-en-roos-slootweg/",
+      "title": "Pupillen van de Week: Olivia van Spronsen en Roos Slootweg",
+      "link": "https://www.sev-voetbal.nl/pupillen-van-de-week-olivia-van-spronsen-en-roos-slootweg",
+      "date": "2026-11-05T15:02:21.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "Zaterdag staat er een heuse gemeentelijke derby op het programma! Om 14.30 uur trapt de équipe van Arjan Kortleven af tegen de gemeentegenoten van Stompwijk’92. Voor SEV 1 is het zaak om de overwinning op Hazerswoudse Boys (2-3) een mooi vervolg te geven en ook de Stompwijkers aan de zegekar te b…",
+      "searchText": "Zaterdag staat er een heuse gemeentelijke derby op het programma! Om 14.30 uur trapt de équipe van Arjan Kortleven af tegen de gemeentegenoten van Stompwijk’92. Voor SEV 1 is het zaak om de overwinning op Hazerswoudse Boys (2-3) een mooi vervolg te geven en ook de Stompwijkers aan de zegekar te b...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-pupil-olivia-roos.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/sev-maakt-het-zichzelf-onnodig-lastig-maar-wint-wel-2/",
       "title": "SEV maakt het zichzelf onnodig lastig maar wint wel",
