@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-11-13T13:05:45.775Z",
+  "verifiedAt": "2026-11-14T12:10:19.701Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/vacature-en-profielschets-hoofdtrainer-sev/",
+      "title": "Vacature en Profielschets hoofdtrainer SEV",
+      "link": "https://www.sev-voetbal.nl/vacature-en-profielschets-hoofdtrainer-sev",
+      "date": "2026-11-13T14:40:20.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "SEV is voor het seizoen 2027/2028 op zoek naar een hoofdtrainer voor de A-selectie. De A-selectie bestaat uit ongeveer 38 spelers die samen het eerste en tweede elftal vormen. Het eerste team speelt dit seizoen in de zaterdag vierde klasse. SEV streeft ernaar om zoveel mogelijk spelers van de select…",
+      "searchText": "SEV is voor het seizoen 2027/2028 op zoek naar een hoofdtrainer voor de A-selectie. De A-selectie bestaat uit ongeveer 38 spelers die samen het eerste en tweede elftal vormen. Het eerste team speelt dit seizoen in de zaterdag vierde klasse. SEV streeft ernaar om zoveel mogelijk spelers van de select...",
+      "image": "https://www.sev-voetbal.nl/wp-content/uploads/sevvoetbal/nieuws-thumbnails-vacature-hoofdtrainer.jpg"
+    },
     {
       "id": "https://www.sev-voetbal.nl/frank-dobbe-verlengt-als-technisch-coordinator-bij-sev/",
       "title": "Frank Dobbe verlengt als technisch coördinator bij SEV",
