@@ -1,6 +1,6 @@
 {
   "source": "https://www.sev-voetbal.nl/feed/",
-  "verifiedAt": "2026-11-15T12:43:39.988Z",
+  "verifiedAt": "2026-11-16T13:37:40.394Z",
   "complete": true,
   "coverageYears": [
     2026,
@@ -8,6 +8,19 @@
   ],
   "pagesRead": 32,
   "items": [
+    {
+      "id": "https://www.sev-voetbal.nl/sev-verliest-lastige-uitwedstrijd/",
+      "title": "SEV verliest lastige uitwedstrijd",
+      "link": "https://www.sev-voetbal.nl/sev-verliest-lastige-uitwedstrijd",
+      "date": "2026-11-16T08:30:18.000Z",
+      "category": "Club nieuws",
+      "categories": [
+        "Club nieuws"
+      ],
+      "excerpt": "De openingsfase verliep gelijkopgaand. SJZ brak de wedstrijd open met een goede voorzet, die bij de tweede paal werd binnengelopen voor de 1-0. Kort daarna viel ook de tweede treffer, ditmaal na een discutabel moment. De grensrechter vlagde voor een achterbal en meerdere spelers van SEV verwachtten…",
+      "searchText": "De openingsfase verliep gelijkopgaand. SJZ brak de wedstrijd open met een goede voorzet, die bij de tweede paal werd binnengelopen voor de 1-0. Kort daarna viel ook de tweede treffer, ditmaal na een discutabel moment. De grensrechter vlagde voor een achterbal en meerdere spelers van SEV verwachtten...",
+      "image": ""
+    },
     {
       "id": "https://www.sev-voetbal.nl/vacature-en-profielschets-hoofdtrainer-sev/",
       "title": "Vacature en Profielschets hoofdtrainer SEV",
